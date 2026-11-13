@@ -1,0 +1,13 @@
+.venv/
+data/interim/
+data/processed/
+models/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+
+# Raw data: ~100 MB of JSON. ipl_json.zip (committed, 5 MB) holds the identical files;
+# unzip it into data/raw/cricsheet_json/ on a fresh clone.
+data/raw/cricsheet_json/
+ipl/
+ipl_json/

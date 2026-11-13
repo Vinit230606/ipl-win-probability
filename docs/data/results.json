@@ -1,0 +1,1275 @@
+{
+ "generated_at": "2026-11-13T21:10:16+00:00",
+ "best_model": "gbm",
+ "other_model": "lr_full",
+ "featured_match_id": "1527688",
+ "splits": {
+  "seasons": {
+   "train": [
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+   ],
+   "val": [
+    2024
+   ],
+   "test": [
+    2025,
+    2026
+   ]
+  },
+  "table": [
+   {
+    "split": "train",
+    "seasons": "2008–2023",
+    "matches": 969,
+    "all_rows": 113010,
+    "model_rows": 112041,
+    "terminal_rows": 969,
+    "chase_win_rate": "0.545"
+   },
+   {
+    "split": "val",
+    "seasons": "2024",
+    "matches": 70,
+    "all_rows": 8108,
+    "model_rows": 8038,
+    "terminal_rows": 70,
+    "chase_win_rate": "0.514"
+   },
+   {
+    "split": "test",
+    "seasons": "2025–2026",
+    "matches": 138,
+    "all_rows": 15914,
+    "model_rows": 15776,
+    "terminal_rows": 138,
+    "chase_win_rate": "0.580"
+   }
+  ]
+ },
+ "exclusions": {
+  "CHASE_INCOMPLETE": 6,
+  "DLS": 23,
+  "NO_RESULT": 9,
+  "REDUCED_OVERS": 12,
+  "TIE": 16
+ },
+ "cleaning": {
+  "raw_matches": 1243,
+  "kept": 1177,
+  "excluded": 66
+ },
+ "methods": {
+  "baseline": {
+   "label": "Baseline",
+   "description": "Historical lookup table: the share of training chases that were won from the same band of runs needed, balls left and wickets left, with coarser fallbacks for rare states. No machine learning."
+  },
+  "lr_full": {
+   "label": "LR-full",
+   "description": "Logistic regression on the seven scoreboard features plus four terms derived from them (log runs needed, log balls left, required rate times wickets, runs per wicket). Recent seasons weighted more (weight halves every 2 seasons back)."
+  },
+  "lr_core": {
+   "label": "LR-core",
+   "description": "Logistic regression on runs needed, balls left and wickets left only (plus terms computed from those three). Used by the what-if calculator. Recent seasons weighted more (weight halves every 2 seasons back)."
+  },
+  "gbm": {
+   "label": "GBM",
+   "description": "Gradient-boosted decision trees (scikit-learn HistGradientBoostingClassifier) on the seven scoreboard features. Recent seasons weighted more (weight halves every 8 seasons back)."
+  }
+ },
+ "chosen_params": {
+  "lr_full": {
+   "feature_set": "BASE7_E",
+   "C": 0.03,
+   "half_life": 2.0,
+   "val_brier": 0.120537,
+   "val_log_loss": 0.378134,
+   "n_iter": 42,
+   "fit_seconds": 0.36,
+   "features": [
+    "runs_needed",
+    "balls_left",
+    "wickets_left",
+    "target",
+    "rrr",
+    "runs_last18",
+    "wkts_last18",
+    "log_runs_needed",
+    "log_balls_left",
+    "rrr_x_wkts",
+    "runs_per_wicket"
+   ]
+  },
+  "lr_core": {
+   "feature_set": "CORE",
+   "C": 0.3,
+   "half_life": 2.0,
+   "val_brier": 0.121102,
+   "val_log_loss": 0.381314,
+   "n_iter": 34,
+   "fit_seconds": 0.33,
+   "features": [
+    "runs_needed",
+    "balls_left",
+    "wickets_left",
+    "rrr",
+    "log_runs_needed",
+    "log_balls_left",
+    "rrr_x_wkts",
+    "runs_per_wicket"
+   ]
+  },
+  "gbm": {
+   "learning_rate": 0.03,
+   "max_leaf_nodes": 15,
+   "min_samples_leaf": 200,
+   "l2_regularization": 0.0,
+   "max_iter": 300,
+   "monotonic": true,
+   "half_life": 8.0,
+   "val_brier": 0.116136,
+   "val_log_loss": 0.377794,
+   "features": [
+    "runs_needed",
+    "balls_left",
+    "wickets_left",
+    "target",
+    "rrr",
+    "runs_last18",
+    "wkts_last18"
+   ]
+  }
+ },
+ "test": {
+  "baseline": {
+   "brier": 0.1516,
+   "log_loss": 0.511734,
+   "ece": 0.132274,
+   "n_rows": 15776,
+   "n_matches": 138
+  },
+  "lr_full": {
+   "brier": 0.12478,
+   "log_loss": 0.390821,
+   "ece": 0.081652,
+   "n_rows": 15776,
+   "n_matches": 138,
+   "bss": 0.176911,
+   "bss_ci": [
+    0.11885,
+    0.229768
+   ],
+   "verdict": "LR-full beats the baseline (BSS 0.177, 95% interval [0.119, 0.230])."
+  },
+  "lr_core": {
+   "brier": 0.127185,
+   "log_loss": 0.400843,
+   "ece": 0.093638,
+   "n_rows": 15776,
+   "n_matches": 138,
+   "bss": 0.161046,
+   "bss_ci": [
+    0.118278,
+    0.203442
+   ],
+   "verdict": "LR-core beats the baseline (BSS 0.161, 95% interval [0.118, 0.203])."
+  },
+  "gbm": {
+   "brier": 0.174026,
+   "log_loss": 0.565238,
+   "ece": 0.137209,
+   "n_rows": 15776,
+   "n_matches": 138,
+   "bss": -0.147929,
+   "bss_ci": [
+    -0.320058,
+    0.008695
+   ],
+   "verdict": "We cannot say GBM beats the baseline: the 95% interval [-0.320, 0.009] includes 0 (BSS -0.148)."
+  }
+ },
+ "validation": {
+  "baseline": {
+   "brier": 0.135327,
+   "log_loss": 0.451809,
+   "ece": 0.076357,
+   "n_rows": 8038,
+   "n_matches": 70
+  },
+  "lr_full": {
+   "brier": 0.120537,
+   "log_loss": 0.378134,
+   "ece": 0.053332,
+   "n_rows": 8038,
+   "n_matches": 70,
+   "bss": 0.109289,
+   "bss_ci": [
+    0.04374,
+    0.169154
+   ],
+   "verdict": "LR-full beats the baseline (BSS 0.109, 95% interval [0.044, 0.169])."
+  },
+  "lr_core": {
+   "brier": 0.121102,
+   "log_loss": 0.381314,
+   "ece": 0.0585,
+   "n_rows": 8038,
+   "n_matches": 70,
+   "bss": 0.105114,
+   "bss_ci": [
+    0.050854,
+    0.156375
+   ],
+   "verdict": "LR-core beats the baseline (BSS 0.105, 95% interval [0.051, 0.156])."
+  },
+  "gbm": {
+   "brier": 0.116136,
+   "log_loss": 0.377794,
+   "ece": 0.062974,
+   "n_rows": 8038,
+   "n_matches": 70,
+   "bss": 0.141812,
+   "bss_ci": [
+    -0.006686,
+    0.265537
+   ],
+   "verdict": "We cannot say GBM beats the baseline: the 95% interval [-0.007, 0.266] includes 0 (BSS 0.142)."
+  }
+ },
+ "test_gbm_vs_lr_full": {
+  "bss": -0.39466,
+  "ci": [
+   -0.641339,
+   -0.182231
+  ],
+  "n_matches": 138,
+  "verdict": "GBM is worse than LR-full (BSS -0.395, 95% interval [-0.641, -0.182])."
+ },
+ "validation_gbm_vs_lr_full": {
+  "bss": 0.036514,
+  "ci": [
+   -0.156143,
+   0.190842
+  ],
+  "n_matches": 70,
+  "verdict": "We cannot say GBM beats LR-full: the 95% interval [-0.156, 0.191] includes 0 (BSS 0.037)."
+ },
+ "test_all_rows_brier": {
+  "baseline": 0.150285,
+  "lr_full": 0.123698,
+  "lr_core": 0.126082,
+  "gbm": 0.172517
+ },
+ "calibration": {
+  "test": {
+   "baseline": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 3294,
+     "mean_p": 0.028277,
+     "observed_rate": 0.061931
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 1911,
+     "mean_p": 0.15664,
+     "observed_rate": 0.26112
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 1347,
+     "mean_p": 0.264038,
+     "observed_rate": 0.434298
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 1280,
+     "mean_p": 0.357533,
+     "observed_rate": 0.5
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 1467,
+     "mean_p": 0.440285,
+     "observed_rate": 0.670757
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 1314,
+     "mean_p": 0.550183,
+     "observed_rate": 0.790715
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 1364,
+     "mean_p": 0.651013,
+     "observed_rate": 0.929619
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 721,
+     "mean_p": 0.745552,
+     "observed_rate": 0.918169
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 1276,
+     "mean_p": 0.857484,
+     "observed_rate": 0.975705
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 1802,
+     "mean_p": 0.972278,
+     "observed_rate": 0.941731
+    }
+   ],
+   "lr_full": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 3060,
+     "mean_p": 0.028656,
+     "observed_rate": 0.047712
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 1385,
+     "mean_p": 0.149315,
+     "observed_rate": 0.13213
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 1297,
+     "mean_p": 0.250901,
+     "observed_rate": 0.285274
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 1324,
+     "mean_p": 0.350069,
+     "observed_rate": 0.480363
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 1189,
+     "mean_p": 0.450306,
+     "observed_rate": 0.617325
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 1154,
+     "mean_p": 0.550315,
+     "observed_rate": 0.713172
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 1084,
+     "mean_p": 0.650096,
+     "observed_rate": 0.838561
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 1279,
+     "mean_p": 0.750886,
+     "observed_rate": 0.915559
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 1576,
+     "mean_p": 0.851051,
+     "observed_rate": 0.94797
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 2428,
+     "mean_p": 0.956438,
+     "observed_rate": 0.970758
+    }
+   ],
+   "lr_core": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 3079,
+     "mean_p": 0.027459,
+     "observed_rate": 0.051965
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 1412,
+     "mean_p": 0.148662,
+     "observed_rate": 0.143059
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 1432,
+     "mean_p": 0.251497,
+     "observed_rate": 0.267458
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 1486,
+     "mean_p": 0.347342,
+     "observed_rate": 0.512786
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 1255,
+     "mean_p": 0.450272,
+     "observed_rate": 0.623108
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 1065,
+     "mean_p": 0.550036,
+     "observed_rate": 0.750235
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 1074,
+     "mean_p": 0.650277,
+     "observed_rate": 0.914339
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 1298,
+     "mean_p": 0.751397,
+     "observed_rate": 0.929122
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 1437,
+     "mean_p": 0.850921,
+     "observed_rate": 0.964509
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 2238,
+     "mean_p": 0.957763,
+     "observed_rate": 0.965594
+    }
+   ],
+   "gbm": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 5252,
+     "mean_p": 0.024226,
+     "observed_rate": 0.165461
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 830,
+     "mean_p": 0.146353,
+     "observed_rate": 0.449398
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 809,
+     "mean_p": 0.250219,
+     "observed_rate": 0.466007
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 950,
+     "mean_p": 0.353556,
+     "observed_rate": 0.576842
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 1018,
+     "mean_p": 0.451095,
+     "observed_rate": 0.694499
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 1037,
+     "mean_p": 0.548347,
+     "observed_rate": 0.755063
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 1063,
+     "mean_p": 0.650947,
+     "observed_rate": 0.795861
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 1041,
+     "mean_p": 0.752242,
+     "observed_rate": 0.814601
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 1010,
+     "mean_p": 0.851317,
+     "observed_rate": 0.868317
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 2766,
+     "mean_p": 0.969394,
+     "observed_rate": 0.938178
+    }
+   ]
+  },
+  "validation": {
+   "baseline": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 2015,
+     "mean_p": 0.027729,
+     "observed_rate": 0.07196
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 1049,
+     "mean_p": 0.145788,
+     "observed_rate": 0.196378
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 647,
+     "mean_p": 0.259917,
+     "observed_rate": 0.276662
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 576,
+     "mean_p": 0.355683,
+     "observed_rate": 0.454861
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 666,
+     "mean_p": 0.447407,
+     "observed_rate": 0.612613
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 647,
+     "mean_p": 0.560412,
+     "observed_rate": 0.619784
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 615,
+     "mean_p": 0.648984,
+     "observed_rate": 0.826016
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 340,
+     "mean_p": 0.742023,
+     "observed_rate": 0.911765
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 548,
+     "mean_p": 0.848812,
+     "observed_rate": 0.970803
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 935,
+     "mean_p": 0.974623,
+     "observed_rate": 0.997861
+    }
+   ],
+   "lr_full": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1850,
+     "mean_p": 0.038983,
+     "observed_rate": 0.027027
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 987,
+     "mean_p": 0.145664,
+     "observed_rate": 0.187437
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 699,
+     "mean_p": 0.247866,
+     "observed_rate": 0.296137
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 525,
+     "mean_p": 0.345322,
+     "observed_rate": 0.409524
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 451,
+     "mean_p": 0.451568,
+     "observed_rate": 0.48337
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 640,
+     "mean_p": 0.55165,
+     "observed_rate": 0.540625
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 583,
+     "mean_p": 0.648897,
+     "observed_rate": 0.80789
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 616,
+     "mean_p": 0.749242,
+     "observed_rate": 0.876623
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 626,
+     "mean_p": 0.847456,
+     "observed_rate": 0.950479
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 1061,
+     "mean_p": 0.957741,
+     "observed_rate": 0.99623
+    }
+   ],
+   "lr_core": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 1957,
+     "mean_p": 0.036636,
+     "observed_rate": 0.035769
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 1002,
+     "mean_p": 0.146125,
+     "observed_rate": 0.186627
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 681,
+     "mean_p": 0.250817,
+     "observed_rate": 0.339207
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 510,
+     "mean_p": 0.350817,
+     "observed_rate": 0.407843
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 478,
+     "mean_p": 0.451929,
+     "observed_rate": 0.441423
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 640,
+     "mean_p": 0.552265,
+     "observed_rate": 0.607812
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 579,
+     "mean_p": 0.649294,
+     "observed_rate": 0.839378
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 595,
+     "mean_p": 0.749575,
+     "observed_rate": 0.890756
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 584,
+     "mean_p": 0.848598,
+     "observed_rate": 0.958904
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 1012,
+     "mean_p": 0.960854,
+     "observed_rate": 1.0
+    }
+   ],
+   "gbm": [
+    {
+     "bin": 0,
+     "lo": 0.0,
+     "hi": 0.1,
+     "n": 2438,
+     "mean_p": 0.021603,
+     "observed_rate": 0.045939
+    },
+    {
+     "bin": 1,
+     "lo": 0.1,
+     "hi": 0.2,
+     "n": 770,
+     "mean_p": 0.145724,
+     "observed_rate": 0.176623
+    },
+    {
+     "bin": 2,
+     "lo": 0.2,
+     "hi": 0.3,
+     "n": 480,
+     "mean_p": 0.245952,
+     "observed_rate": 0.358333
+    },
+    {
+     "bin": 3,
+     "lo": 0.3,
+     "hi": 0.4,
+     "n": 467,
+     "mean_p": 0.35001,
+     "observed_rate": 0.522484
+    },
+    {
+     "bin": 4,
+     "lo": 0.4,
+     "hi": 0.5,
+     "n": 563,
+     "mean_p": 0.454502,
+     "observed_rate": 0.580817
+    },
+    {
+     "bin": 5,
+     "lo": 0.5,
+     "hi": 0.6,
+     "n": 495,
+     "mean_p": 0.552164,
+     "observed_rate": 0.581818
+    },
+    {
+     "bin": 6,
+     "lo": 0.6,
+     "hi": 0.7,
+     "n": 537,
+     "mean_p": 0.653024,
+     "observed_rate": 0.789572
+    },
+    {
+     "bin": 7,
+     "lo": 0.7,
+     "hi": 0.8,
+     "n": 478,
+     "mean_p": 0.747194,
+     "observed_rate": 0.824268
+    },
+    {
+     "bin": 8,
+     "lo": 0.8,
+     "hi": 0.9,
+     "n": 554,
+     "mean_p": 0.848692,
+     "observed_rate": 0.963899
+    },
+    {
+     "bin": 9,
+     "lo": 0.9,
+     "hi": 1.0,
+     "n": 1256,
+     "mean_p": 0.974692,
+     "observed_rate": 0.997611
+    }
+   ]
+  }
+ },
+ "phase": [
+  {
+   "phase": "powerplay",
+   "n_rows": 5199,
+   "n_matches": 138,
+   "brier_baseline": 0.207549,
+   "brier_lr_full": 0.17403,
+   "brier_lr_core": 0.178905,
+   "brier_gbm": 0.219922,
+   "bss_lr_full": 0.161501,
+   "bss_ci_lr_full": [
+    0.109456,
+    0.207686
+   ],
+   "bss_lr_core": 0.138012,
+   "bss_ci_lr_core": [
+    0.090995,
+    0.180722
+   ],
+   "bss_gbm": -0.059615,
+   "bss_ci_gbm": [
+    -0.170806,
+    0.055698
+   ]
+  },
+  {
+   "phase": "middle",
+   "n_rows": 7596,
+   "n_matches": 138,
+   "brier_baseline": 0.138033,
+   "brier_lr_full": 0.114613,
+   "brier_lr_core": 0.11703,
+   "brier_gbm": 0.171902,
+   "bss_lr_full": 0.169666,
+   "bss_ci_lr_full": [
+    0.089349,
+    0.24884
+   ],
+   "bss_lr_core": 0.15216,
+   "bss_ci_lr_core": [
+    0.095105,
+    0.209809
+   ],
+   "bss_gbm": -0.245373,
+   "bss_ci_gbm": [
+    -0.481247,
+    -0.058464
+   ]
+  },
+  {
+   "phase": "death",
+   "n_rows": 2981,
+   "n_matches": 128,
+   "brier_baseline": 0.088592,
+   "brier_lr_full": 0.064792,
+   "brier_lr_core": 0.062861,
+   "brier_gbm": 0.099391,
+   "bss_lr_full": 0.268642,
+   "bss_ci_lr_full": [
+    0.16284,
+    0.381868
+   ],
+   "bss_lr_core": 0.290436,
+   "bss_ci_lr_core": [
+    0.204788,
+    0.387751
+   ],
+   "bss_gbm": -0.121898,
+   "bss_ci_gbm": [
+    -0.426378,
+    0.160292
+   ]
+  }
+ ],
+ "season": [
+  {
+   "season": 2025,
+   "n_rows": 7765,
+   "n_matches": 68,
+   "brier_baseline": 0.150979,
+   "brier_lr_full": 0.133301,
+   "brier_lr_core": 0.131015,
+   "brier_gbm": 0.160105,
+   "bss_lr_full": 0.11709,
+   "bss_ci_lr_full": [
+    0.041292,
+    0.195996
+   ],
+   "bss_lr_core": 0.132226,
+   "bss_ci_lr_core": [
+    0.075493,
+    0.190069
+   ],
+   "bss_gbm": -0.06045,
+   "bss_ci_gbm": [
+    -0.251404,
+    0.141992
+   ]
+  },
+  {
+   "season": 2026,
+   "n_rows": 8011,
+   "n_matches": 70,
+   "brier_baseline": 0.152202,
+   "brier_lr_full": 0.116521,
+   "brier_lr_core": 0.123473,
+   "brier_gbm": 0.187518,
+   "bss_lr_full": 0.23443,
+   "bss_ci_lr_full": [
+    0.164404,
+    0.298988
+   ],
+   "bss_lr_core": 0.188755,
+   "bss_ci_lr_core": [
+    0.132942,
+    0.239214
+   ],
+   "bss_gbm": -0.23204,
+   "bss_ci_gbm": [
+    -0.4952,
+    0.007308
+   ]
+  }
+ ],
+ "drift": [
+  {
+   "season": 2024,
+   "mean_p": 0.420231,
+   "observed_rows": 0.483205,
+   "start_mean_p": 0.422236,
+   "chase_win_rate": 0.514286,
+   "n_matches": 70,
+   "gap_rows": -0.062974,
+   "gap_start": -0.09205,
+   "role": "validation"
+  },
+  {
+   "season": 2025,
+   "mean_p": 0.429081,
+   "observed_rows": 0.485641,
+   "start_mean_p": 0.392975,
+   "chase_win_rate": 0.514706,
+   "n_matches": 68,
+   "gap_rows": -0.056559,
+   "gap_start": -0.121731,
+   "role": "test"
+  },
+  {
+   "season": 2026,
+   "mean_p": 0.436807,
+   "observed_rows": 0.630633,
+   "start_mean_p": 0.367404,
+   "chase_win_rate": 0.642857,
+   "n_matches": 70,
+   "gap_rows": -0.193826,
+   "gap_start": -0.275454,
+   "role": "test"
+  }
+ ],
+ "failure_cases": {
+  "worst_vs_baseline": [
+   {
+    "match_id": "1473466",
+    "brier_model": 0.681316,
+    "brier_baseline": 0.21718,
+    "explanation": "Delhi Capitals chasing 206 against Mumbai Indians (2025-04-13), lost. GBM match Brier 0.681 vs baseline 0.217 (+0.464)."
+   },
+   {
+    "match_id": "1529279",
+    "brier_model": 0.747724,
+    "brier_baseline": 0.287492,
+    "explanation": "Sunrisers Hyderabad chasing 229 against Rajasthan Royals (2026-04-25), won. GBM match Brier 0.748 vs baseline 0.287 (+0.460)."
+   },
+   {
+    "match_id": "1473479",
+    "brier_model": 0.655172,
+    "brier_baseline": 0.196596,
+    "explanation": "Rajasthan Royals chasing 206 against Royal Challengers Bengaluru (2025-04-24), lost. GBM match Brier 0.655 vs baseline 0.197 (+0.459)."
+   },
+   {
+    "match_id": "1529286",
+    "brier_model": 0.815429,
+    "brier_baseline": 0.365637,
+    "explanation": "Delhi Capitals chasing 226 against Rajasthan Royals (2026-05-01), won. GBM match Brier 0.815 vs baseline 0.366 (+0.450)."
+   },
+   {
+    "match_id": "1529290",
+    "brier_model": 0.770606,
+    "brier_baseline": 0.342905,
+    "explanation": "Mumbai Indians chasing 229 against Lucknow Super Giants (2026-05-04), won. GBM match Brier 0.771 vs baseline 0.343 (+0.428)."
+   }
+  ],
+  "biggest_upsets": [
+   {
+    "match_id": "1473468",
+    "min_p_winner": 0.00093,
+    "label": "8.6",
+    "explanation": "Kolkata Knight Riders chasing 112 against Punjab Kings (2025-04-15), lost. GBM gave the defending team only 0.1% after ball 8.6 (needed 41 from 66 balls with 7 wickets left)."
+   },
+   {
+    "match_id": "1527687",
+    "min_p_winner": 0.009131,
+    "label": "19.4",
+    "explanation": "Delhi Capitals chasing 211 against Gujarat Titans (2026-04-08), lost. GBM gave the defending team only 0.9% after ball 19.4 (needed 2 from 2 balls with 3 wickets left)."
+   },
+   {
+    "match_id": "1473507",
+    "min_p_winner": 0.010147,
+    "label": "11.2",
+    "explanation": "Royal Challengers Bengaluru chasing 228 against Lucknow Super Giants (2025-05-27), won. GBM gave the chasing team only 1.0% after ball 11.2 (needed 105 from 52 balls with 6 wickets left)."
+   },
+   {
+    "match_id": "1473464",
+    "min_p_winner": 0.012179,
+    "label": "0.1",
+    "explanation": "Sunrisers Hyderabad chasing 246 against Punjab Kings (2025-04-12), won. GBM gave the chasing team only 1.2% after ball 0.1 (needed 246 from 119 balls with 10 wickets left)."
+   },
+   {
+    "match_id": "1529284",
+    "min_p_winner": 0.012179,
+    "label": "0.1",
+    "explanation": "Sunrisers Hyderabad chasing 244 against Mumbai Indians (2026-04-29), won. GBM gave the chasing team only 1.2% after ball 0.1 (needed 244 from 119 balls with 10 wickets left)."
+   }
+  ]
+ },
+ "baseline_levels": {
+  "A": 0.96501,
+  "B": 0.027383,
+  "C": 0.007606,
+  "D": 0.0
+ },
+ "counts": {
+  "test_rows": 15914,
+  "test_model_rows": 15776,
+  "test_terminal_rows": 138,
+  "test_matches": 138,
+  "fit_rows": 120079,
+  "fit_matches": 1039
+ },
+ "evaluation": {
+  "n_bootstrap": 1000,
+  "ci": 0.95,
+  "calibration_bins": 10,
+  "big_over_runs": 15,
+  "momentum_window": 18,
+  "baseline_min_count": 30
+ },
+ "diagnostics": {
+  "target_bins": [
+   {
+    "target_band": "up to 160",
+    "n_rows": 2456,
+    "n_matches": 25,
+    "chase_win_rate": 0.92,
+    "mean_p_baseline": 0.788654,
+    "brier_baseline": 0.106804,
+    "mean_p_lr_full": 0.807319,
+    "brier_lr_full": 0.085072,
+    "mean_p_lr_core": 0.813479,
+    "brier_lr_core": 0.085178,
+    "mean_p_gbm": 0.822077,
+    "brier_gbm": 0.095649
+   },
+   {
+    "target_band": "161–180",
+    "n_rows": 2115,
+    "n_matches": 19,
+    "chase_win_rate": 0.947368,
+    "mean_p_baseline": 0.632953,
+    "brier_baseline": 0.165353,
+    "mean_p_lr_full": 0.689464,
+    "brier_lr_full": 0.122473,
+    "mean_p_lr_core": 0.686115,
+    "brier_lr_core": 0.124135,
+    "mean_p_gbm": 0.670049,
+    "brier_gbm": 0.139498
+   },
+   {
+    "target_band": "181–200",
+    "n_rows": 2943,
+    "n_matches": 25,
+    "chase_win_rate": 0.56,
+    "mean_p_baseline": 0.464192,
+    "brier_baseline": 0.156555,
+    "mean_p_lr_full": 0.499176,
+    "brier_lr_full": 0.132865,
+    "mean_p_lr_core": 0.488767,
+    "brier_lr_core": 0.135487,
+    "mean_p_gbm": 0.488518,
+    "brier_gbm": 0.143797
+   },
+   {
+    "target_band": "201–220",
+    "n_rows": 4154,
+    "n_matches": 35,
+    "chase_win_rate": 0.428571,
+    "mean_p_baseline": 0.334472,
+    "brier_baseline": 0.191095,
+    "mean_p_lr_full": 0.387945,
+    "brier_lr_full": 0.173941,
+    "mean_p_lr_core": 0.362889,
+    "brier_lr_core": 0.17308,
+    "mean_p_gbm": 0.402813,
+    "brier_gbm": 0.228821
+   },
+   {
+    "target_band": "221–240",
+    "n_rows": 2372,
+    "n_matches": 20,
+    "chase_win_rate": 0.35,
+    "mean_p_baseline": 0.250627,
+    "brier_baseline": 0.146026,
+    "mean_p_lr_full": 0.312083,
+    "brier_lr_full": 0.112977,
+    "mean_p_lr_core": 0.285463,
+    "brier_lr_core": 0.11652,
+    "mean_p_gbm": 0.072362,
+    "brier_gbm": 0.257761
+   },
+   {
+    "target_band": "over 240",
+    "n_rows": 1736,
+    "n_matches": 14,
+    "chase_win_rate": 0.214286,
+    "mean_p_baseline": 0.127138,
+    "brier_baseline": 0.102925,
+    "mean_p_lr_full": 0.184679,
+    "brier_lr_full": 0.068551,
+    "mean_p_lr_core": 0.166792,
+    "brier_lr_core": 0.081009,
+    "mean_p_gbm": 0.06467,
+    "brier_gbm": 0.132691
+   }
+  ],
+  "note": "Computed by `make export` from the stored test predictions after the single test run, to explain the results. No model was refit or changed."
+ }
+}

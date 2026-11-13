@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Replay a chase · IPL win probability</title>
+  <meta name="description" content="Ball-by-ball win probability for recent IPL chases: a historical baseline against machine-learning models.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/vendor/chart.umd.min.js" defer></script>
+  <script type="module" src="assets/js/replay.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="site-title" href="index.html">IPL win probability</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Replay</a>
+        <a href="calculator.html">What-if</a>
+        <a href="results.html">Results</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <h1 class="visually-hidden">Replay a chase</h1>
+
+    <section class="filters" aria-label="Choose a chase">
+      <label>Season <select id="season"></select></label>
+      <label>Team <select id="team"></select></label>
+      <label class="grow">Search <input id="search" type="search" placeholder="Search chases" autocomplete="off"></label>
+      <label class="grow">Chase <select id="match-select"></select></label>
+      <button id="featured" type="button">Featured chase</button>
+    </section>
+    <p id="filter-msg" class="notice" hidden></p>
+
+    <h2 id="match-title" class="match-title"></h2>
+    <p id="match-meta" class="match-meta"></p>
+
+    <div class="strip" aria-hidden="true">
+      <p id="strip-state" class="strip-state"></p>
+      <dl class="strip-probs">
+        <div><dt><span class="sw"></span><span id="lab-model"></span></dt><dd id="p-model"></dd></div>
+        <div><dt><span class="sw other"></span><span id="lab-other"></span></dt><dd id="p-other"></dd></div>
+        <div><dt><span class="sw base"></span><span id="lab-base"></span></dt><dd id="p-base"></dd></div>
+      </dl>
+    </div>
+
+    <figure class="chart-panel">
+      <ul class="legend" id="legend">
+        <li><span class="sw"></span><span id="leg-model"></span></li>
+        <li><span class="sw other"></span><span id="leg-other"></span></li>
+        <li><span class="sw base"></span><span id="leg-base"></span></li>
+        <li><span class="sw wkt"></span>Wicket</li>
+        <li><span class="sw big"></span><span id="leg-big">Big over</span></li>
+      </ul>
+      <div id="chart-box" class="chart-box" tabindex="0" role="group"
+           aria-label="Win probability chart. Use the left and right arrow keys to step through the balls, Home and End to jump to the start or the end."
+           aria-describedby="detail">
+        <canvas id="chart" aria-hidden="true"></canvas>
+      </div>
+      <figcaption id="detail" class="detail"></figcaption>
+    </figure>
+
+    <p id="summary" class="summary"></p>
+    <p><button id="table-toggle" type="button" aria-expanded="false" aria-controls="ball-table-wrap">View as table</button></p>
+    <div id="ball-table-wrap" hidden></div>
+    <p id="live" class="visually-hidden" aria-live="polite"></p>
+
+    <section id="model-note" class="prose" aria-labelledby="note-title">
+      <h2 id="note-title">Reading the chart</h2>
+      <p>Each line is the chasing team's chance of winning, recalculated after every ball from
+        the scoreboard alone: runs needed, balls left, wickets left, the target and the runs and
+        wickets in the most recent <span id="win18">few</span> legal balls. Once the result is settled by the rules (target reached, all out, or no balls left)
+        the lines jump to 100% or 0% and the ball is marked decided.</p>
+      <p id="note-models"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
+      ES 335 project by Vinit Parmar and Dutt Parmar.</div>
+  </footer>
+</body>
+</html>

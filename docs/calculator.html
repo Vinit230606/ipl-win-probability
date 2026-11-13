@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What-if calculator · IPL win probability</title>
+  <meta name="description" content="Enter runs needed, balls left and wickets left to see the chasing team's win probability from a simple logistic regression model.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/vendor/chart.umd.min.js" defer></script>
+  <script type="module" src="assets/js/calculator.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="site-title" href="index.html">IPL win probability</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Replay</a>
+        <a href="calculator.html">What-if</a>
+        <a href="results.html">Results</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <h1>What if a team needs…</h1>
+    <p class="prose muted">Set the scoreboard of a chase and see how often a team in that spot
+      wins, according to the simple model. The calculator uses only these three numbers.</p>
+
+    <div class="calc">
+      <form id="calc-form" novalidate>
+        <div class="field">
+          <label for="runs">Runs needed</label>
+          <div class="stepper">
+            <button type="button" data-for="runs" data-step="-1" aria-label="One run fewer">−</button>
+            <input id="runs" name="runs" type="number" inputmode="numeric" step="1" value="42" aria-describedby="err-runs">
+            <button type="button" data-for="runs" data-step="1" aria-label="One run more">+</button>
+          </div>
+          <p id="err-runs" class="field-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="balls">Balls left</label>
+          <div class="stepper">
+            <button type="button" data-for="balls" data-step="-1" aria-label="One ball fewer">−</button>
+            <input id="balls" name="balls" type="number" inputmode="numeric" step="1" value="25" aria-describedby="err-balls">
+            <button type="button" data-for="balls" data-step="1" aria-label="One ball more">+</button>
+          </div>
+          <p id="err-balls" class="field-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="wkts">Wickets left</label>
+          <div class="stepper">
+            <button type="button" data-for="wkts" data-step="-1" aria-label="One wicket fewer">−</button>
+            <input id="wkts" name="wkts" type="number" inputmode="numeric" step="1" value="6" aria-describedby="err-wkts">
+            <button type="button" data-for="wkts" data-step="1" aria-label="One wicket more">+</button>
+          </div>
+          <p id="err-wkts" class="field-error" hidden></p>
+        </div>
+      </form>
+
+      <section aria-labelledby="readout-label">
+        <h2 id="readout-label" class="visually-hidden">Win probability</h2>
+        <output id="readout" class="readout" for="runs balls wkts" aria-live="polite">–</output>
+        <p id="sentence" class="readout-sentence"></p>
+        <div class="chart-panel">
+          <div class="chart-box small"><canvas id="curve" role="img" aria-label="Win probability against balls left for the entered runs needed and wickets left"></canvas></div>
+          <p id="curve-caption" class="muted"></p>
+        </div>
+        <p id="model-note" class="muted prose"></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
+      ES 335 project by Vinit Parmar and Dutt Parmar.</div>
+  </footer>
+</body>
+</html>

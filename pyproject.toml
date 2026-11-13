@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iplwp"
+version = "0.1.0"
+description = "IPL second-innings win probability (ES 335 course project)"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+iplwp = ["json_schemas/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "docs/data/results.json: every metric shown on the website",
+  "type": "object",
+  "required": ["generated_at", "best_model", "other_model", "featured_match_id", "splits",
+               "exclusions", "cleaning", "methods", "evaluation", "test", "validation", "test_gbm_vs_lr_full",
+               "validation_gbm_vs_lr_full", "test_all_rows_brier", "calibration", "phase",
+               "season", "drift", "failure_cases", "baseline_levels", "counts", "diagnostics"],
+  "properties": {
+    "best_model": {"enum": ["gbm", "lr_full"]},
+    "other_model": {"enum": ["gbm", "lr_full"]},
+    "splits": {
+      "type": "object",
+      "required": ["seasons", "table"],
+      "properties": {
+        "seasons": {
+          "type": "object",
+          "required": ["train", "val", "test"],
+          "additionalProperties": {"type": "array", "items": {"type": "integer"}, "minItems": 1}
+        },
+        "table": {"type": "array", "minItems": 3}
+      }
+    },
+    "exclusions": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "cleaning": {
+      "type": "object",
+      "required": ["raw_matches", "kept", "excluded"],
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "methods": {
+      "type": "object",
+      "required": ["baseline", "lr_full", "lr_core", "gbm"],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["label", "description"],
+        "properties": {"label": {"type": "string"}, "description": {"type": "string"}}
+      }
+    },
+    "test": {"$ref": "#/$defs/method_metrics"},
+    "validation": {"$ref": "#/$defs/method_metrics"},
+    "test_gbm_vs_lr_full": {"$ref": "#/$defs/pair"},
+    "validation_gbm_vs_lr_full": {"$ref": "#/$defs/pair"},
+    "calibration": {
+      "type": "object",
+      "required": ["test", "validation"],
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["bin", "lo", "hi", "n", "mean_p", "observed_rate"],
+            "properties": {
+              "n": {"type": "integer", "minimum": 0},
+              "mean_p": {"type": ["number", "null"]},
+              "observed_rate": {"type": ["number", "null"]}
+            }
+          }
+        }
+      }
+    },
+    "phase": {"type": "array", "minItems": 3},
+    "season": {"type": "array", "minItems": 1},
+    "drift": {"type": "array", "minItems": 2},
+    "failure_cases": {
+      "type": "object",
+      "required": ["worst_vs_baseline", "biggest_upsets"],
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["match_id", "explanation"],
+          "properties": {"match_id": {"type": "string"}, "explanation": {"type": "string"}}
+        }
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "required": ["n_bootstrap", "ci", "calibration_bins", "big_over_runs", "momentum_window",
+                   "baseline_min_count"]
+    },
+    "baseline_levels": {
+      "type": "object",
+      "required": ["A", "B", "C", "D"],
+      "additionalProperties": {"$ref": "#/$defs/prob"}
+    },
+    "diagnostics": {
+      "type": "object",
+      "required": ["target_bins", "note"],
+      "properties": {"target_bins": {"type": "array", "minItems": 1}, "note": {"type": "string"}}
+    }
+  },
+  "$defs": {
+    "prob": {"type": "number", "minimum": 0, "maximum": 1},
+    "ci": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+    "pair": {
+      "type": "object",
+      "required": ["bss", "ci", "verdict"],
+      "properties": {"bss": {"type": "number"}, "ci": {"$ref": "#/$defs/ci"},
+                     "verdict": {"type": "string"}}
+    },
+    "method_metrics": {
+      "type": "object",
+      "required": ["baseline", "lr_full", "lr_core", "gbm"],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["brier", "log_loss", "ece", "n_rows", "n_matches"],
+        "properties": {
+          "brier": {"$ref": "#/$defs/prob"},
+          "log_loss": {"type": "number", "minimum": 0},
+          "ece": {"$ref": "#/$defs/prob"},
+          "bss": {"type": "number"},
+          "bss_ci": {"$ref": "#/$defs/ci"},
+          "verdict": {"type": "string"}
+        }
+      }
+    }
+  }
+}

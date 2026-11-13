@@ -1,0 +1,42 @@
+{
+  "meta": {"data_version": "1.1.0", "created": "2020-09-21", "revision": 1},
+  "info": {
+    "balls_per_over": 6,
+    "city": "Dubai",
+    "dates": ["2020-09-20"],
+    "event": {"name": "Indian Premier League", "match_number": 1},
+    "gender": "male",
+    "match_type": "T20",
+    "outcome": {"winner": "Mumbai Indians", "by": {"wickets": 9}},
+    "overs": 20,
+    "season": "2020/21",
+    "teams": ["Kings XI Punjab", "Mumbai Indians"],
+    "venue": "Dubai International Cricket Stadium"
+  },
+  "innings": [
+    {
+      "team": "Kings XI Punjab",
+      "overs": [
+        {"over": 0, "deliveries": [
+          {"batter": "P1", "bowler": "B1", "non_striker": "P2", "runs": {"batter": 4, "extras": 0, "total": 4}},
+          {"batter": "P1", "bowler": "B1", "non_striker": "P2", "extras": {"wides": 1}, "runs": {"batter": 0, "extras": 1, "total": 1}},
+          {"batter": "P1", "bowler": "B1", "non_striker": "P2", "runs": {"batter": 0, "extras": 0, "total": 0},
+           "wickets": [{"player_out": "P1", "kind": "bowled"}]}
+        ]}
+      ]
+    },
+    {
+      "team": "Mumbai Indians",
+      "target": {"overs": 20, "runs": 6},
+      "overs": [
+        {"over": 0, "deliveries": [
+          {"batter": "P5", "bowler": "B3", "non_striker": "P6", "runs": {"batter": 1, "extras": 0, "total": 1}},
+          {"batter": "P6", "bowler": "B3", "non_striker": "P5", "runs": {"batter": 0, "extras": 0, "total": 0},
+           "wickets": [{"player_out": "P6", "kind": "caught", "fielders": [{"name": "F1"}]}]},
+          {"batter": "P5", "bowler": "B3", "non_striker": "P6", "extras": {"legbyes": 2}, "runs": {"batter": 0, "extras": 2, "total": 2}},
+          {"batter": "P6", "bowler": "B3", "non_striker": "P5", "extras": {"noballs": 1}, "runs": {"batter": 4, "extras": 1, "total": 5}}
+        ]}
+      ]
+    }
+  ]
+}

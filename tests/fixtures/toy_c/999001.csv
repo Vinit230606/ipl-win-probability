@@ -1,0 +1,8 @@
+match_id,season,start_date,venue,innings,ball,batting_team,bowling_team,striker,non_striker,bowler,runs_off_bat,extras,wides,noballs,byes,legbyes,penalty,wicket_type,player_dismissed,other_wicket_type,other_player_dismissed
+999001,2020/21,2020-09-20,Dubai International Cricket Stadium,1,0.1,Kings XI Punjab,Mumbai Indians,P1,P2,B1,4,0,,,,,,,,,
+999001,2020/21,2020-09-20,Dubai International Cricket Stadium,1,0.2,Kings XI Punjab,Mumbai Indians,P1,P2,B1,0,1,1,,,,,,,,
+999001,2020/21,2020-09-20,Dubai International Cricket Stadium,1,0.2,Kings XI Punjab,Mumbai Indians,P1,P2,B1,0,0,,,,,,bowled,P1,,
+999001,2020/21,2020-09-20,Dubai International Cricket Stadium,2,0.1,Mumbai Indians,Kings XI Punjab,P5,P6,B3,1,0,,,,,,,,,
+999001,2020/21,2020-09-20,Dubai International Cricket Stadium,2,0.2,Mumbai Indians,Kings XI Punjab,P6,P5,B3,0,0,,,,,,caught,P6,,
+999001,2020/21,2020-09-20,Dubai International Cricket Stadium,2,0.3,Mumbai Indians,Kings XI Punjab,P5,P6,B3,0,2,,,,2,,,,,
+999001,2020/21,2020-09-20,Dubai International Cricket Stadium,2,0.4,Mumbai Indians,Kings XI Punjab,P6,P5,B3,4,1,,1,,,,,,,

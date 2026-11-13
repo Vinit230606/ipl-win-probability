@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "docs/data/lr_core.json: calculator model (LR-core) and parity vectors",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["feature_order", "rrr_clip", "scaler_mean", "scaler_scale", "coef", "intercept",
+               "input_ranges", "test_metrics", "test_vectors"],
+  "properties": {
+    "feature_order": {"type": "array", "items": {"type": "string"}, "minItems": 3},
+    "rrr_clip": {"type": "number", "exclusiveMinimum": 0},
+    "scaler_mean": {"type": "array", "items": {"type": "number"}},
+    "scaler_scale": {"type": "array", "items": {"type": "number", "exclusiveMinimum": 0}},
+    "coef": {"type": "array", "items": {"type": "number"}},
+    "intercept": {"type": "number"},
+    "half_life": {"type": ["number", "null"]},
+    "input_ranges": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runs_needed", "balls_left", "wickets_left"],
+      "properties": {
+        "runs_needed": {"$ref": "#/$defs/range"},
+        "balls_left": {"$ref": "#/$defs/range"},
+        "wickets_left": {"$ref": "#/$defs/range"}
+      }
+    },
+    "test_metrics": {
+      "type": "object",
+      "required": ["brier", "bss", "bss_ci"],
+      "properties": {
+        "brier": {"type": "number", "minimum": 0, "maximum": 1},
+        "bss": {"type": "number"},
+        "bss_ci": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}
+      }
+    },
+    "test_vectors": {
+      "type": "array",
+      "minItems": 200,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["runs_needed", "balls_left", "wickets_left", "p"],
+        "properties": {
+          "runs_needed": {"type": "integer", "minimum": 1},
+          "balls_left": {"type": "integer", "minimum": 1},
+          "wickets_left": {"type": "integer", "minimum": 1},
+          "p": {"type": "number", "minimum": 0, "maximum": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "range": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2}
+  }
+}

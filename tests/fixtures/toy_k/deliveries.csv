@@ -1,0 +1,8 @@
+match_id,inning,batting_team,bowling_team,over,ball,batter,bowler,non_striker,batsman_runs,extra_runs,total_runs,extras_type,is_wicket,player_dismissed,dismissal_kind,fielder
+999001,2,Mumbai Indians,Kings XI Punjab,0,4,P6,B3,P5,4,1,5,noballs,0,NA,NA,NA
+999001,1,Kings XI Punjab,Mumbai Indians,0,1,P1,B1,P2,4,0,4,NA,0,NA,NA,NA
+999001,1,Kings XI Punjab,Mumbai Indians,0,2,P1,B1,P2,0,1,1,wides,0,NA,NA,NA
+999001,1,Kings XI Punjab,Mumbai Indians,0,3,P1,B1,P2,0,0,0,NA,1,P1,Bowled,NA
+999001,2,Mumbai Indians,Kings XI Punjab,0,1,P5,B3,P6,1,0,1,NA,0,NA,NA,NA
+999001,2,Mumbai Indians,Kings XI Punjab,0,2,P6,B3,P5,0,0,0,NA,1,P6,caught,F1
+999001,2,Mumbai Indians,Kings XI Punjab,0,3,P5,B3,P6,0,2,2,legbyes,0,NA,NA,NA

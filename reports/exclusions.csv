@@ -1,0 +1,67 @@
+match_id,season,reason,detail
+501265,2011,NO_RESULT,outcome: no result
+829763,2015,NO_RESULT,outcome: no result
+829813,2015,NO_RESULT,outcome: no result
+1178424,2019,NO_RESULT,outcome: no result
+1359519,2023,NO_RESULT,outcome: no result
+1473481,2025,NO_RESULT,outcome: no result
+1473492,2025,NO_RESULT,outcome: no result
+1473495,2025,NO_RESULT,outcome: no result
+1527685,2026,NO_RESULT,outcome: no result
+392190,2009,TIE,outcome: tie (incl. super over)
+419121,2010,TIE,outcome: tie (incl. super over)
+598004,2013,TIE,outcome: tie (incl. super over)
+598017,2013,TIE,outcome: tie (incl. super over)
+729315,2014,TIE,outcome: tie (incl. super over)
+829741,2015,TIE,outcome: tie (incl. super over)
+1082625,2017,TIE,outcome: tie (incl. super over)
+1175365,2019,TIE,outcome: tie (incl. super over)
+1178426,2019,TIE,outcome: tie (incl. super over)
+1216493,2020,TIE,outcome: tie (incl. super over)
+1216512,2020,TIE,outcome: tie (incl. super over)
+1216517,2020,TIE,outcome: tie (incl. super over)
+1216547,2020,TIE,outcome: tie (incl. super over)
+1254077,2021,TIE,outcome: tie (incl. super over)
+1473469,2025,TIE,outcome: tie (incl. super over)
+1529281,2026,TIE,outcome: tie (incl. super over)
+336022,2008,DLS,method: D/L
+336025,2008,DLS,method: D/L
+392183,2009,DLS,method: D/L
+392186,2009,DLS,method: D/L
+392214,2009,DLS,method: D/L
+501215,2011,DLS,method: D/L
+501245,2011,DLS,method: D/L
+501255,2011,DLS,method: D/L
+733993,2014,DLS,method: D/L
+829743,2015,DLS,method: D/L
+829807,2015,DLS,method: D/L
+980943,2016,DLS,method: D/L
+980989,2016,DLS,method: D/L
+980997,2016,DLS,method: D/L
+980999,2016,DLS,method: D/L
+1082648,2017,DLS,method: D/L
+1136566,2018,DLS,method: D/L
+1136578,2018,DLS,method: D/L
+1136592,2018,DLS,method: D/L
+1359476,2023,DLS,method: D/L
+1370353,2023,DLS,method: D/L
+1473493,2025,DLS,method: D/L
+1529293,2026,DLS,method: D/L
+335987,2008,REDUCED_OVERS,"target overs 20.0; innings 1: 119 legal balls, 8 wkts"
+336010,2008,REDUCED_OVERS,"target overs 16.0; innings 1: 96 legal balls, 7 wkts"
+336012,2008,REDUCED_OVERS,"target overs 18.0; innings 1: 108 legal balls, 9 wkts"
+501202,2011,REDUCED_OVERS,"target overs 20.0; innings 1: 119 legal balls, 8 wkts"
+548307,2012,REDUCED_OVERS,"target overs 12.0; innings 1: 72 legal balls, 9 wkts"
+598068,2013,REDUCED_OVERS,"target overs 8.0; innings 1: 48 legal balls, 2 wkts"
+733971,2014,REDUCED_OVERS,"target overs 17.0; innings 1: 102 legal balls, 3 wkts"
+829771,2015,REDUCED_OVERS,"target overs 10.0; innings 1: 60 legal balls, 4 wkts"
+829803,2015,REDUCED_OVERS,"target overs 10.0; innings 1: 60 legal balls, 6 wkts"
+1426298,2024,REDUCED_OVERS,"target overs 16.0; innings 1: 96 legal balls, 7 wkts"
+1473471,2025,REDUCED_OVERS,"target overs 14.0; innings 1: 84 legal balls, 9 wkts"
+1527686,2026,REDUCED_OVERS,"target overs 11.0; innings 1: 66 legal balls, 3 wkts"
+392197,2009,CHASE_INCOMPLETE,"innings 2: 92 legal balls, 9 wkts, 95/188"
+392202,2009,CHASE_INCOMPLETE,"innings 2: 117 legal balls, 9 wkts, 126/165"
+419114,2010,CHASE_INCOMPLETE,"innings 2: 99 legal balls, 9 wkts, 120/219"
+598066,2013,CHASE_INCOMPLETE,"innings 2: 115 legal balls, 9 wkts, 133/184"
+729293,2014,CHASE_INCOMPLETE,"innings 2: 94 legal balls, 9 wkts, 84/178"
+1175358,2019,CHASE_INCOMPLETE,"innings 2: 116 legal balls, 9 wkts, 176/214"

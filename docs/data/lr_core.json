@@ -1,0 +1,1569 @@
+{
+ "feature_order": [
+  "runs_needed",
+  "balls_left",
+  "wickets_left",
+  "rrr",
+  "log_runs_needed",
+  "log_balls_left",
+  "rrr_x_wkts",
+  "runs_per_wicket"
+ ],
+ "rrr_clip": 36.0,
+ "scaler_mean": [
+  94.91824548838682,
+  63.11179306956254,
+  7.5335404192240105,
+  10.098980549428603,
+  4.352990192984683,
+  3.950179264611983,
+  6.912192818824711,
+  13.266839482790232
+ ],
+ "scaler_scale": [
+  50.53049848400742,
+  33.172491436049874,
+  2.138171912737666,
+  5.467656329283622,
+  0.7658019118173998,
+  0.760231832794551,
+  2.413752192684898,
+  8.910706437252868
+ ],
+ "coef": [
+  0.6082408555797235,
+  -0.1686928786648463,
+  0.10476106699516055,
+  -0.07232309407236047,
+  -2.3370881208640486,
+  2.6569185252997913,
+  -0.009724422579413066,
+  -2.428222342891859
+ ],
+ "intercept": 0.09626543028048531,
+ "half_life": 2.0,
+ "input_ranges": {
+  "runs_needed": [
+   1,
+   300
+  ],
+  "balls_left": [
+   1,
+   120
+  ],
+  "wickets_left": [
+   1,
+   10
+  ]
+ },
+ "test_metrics": {
+  "brier": 0.1271852231,
+  "bss": 0.161045534,
+  "bss_ci": [
+   0.1182776589,
+   0.2034415824
+  ]
+ },
+ "test_vectors": [
+  {
+   "runs_needed": 1,
+   "balls_left": 1,
+   "wickets_left": 1,
+   "p": 0.8975399799734597
+  },
+  {
+   "runs_needed": 300,
+   "balls_left": 120,
+   "wickets_left": 10,
+   "p": 0.03112533445357281
+  },
+  {
+   "runs_needed": 1,
+   "balls_left": 120,
+   "wickets_left": 10,
+   "p": 0.9999999424384036
+  },
+  {
+   "runs_needed": 300,
+   "balls_left": 1,
+   "wickets_left": 1,
+   "p": 1.9792737170996984e-40
+  },
+  {
+   "runs_needed": 27,
+   "balls_left": 91,
+   "wickets_left": 8,
+   "p": 0.9991759467975517
+  },
+  {
+   "runs_needed": 233,
+   "balls_left": 50,
+   "wickets_left": 7,
+   "p": 0.0006282925364208011
+  },
+  {
+   "runs_needed": 197,
+   "balls_left": 95,
+   "wickets_left": 3,
+   "p": 7.795415005779472e-07
+  },
+  {
+   "runs_needed": 132,
+   "balls_left": 5,
+   "wickets_left": 5,
+   "p": 3.9750370835449835e-06
+  },
+  {
+   "runs_needed": 130,
+   "balls_left": 22,
+   "wickets_left": 2,
+   "p": 1.0025587548744985e-08
+  },
+  {
+   "runs_needed": 258,
+   "balls_left": 60,
+   "wickets_left": 4,
+   "p": 2.064810272889937e-07
+  },
+  {
+   "runs_needed": 26,
+   "balls_left": 23,
+   "wickets_left": 10,
+   "p": 0.9556568027680238
+  },
+  {
+   "runs_needed": 210,
+   "balls_left": 40,
+   "wickets_left": 5,
+   "p": 2.6218712357484336e-05
+  },
+  {
+   "runs_needed": 61,
+   "balls_left": 80,
+   "wickets_left": 2,
+   "p": 0.0462656348597774
+  },
+  {
+   "runs_needed": 29,
+   "balls_left": 18,
+   "wickets_left": 7,
+   "p": 0.800348070315268
+  },
+  {
+   "runs_needed": 158,
+   "balls_left": 82,
+   "wickets_left": 10,
+   "p": 0.4025350496200358
+  },
+  {
+   "runs_needed": 293,
+   "balls_left": 13,
+   "wickets_left": 9,
+   "p": 9.759773604403257e-06
+  },
+  {
+   "runs_needed": 221,
+   "balls_left": 22,
+   "wickets_left": 3,
+   "p": 5.803415207909469e-10
+  },
+  {
+   "runs_needed": 229,
+   "balls_left": 71,
+   "wickets_left": 5,
+   "p": 6.615101837062847e-05
+  },
+  {
+   "runs_needed": 216,
+   "balls_left": 96,
+   "wickets_left": 6,
+   "p": 0.002774202062057581
+  },
+  {
+   "runs_needed": 236,
+   "balls_left": 21,
+   "wickets_left": 3,
+   "p": 1.2544131458456554e-10
+  },
+  {
+   "runs_needed": 154,
+   "balls_left": 36,
+   "wickets_left": 3,
+   "p": 1.941553152763833e-06
+  },
+  {
+   "runs_needed": 39,
+   "balls_left": 112,
+   "wickets_left": 3,
+   "p": 0.9801483437655428
+  },
+  {
+   "runs_needed": 252,
+   "balls_left": 119,
+   "wickets_left": 10,
+   "p": 0.10321234486067313
+  },
+  {
+   "runs_needed": 136,
+   "balls_left": 70,
+   "wickets_left": 8,
+   "p": 0.24838442229330437
+  },
+  {
+   "runs_needed": 151,
+   "balls_left": 54,
+   "wickets_left": 9,
+   "p": 0.11544834713398625
+  },
+  {
+   "runs_needed": 112,
+   "balls_left": 42,
+   "wickets_left": 9,
+   "p": 0.23039604131106725
+  },
+  {
+   "runs_needed": 55,
+   "balls_left": 74,
+   "wickets_left": 10,
+   "p": 0.9847201675919536
+  },
+  {
+   "runs_needed": 279,
+   "balls_left": 71,
+   "wickets_left": 2,
+   "p": 4.493668105548343e-16
+  },
+  {
+   "runs_needed": 235,
+   "balls_left": 36,
+   "wickets_left": 9,
+   "p": 0.0014582934679815468
+  },
+  {
+   "runs_needed": 194,
+   "balls_left": 3,
+   "wickets_left": 1,
+   "p": 8.133286782645488e-27
+  },
+  {
+   "runs_needed": 121,
+   "balls_left": 19,
+   "wickets_left": 5,
+   "p": 0.0005162699513473299
+  },
+  {
+   "runs_needed": 247,
+   "balls_left": 116,
+   "wickets_left": 6,
+   "p": 0.00115541110641512
+  },
+  {
+   "runs_needed": 164,
+   "balls_left": 51,
+   "wickets_left": 4,
+   "p": 0.00010512888374787349
+  },
+  {
+   "runs_needed": 134,
+   "balls_left": 58,
+   "wickets_left": 2,
+   "p": 1.6880643331548575e-07
+  },
+  {
+   "runs_needed": 136,
+   "balls_left": 57,
+   "wickets_left": 2,
+   "p": 1.1844106634953447e-07
+  },
+  {
+   "runs_needed": 69,
+   "balls_left": 94,
+   "wickets_left": 9,
+   "p": 0.9768218608422377
+  },
+  {
+   "runs_needed": 28,
+   "balls_left": 8,
+   "wickets_left": 4,
+   "p": 0.10314646332047021
+  },
+  {
+   "runs_needed": 167,
+   "balls_left": 10,
+   "wickets_left": 4,
+   "p": 3.548250649909936e-07
+  },
+  {
+   "runs_needed": 267,
+   "balls_left": 34,
+   "wickets_left": 10,
+   "p": 0.001066912115472222
+  },
+  {
+   "runs_needed": 20,
+   "balls_left": 59,
+   "wickets_left": 2,
+   "p": 0.9886197021400753
+  },
+  {
+   "runs_needed": 258,
+   "balls_left": 81,
+   "wickets_left": 10,
+   "p": 0.027308114821313227
+  },
+  {
+   "runs_needed": 249,
+   "balls_left": 59,
+   "wickets_left": 10,
+   "p": 0.011949559010526752
+  },
+  {
+   "runs_needed": 84,
+   "balls_left": 53,
+   "wickets_left": 6,
+   "p": 0.4051585073289875
+  },
+  {
+   "runs_needed": 190,
+   "balls_left": 113,
+   "wickets_left": 2,
+   "p": 4.4436222642267397e-10
+  },
+  {
+   "runs_needed": 50,
+   "balls_left": 20,
+   "wickets_left": 2,
+   "p": 0.0036023113156467856
+  },
+  {
+   "runs_needed": 228,
+   "balls_left": 69,
+   "wickets_left": 3,
+   "p": 1.4787950571759884e-08
+  },
+  {
+   "runs_needed": 211,
+   "balls_left": 66,
+   "wickets_left": 6,
+   "p": 0.001031128235305666
+  },
+  {
+   "runs_needed": 107,
+   "balls_left": 57,
+   "wickets_left": 2,
+   "p": 9.371061479223895e-06
+  },
+  {
+   "runs_needed": 21,
+   "balls_left": 97,
+   "wickets_left": 5,
+   "p": 0.9994958760691485
+  },
+  {
+   "runs_needed": 292,
+   "balls_left": 33,
+   "wickets_left": 2,
+   "p": 5.7616170177407765e-18
+  },
+  {
+   "runs_needed": 134,
+   "balls_left": 115,
+   "wickets_left": 6,
+   "p": 0.2556737199194917
+  },
+  {
+   "runs_needed": 268,
+   "balls_left": 40,
+   "wickets_left": 1,
+   "p": 3.6611330205179743e-32
+  },
+  {
+   "runs_needed": 204,
+   "balls_left": 66,
+   "wickets_left": 8,
+   "p": 0.015818488467265655
+  },
+  {
+   "runs_needed": 234,
+   "balls_left": 63,
+   "wickets_left": 1,
+   "p": 1.972793046597758e-27
+  },
+  {
+   "runs_needed": 228,
+   "balls_left": 102,
+   "wickets_left": 2,
+   "p": 1.6118200444392508e-12
+  },
+  {
+   "runs_needed": 59,
+   "balls_left": 53,
+   "wickets_left": 2,
+   "p": 0.018221520551216536
+  },
+  {
+   "runs_needed": 110,
+   "balls_left": 35,
+   "wickets_left": 9,
+   "p": 0.1482207433629655
+  },
+  {
+   "runs_needed": 141,
+   "balls_left": 3,
+   "wickets_left": 1,
+   "p": 2.1184441254072696e-20
+  },
+  {
+   "runs_needed": 150,
+   "balls_left": 44,
+   "wickets_left": 5,
+   "p": 0.0014911134332350987
+  },
+  {
+   "runs_needed": 14,
+   "balls_left": 100,
+   "wickets_left": 6,
+   "p": 0.9999113923076511
+  },
+  {
+   "runs_needed": 164,
+   "balls_left": 2,
+   "wickets_left": 6,
+   "p": 2.1875728780643907e-07
+  },
+  {
+   "runs_needed": 47,
+   "balls_left": 108,
+   "wickets_left": 7,
+   "p": 0.9946793479902893
+  },
+  {
+   "runs_needed": 224,
+   "balls_left": 66,
+   "wickets_left": 9,
+   "p": 0.018046881877571336
+  },
+  {
+   "runs_needed": 205,
+   "balls_left": 17,
+   "wickets_left": 4,
+   "p": 1.2193307409003837e-07
+  },
+  {
+   "runs_needed": 277,
+   "balls_left": 37,
+   "wickets_left": 9,
+   "p": 0.000449509371283563
+  },
+  {
+   "runs_needed": 224,
+   "balls_left": 67,
+   "wickets_left": 4,
+   "p": 3.281205977822167e-06
+  },
+  {
+   "runs_needed": 110,
+   "balls_left": 38,
+   "wickets_left": 10,
+   "p": 0.2527517253369017
+  },
+  {
+   "runs_needed": 291,
+   "balls_left": 14,
+   "wickets_left": 6,
+   "p": 1.4408341528964154e-07
+  },
+  {
+   "runs_needed": 124,
+   "balls_left": 80,
+   "wickets_left": 8,
+   "p": 0.471346116291888
+  },
+  {
+   "runs_needed": 98,
+   "balls_left": 81,
+   "wickets_left": 9,
+   "p": 0.8399632723206296
+  },
+  {
+   "runs_needed": 272,
+   "balls_left": 15,
+   "wickets_left": 8,
+   "p": 9.777143985639107e-06
+  },
+  {
+   "runs_needed": 112,
+   "balls_left": 34,
+   "wickets_left": 9,
+   "p": 0.12474216426331876
+  },
+  {
+   "runs_needed": 23,
+   "balls_left": 30,
+   "wickets_left": 6,
+   "p": 0.9773711902236478
+  },
+  {
+   "runs_needed": 141,
+   "balls_left": 80,
+   "wickets_left": 1,
+   "p": 7.45183547428152e-16
+  },
+  {
+   "runs_needed": 239,
+   "balls_left": 88,
+   "wickets_left": 5,
+   "p": 7.658133257439687e-05
+  },
+  {
+   "runs_needed": 57,
+   "balls_left": 88,
+   "wickets_left": 2,
+   "p": 0.11635209677106985
+  },
+  {
+   "runs_needed": 139,
+   "balls_left": 113,
+   "wickets_left": 9,
+   "p": 0.6983074764392341
+  },
+  {
+   "runs_needed": 39,
+   "balls_left": 93,
+   "wickets_left": 3,
+   "p": 0.9659897989901467
+  },
+  {
+   "runs_needed": 206,
+   "balls_left": 39,
+   "wickets_left": 3,
+   "p": 1.581702387855868e-08
+  },
+  {
+   "runs_needed": 143,
+   "balls_left": 13,
+   "wickets_left": 3,
+   "p": 1.875284452791316e-07
+  },
+  {
+   "runs_needed": 100,
+   "balls_left": 74,
+   "wickets_left": 7,
+   "p": 0.5776944499183396
+  },
+  {
+   "runs_needed": 69,
+   "balls_left": 110,
+   "wickets_left": 6,
+   "p": 0.953799844838608
+  },
+  {
+   "runs_needed": 170,
+   "balls_left": 118,
+   "wickets_left": 10,
+   "p": 0.5810011037112415
+  },
+  {
+   "runs_needed": 201,
+   "balls_left": 28,
+   "wickets_left": 5,
+   "p": 1.2986831316290773e-05
+  },
+  {
+   "runs_needed": 283,
+   "balls_left": 29,
+   "wickets_left": 3,
+   "p": 5.0504299364049796e-12
+  },
+  {
+   "runs_needed": 132,
+   "balls_left": 5,
+   "wickets_left": 1,
+   "p": 1.1012444882529274e-18
+  },
+  {
+   "runs_needed": 49,
+   "balls_left": 17,
+   "wickets_left": 1,
+   "p": 3.014644382380954e-06
+  },
+  {
+   "runs_needed": 250,
+   "balls_left": 67,
+   "wickets_left": 4,
+   "p": 5.281441912443946e-07
+  },
+  {
+   "runs_needed": 189,
+   "balls_left": 66,
+   "wickets_left": 10,
+   "p": 0.10209391940676447
+  },
+  {
+   "runs_needed": 211,
+   "balls_left": 45,
+   "wickets_left": 6,
+   "p": 0.0002681822381739774
+  },
+  {
+   "runs_needed": 30,
+   "balls_left": 38,
+   "wickets_left": 9,
+   "p": 0.9837913163389097
+  },
+  {
+   "runs_needed": 94,
+   "balls_left": 100,
+   "wickets_left": 2,
+   "p": 0.00042081960487101955
+  },
+  {
+   "runs_needed": 231,
+   "balls_left": 56,
+   "wickets_left": 1,
+   "p": 2.995939086175284e-27
+  },
+  {
+   "runs_needed": 250,
+   "balls_left": 97,
+   "wickets_left": 9,
+   "p": 0.027905647941917352
+  },
+  {
+   "runs_needed": 131,
+   "balls_left": 116,
+   "wickets_left": 2,
+   "p": 2.3618410465299707e-06
+  },
+  {
+   "runs_needed": 242,
+   "balls_left": 39,
+   "wickets_left": 1,
+   "p": 4.019740855724202e-29
+  },
+  {
+   "runs_needed": 253,
+   "balls_left": 25,
+   "wickets_left": 5,
+   "p": 4.91822146832081e-07
+  },
+  {
+   "runs_needed": 117,
+   "balls_left": 115,
+   "wickets_left": 10,
+   "p": 0.9033668407062203
+  },
+  {
+   "runs_needed": 270,
+   "balls_left": 77,
+   "wickets_left": 7,
+   "p": 0.0006382032684936847
+  },
+  {
+   "runs_needed": 87,
+   "balls_left": 35,
+   "wickets_left": 1,
+   "p": 2.869489733995326e-10
+  },
+  {
+   "runs_needed": 72,
+   "balls_left": 75,
+   "wickets_left": 9,
+   "p": 0.9454331251770564
+  },
+  {
+   "runs_needed": 205,
+   "balls_left": 62,
+   "wickets_left": 9,
+   "p": 0.027473113415095937
+  },
+  {
+   "runs_needed": 192,
+   "balls_left": 109,
+   "wickets_left": 9,
+   "p": 0.22002128711978278
+  },
+  {
+   "runs_needed": 42,
+   "balls_left": 31,
+   "wickets_left": 10,
+   "p": 0.9128003422258363
+  },
+  {
+   "runs_needed": 250,
+   "balls_left": 119,
+   "wickets_left": 3,
+   "p": 1.1178691238198403e-08
+  },
+  {
+   "runs_needed": 60,
+   "balls_left": 113,
+   "wickets_left": 10,
+   "p": 0.9940343294707779
+  },
+  {
+   "runs_needed": 242,
+   "balls_left": 22,
+   "wickets_left": 4,
+   "p": 2.1227440769045148e-08
+  },
+  {
+   "runs_needed": 3,
+   "balls_left": 20,
+   "wickets_left": 9,
+   "p": 0.9998552418552258
+  },
+  {
+   "runs_needed": 240,
+   "balls_left": 64,
+   "wickets_left": 6,
+   "p": 0.00022866186075329482
+  },
+  {
+   "runs_needed": 237,
+   "balls_left": 6,
+   "wickets_left": 8,
+   "p": 1.870695020792972e-06
+  },
+  {
+   "runs_needed": 235,
+   "balls_left": 36,
+   "wickets_left": 7,
+   "p": 0.0001784549961194318
+  },
+  {
+   "runs_needed": 200,
+   "balls_left": 53,
+   "wickets_left": 7,
+   "p": 0.0031706331875286063
+  },
+  {
+   "runs_needed": 142,
+   "balls_left": 117,
+   "wickets_left": 7,
+   "p": 0.3777994589561245
+  },
+  {
+   "runs_needed": 212,
+   "balls_left": 120,
+   "wickets_left": 8,
+   "p": 0.07573518070812783
+  },
+  {
+   "runs_needed": 84,
+   "balls_left": 19,
+   "wickets_left": 8,
+   "p": 0.051258961548346416
+  },
+  {
+   "runs_needed": 235,
+   "balls_left": 108,
+   "wickets_left": 2,
+   "p": 7.322198715889979e-13
+  },
+  {
+   "runs_needed": 167,
+   "balls_left": 11,
+   "wickets_left": 9,
+   "p": 0.00031597156487344475
+  },
+  {
+   "runs_needed": 138,
+   "balls_left": 90,
+   "wickets_left": 6,
+   "p": 0.11436133860974189
+  },
+  {
+   "runs_needed": 152,
+   "balls_left": 102,
+   "wickets_left": 4,
+   "p": 0.0025382571151119572
+  },
+  {
+   "runs_needed": 171,
+   "balls_left": 107,
+   "wickets_left": 6,
+   "p": 0.03582716122910233
+  },
+  {
+   "runs_needed": 12,
+   "balls_left": 27,
+   "wickets_left": 10,
+   "p": 0.9977697006162206
+  },
+  {
+   "runs_needed": 42,
+   "balls_left": 108,
+   "wickets_left": 9,
+   "p": 0.9979024789942487
+  },
+  {
+   "runs_needed": 74,
+   "balls_left": 14,
+   "wickets_left": 9,
+   "p": 0.044572318301250594
+  },
+  {
+   "runs_needed": 35,
+   "balls_left": 63,
+   "wickets_left": 5,
+   "p": 0.9844422728416936
+  },
+  {
+   "runs_needed": 132,
+   "balls_left": 57,
+   "wickets_left": 8,
+   "p": 0.16711609836556213
+  },
+  {
+   "runs_needed": 201,
+   "balls_left": 38,
+   "wickets_left": 4,
+   "p": 2.3130994705662232e-06
+  },
+  {
+   "runs_needed": 197,
+   "balls_left": 3,
+   "wickets_left": 7,
+   "p": 4.2115271998195995e-07
+  },
+  {
+   "runs_needed": 142,
+   "balls_left": 93,
+   "wickets_left": 7,
+   "p": 0.23117143610738713
+  },
+  {
+   "runs_needed": 257,
+   "balls_left": 41,
+   "wickets_left": 3,
+   "p": 1.6015689210675596e-10
+  },
+  {
+   "runs_needed": 170,
+   "balls_left": 80,
+   "wickets_left": 3,
+   "p": 6.073678991597821e-06
+  },
+  {
+   "runs_needed": 24,
+   "balls_left": 50,
+   "wickets_left": 1,
+   "p": 0.39734704942753524
+  },
+  {
+   "runs_needed": 230,
+   "balls_left": 45,
+   "wickets_left": 2,
+   "p": 7.676070842453088e-14
+  },
+  {
+   "runs_needed": 173,
+   "balls_left": 107,
+   "wickets_left": 5,
+   "p": 0.006607627700097229
+  },
+  {
+   "runs_needed": 191,
+   "balls_left": 12,
+   "wickets_left": 5,
+   "p": 1.523175930957997e-06
+  },
+  {
+   "runs_needed": 170,
+   "balls_left": 89,
+   "wickets_left": 2,
+   "p": 3.62337868531697e-09
+  },
+  {
+   "runs_needed": 167,
+   "balls_left": 90,
+   "wickets_left": 5,
+   "p": 0.0055688638801617936
+  },
+  {
+   "runs_needed": 28,
+   "balls_left": 46,
+   "wickets_left": 7,
+   "p": 0.9904185263403237
+  },
+  {
+   "runs_needed": 168,
+   "balls_left": 32,
+   "wickets_left": 3,
+   "p": 3.112038201118962e-07
+  },
+  {
+   "runs_needed": 239,
+   "balls_left": 1,
+   "wickets_left": 4,
+   "p": 5.699128195977682e-12
+  },
+  {
+   "runs_needed": 92,
+   "balls_left": 113,
+   "wickets_left": 4,
+   "p": 0.3251546268331016
+  },
+  {
+   "runs_needed": 181,
+   "balls_left": 114,
+   "wickets_left": 6,
+   "p": 0.02623760781023497
+  },
+  {
+   "runs_needed": 10,
+   "balls_left": 29,
+   "wickets_left": 4,
+   "p": 0.9979485723141934
+  },
+  {
+   "runs_needed": 105,
+   "balls_left": 4,
+   "wickets_left": 8,
+   "p": 0.00012600068649783246
+  },
+  {
+   "runs_needed": 132,
+   "balls_left": 15,
+   "wickets_left": 4,
+   "p": 1.861585002333928e-05
+  },
+  {
+   "runs_needed": 295,
+   "balls_left": 9,
+   "wickets_left": 5,
+   "p": 1.992892824287436e-09
+  },
+  {
+   "runs_needed": 65,
+   "balls_left": 100,
+   "wickets_left": 4,
+   "p": 0.8158393737454316
+  },
+  {
+   "runs_needed": 83,
+   "balls_left": 108,
+   "wickets_left": 2,
+   "p": 0.003046255528677795
+  },
+  {
+   "runs_needed": 123,
+   "balls_left": 19,
+   "wickets_left": 7,
+   "p": 0.0032735425897215645
+  },
+  {
+   "runs_needed": 298,
+   "balls_left": 90,
+   "wickets_left": 3,
+   "p": 5.921982934855951e-11
+  },
+  {
+   "runs_needed": 257,
+   "balls_left": 22,
+   "wickets_left": 3,
+   "p": 2.150412336594935e-11
+  },
+  {
+   "runs_needed": 11,
+   "balls_left": 45,
+   "wickets_left": 8,
+   "p": 0.9996124530362396
+  },
+  {
+   "runs_needed": 71,
+   "balls_left": 72,
+   "wickets_left": 10,
+   "p": 0.9546097127480125
+  },
+  {
+   "runs_needed": 247,
+   "balls_left": 87,
+   "wickets_left": 7,
+   "p": 0.0023948518081130846
+  },
+  {
+   "runs_needed": 18,
+   "balls_left": 105,
+   "wickets_left": 10,
+   "p": 0.9998925189521649
+  },
+  {
+   "runs_needed": 257,
+   "balls_left": 6,
+   "wickets_left": 9,
+   "p": 2.5772574022898015e-06
+  },
+  {
+   "runs_needed": 85,
+   "balls_left": 24,
+   "wickets_left": 5,
+   "p": 0.01810555287155411
+  },
+  {
+   "runs_needed": 276,
+   "balls_left": 34,
+   "wickets_left": 8,
+   "p": 0.00011987746086553889
+  },
+  {
+   "runs_needed": 89,
+   "balls_left": 38,
+   "wickets_left": 4,
+   "p": 0.018610904256793764
+  },
+  {
+   "runs_needed": 131,
+   "balls_left": 120,
+   "wickets_left": 5,
+   "p": 0.1184500528706431
+  },
+  {
+   "runs_needed": 199,
+   "balls_left": 94,
+   "wickets_left": 6,
+   "p": 0.005950354941264787
+  },
+  {
+   "runs_needed": 38,
+   "balls_left": 39,
+   "wickets_left": 10,
+   "p": 0.9702786210885086
+  },
+  {
+   "runs_needed": 168,
+   "balls_left": 117,
+   "wickets_left": 9,
+   "p": 0.4539062862005286
+  },
+  {
+   "runs_needed": 152,
+   "balls_left": 60,
+   "wickets_left": 5,
+   "p": 0.0037963236600526105
+  },
+  {
+   "runs_needed": 236,
+   "balls_left": 61,
+   "wickets_left": 7,
+   "p": 0.0011252631208723259
+  },
+  {
+   "runs_needed": 299,
+   "balls_left": 53,
+   "wickets_left": 3,
+   "p": 8.625155248054153e-12
+  },
+  {
+   "runs_needed": 200,
+   "balls_left": 18,
+   "wickets_left": 9,
+   "p": 0.0004813616441666829
+  },
+  {
+   "runs_needed": 123,
+   "balls_left": 113,
+   "wickets_left": 6,
+   "p": 0.3809738577993676
+  },
+  {
+   "runs_needed": 122,
+   "balls_left": 2,
+   "wickets_left": 6,
+   "p": 2.1786290753225005e-06
+  },
+  {
+   "runs_needed": 126,
+   "balls_left": 21,
+   "wickets_left": 8,
+   "p": 0.007379239633032698
+  },
+  {
+   "runs_needed": 245,
+   "balls_left": 28,
+   "wickets_left": 7,
+   "p": 5.3417649865451024e-05
+  },
+  {
+   "runs_needed": 97,
+   "balls_left": 34,
+   "wickets_left": 1,
+   "p": 1.3500729136315768e-11
+  },
+  {
+   "runs_needed": 51,
+   "balls_left": 16,
+   "wickets_left": 3,
+   "p": 0.014421626972433037
+  },
+  {
+   "runs_needed": 101,
+   "balls_left": 3,
+   "wickets_left": 2,
+   "p": 1.9093593374627865e-09
+  },
+  {
+   "runs_needed": 7,
+   "balls_left": 82,
+   "wickets_left": 8,
+   "p": 0.9999844434902724
+  },
+  {
+   "runs_needed": 32,
+   "balls_left": 117,
+   "wickets_left": 1,
+   "p": 0.32307335015822014
+  },
+  {
+   "runs_needed": 28,
+   "balls_left": 15,
+   "wickets_left": 3,
+   "p": 0.3268600645875136
+  },
+  {
+   "runs_needed": 232,
+   "balls_left": 36,
+   "wickets_left": 6,
+   "p": 4.313900658166044e-05
+  },
+  {
+   "runs_needed": 217,
+   "balls_left": 61,
+   "wickets_left": 7,
+   "p": 0.0024908384765445885
+  },
+  {
+   "runs_needed": 210,
+   "balls_left": 112,
+   "wickets_left": 6,
+   "p": 0.005991896272702935
+  },
+  {
+   "runs_needed": 139,
+   "balls_left": 84,
+   "wickets_left": 9,
+   "p": 0.47947918274829787
+  },
+  {
+   "runs_needed": 216,
+   "balls_left": 92,
+   "wickets_left": 10,
+   "p": 0.12749845973563886
+  },
+  {
+   "runs_needed": 49,
+   "balls_left": 70,
+   "wickets_left": 2,
+   "p": 0.21698641639781113
+  },
+  {
+   "runs_needed": 271,
+   "balls_left": 51,
+   "wickets_left": 10,
+   "p": 0.0037592322353362153
+  },
+  {
+   "runs_needed": 151,
+   "balls_left": 24,
+   "wickets_left": 7,
+   "p": 0.001763828565370987
+  },
+  {
+   "runs_needed": 282,
+   "balls_left": 104,
+   "wickets_left": 7,
+   "p": 0.0010764003274395535
+  },
+  {
+   "runs_needed": 46,
+   "balls_left": 97,
+   "wickets_left": 1,
+   "p": 0.0024014857285524958
+  },
+  {
+   "runs_needed": 150,
+   "balls_left": 4,
+   "wickets_left": 7,
+   "p": 7.396091238958415e-06
+  },
+  {
+   "runs_needed": 209,
+   "balls_left": 86,
+   "wickets_left": 8,
+   "p": 0.031132294202056914
+  },
+  {
+   "runs_needed": 149,
+   "balls_left": 11,
+   "wickets_left": 6,
+   "p": 5.860915594164503e-05
+  },
+  {
+   "runs_needed": 134,
+   "balls_left": 89,
+   "wickets_left": 1,
+   "p": 7.59050149383214e-15
+  },
+  {
+   "runs_needed": 50,
+   "balls_left": 100,
+   "wickets_left": 6,
+   "p": 0.9873949122896546
+  },
+  {
+   "runs_needed": 115,
+   "balls_left": 16,
+   "wickets_left": 10,
+   "p": 0.012055320203825302
+  },
+  {
+   "runs_needed": 72,
+   "balls_left": 53,
+   "wickets_left": 8,
+   "p": 0.803956318335452
+  },
+  {
+   "runs_needed": 91,
+   "balls_left": 15,
+   "wickets_left": 2,
+   "p": 1.0832635381350382e-06
+  },
+  {
+   "runs_needed": 206,
+   "balls_left": 69,
+   "wickets_left": 10,
+   "p": 0.07115270785437812
+  },
+  {
+   "runs_needed": 190,
+   "balls_left": 112,
+   "wickets_left": 10,
+   "p": 0.3794873429185206
+  },
+  {
+   "runs_needed": 183,
+   "balls_left": 10,
+   "wickets_left": 2,
+   "p": 3.938360801221645e-13
+  },
+  {
+   "runs_needed": 109,
+   "balls_left": 48,
+   "wickets_left": 9,
+   "p": 0.35360755967552226
+  },
+  {
+   "runs_needed": 288,
+   "balls_left": 117,
+   "wickets_left": 5,
+   "p": 1.2835272542117689e-05
+  },
+  {
+   "runs_needed": 27,
+   "balls_left": 37,
+   "wickets_left": 6,
+   "p": 0.9789813853852192
+  },
+  {
+   "runs_needed": 103,
+   "balls_left": 16,
+   "wickets_left": 5,
+   "p": 0.0010378392543978997
+  },
+  {
+   "runs_needed": 36,
+   "balls_left": 59,
+   "wickets_left": 8,
+   "p": 0.9908929543764625
+  },
+  {
+   "runs_needed": 102,
+   "balls_left": 62,
+   "wickets_left": 10,
+   "p": 0.7209900269417305
+  },
+  {
+   "runs_needed": 289,
+   "balls_left": 80,
+   "wickets_left": 8,
+   "p": 0.0014701159903204722
+  },
+  {
+   "runs_needed": 110,
+   "balls_left": 38,
+   "wickets_left": 10,
+   "p": 0.2527517253369017
+  },
+  {
+   "runs_needed": 273,
+   "balls_left": 115,
+   "wickets_left": 10,
+   "p": 0.054705320774802245
+  },
+  {
+   "runs_needed": 149,
+   "balls_left": 63,
+   "wickets_left": 1,
+   "p": 3.574851848722149e-17
+  },
+  {
+   "runs_needed": 210,
+   "balls_left": 35,
+   "wickets_left": 3,
+   "p": 7.224057636698353e-09
+  },
+  {
+   "runs_needed": 138,
+   "balls_left": 116,
+   "wickets_left": 8,
+   "p": 0.5964174719275607
+  },
+  {
+   "runs_needed": 80,
+   "balls_left": 111,
+   "wickets_left": 6,
+   "p": 0.9031168843279926
+  },
+  {
+   "runs_needed": 230,
+   "balls_left": 60,
+   "wickets_left": 1,
+   "p": 5.010086344392576e-27
+  },
+  {
+   "runs_needed": 291,
+   "balls_left": 3,
+   "wickets_left": 1,
+   "p": 2.5262064447226184e-38
+  },
+  {
+   "runs_needed": 80,
+   "balls_left": 72,
+   "wickets_left": 6,
+   "p": 0.7105553963421644
+  },
+  {
+   "runs_needed": 234,
+   "balls_left": 67,
+   "wickets_left": 7,
+   "p": 0.001691562794814226
+  },
+  {
+   "runs_needed": 79,
+   "balls_left": 18,
+   "wickets_left": 2,
+   "p": 1.5151174207737218e-05
+  },
+  {
+   "runs_needed": 216,
+   "balls_left": 77,
+   "wickets_left": 2,
+   "p": 3.454645204835825e-12
+  },
+  {
+   "runs_needed": 237,
+   "balls_left": 101,
+   "wickets_left": 2,
+   "p": 4.5085884371736953e-13
+  },
+  {
+   "runs_needed": 135,
+   "balls_left": 13,
+   "wickets_left": 6,
+   "p": 0.00021393015560018408
+  },
+  {
+   "runs_needed": 222,
+   "balls_left": 87,
+   "wickets_left": 1,
+   "p": 1.5618203348858247e-25
+  },
+  {
+   "runs_needed": 82,
+   "balls_left": 17,
+   "wickets_left": 6,
+   "p": 0.014700863674112398
+  },
+  {
+   "runs_needed": 24,
+   "balls_left": 90,
+   "wickets_left": 5,
+   "p": 0.9989381478732179
+  },
+  {
+   "runs_needed": 29,
+   "balls_left": 51,
+   "wickets_left": 5,
+   "p": 0.9865185669510412
+  },
+  {
+   "runs_needed": 135,
+   "balls_left": 1,
+   "wickets_left": 7,
+   "p": 6.291222795082304e-07
+  },
+  {
+   "runs_needed": 271,
+   "balls_left": 116,
+   "wickets_left": 6,
+   "p": 0.0003839536544091979
+  },
+  {
+   "runs_needed": 39,
+   "balls_left": 20,
+   "wickets_left": 8,
+   "p": 0.6862480308745778
+  },
+  {
+   "runs_needed": 137,
+   "balls_left": 72,
+   "wickets_left": 8,
+   "p": 0.25719535606718796
+  },
+  {
+   "runs_needed": 212,
+   "balls_left": 22,
+   "wickets_left": 10,
+   "p": 0.0012165683478189476
+  },
+  {
+   "runs_needed": 61,
+   "balls_left": 112,
+   "wickets_left": 8,
+   "p": 0.9891519273893312
+  },
+  {
+   "runs_needed": 217,
+   "balls_left": 89,
+   "wickets_left": 6,
+   "p": 0.0020746914565346877
+  },
+  {
+   "runs_needed": 92,
+   "balls_left": 97,
+   "wickets_left": 5,
+   "p": 0.5277023568975813
+  },
+  {
+   "runs_needed": 243,
+   "balls_left": 52,
+   "wickets_left": 3,
+   "p": 1.3686450437709227e-09
+  },
+  {
+   "runs_needed": 174,
+   "balls_left": 57,
+   "wickets_left": 6,
+   "p": 0.004068245366565286
+  },
+  {
+   "runs_needed": 165,
+   "balls_left": 77,
+   "wickets_left": 2,
+   "p": 4.666263473158465e-09
+  },
+  {
+   "runs_needed": 54,
+   "balls_left": 95,
+   "wickets_left": 10,
+   "p": 0.9933738384071286
+  },
+  {
+   "runs_needed": 139,
+   "balls_left": 102,
+   "wickets_left": 9,
+   "p": 0.6288186103837434
+  },
+  {
+   "runs_needed": 257,
+   "balls_left": 3,
+   "wickets_left": 2,
+   "p": 4.3183787635629176e-19
+  },
+  {
+   "runs_needed": 6,
+   "balls_left": 80,
+   "wickets_left": 8,
+   "p": 0.9999890974625844
+  },
+  {
+   "runs_needed": 228,
+   "balls_left": 14,
+   "wickets_left": 2,
+   "p": 2.1861301263830186e-15
+  },
+  {
+   "runs_needed": 148,
+   "balls_left": 35,
+   "wickets_left": 8,
+   "p": 0.01714064142271042
+  },
+  {
+   "runs_needed": 216,
+   "balls_left": 100,
+   "wickets_left": 1,
+   "p": 1.267164760932835e-24
+  },
+  {
+   "runs_needed": 199,
+   "balls_left": 31,
+   "wickets_left": 5,
+   "p": 2.0246939885997927e-05
+  },
+  {
+   "runs_needed": 130,
+   "balls_left": 96,
+   "wickets_left": 7,
+   "p": 0.37745916208621777
+  },
+  {
+   "runs_needed": 93,
+   "balls_left": 56,
+   "wickets_left": 8,
+   "p": 0.5795490922473434
+  },
+  {
+   "runs_needed": 189,
+   "balls_left": 28,
+   "wickets_left": 5,
+   "p": 2.6059873629742976e-05
+  },
+  {
+   "runs_needed": 43,
+   "balls_left": 41,
+   "wickets_left": 10,
+   "p": 0.9606136925768782
+  },
+  {
+   "runs_needed": 176,
+   "balls_left": 64,
+   "wickets_left": 8,
+   "p": 0.04197491462417762
+  },
+  {
+   "runs_needed": 29,
+   "balls_left": 92,
+   "wickets_left": 3,
+   "p": 0.9932346672811957
+  },
+  {
+   "runs_needed": 195,
+   "balls_left": 73,
+   "wickets_left": 7,
+   "p": 0.01173115873851354
+  },
+  {
+   "runs_needed": 189,
+   "balls_left": 112,
+   "wickets_left": 8,
+   "p": 0.13740751246326263
+  },
+  {
+   "runs_needed": 26,
+   "balls_left": 105,
+   "wickets_left": 4,
+   "p": 0.9986181276247508
+  }
+ ]
+}
