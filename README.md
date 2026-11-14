@@ -21,7 +21,8 @@ GBM had the best validation score (2024) but failed on test. Tree models cannot 
 targets above 220 were rare and almost always defended in 2008–2024 but are often chased in
 2025–2026. Logistic regression changes smoothly with the target and handled the shift.
 
-Live site: _add the GitHub Pages link after deployment._
+Live site: https://vinit230606.github.io/ipl-win-probability/
+(repository: https://github.com/Vinit230606/ipl-win-probability).
 
 ## Data
 Ball-by-ball data from [Cricsheet](https://cricsheet.org/) (`ipl_json.zip`, 1,243 IPL matches,
