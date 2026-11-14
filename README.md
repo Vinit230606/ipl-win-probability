@@ -70,10 +70,10 @@ Tests: `python -m pytest -q` then `node docs/tests/parity.test.mjs` (both are in
 Preview the site: `python -m http.server -d docs 8000`, then open http://localhost:8000.
 
 ## Deploying the website
-1. `git init`, commit everything (`docs/data/` is committed; `.venv`, `data/interim`,
-   `data/processed` and `models/` are ignored), and push to a GitHub repository.
-2. On GitHub: Settings → Pages → Deploy from a branch → `main` / `docs`.
-3. All asset paths are relative, so the site works under `https://<user>.github.io/<repo>/`.
+GitHub Pages serves the `docs/` folder of `main` (Settings → Pages → Deploy from a branch →
+`main` / `docs`). Every push to `main` redeploys the site within a minute or two. `docs/data/` is
+committed; `.venv`, `data/interim`, `data/processed` and `models/` are not. All asset paths are
+relative, so the site works under `https://<user>.github.io/<repo>/`.
 
 ## Reproducibility
 `config/config.yaml` holds every constant; all randomness uses `seed: 42`. The whole pipeline was
