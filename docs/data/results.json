@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T21:10:16+00:00",
+ "generated_at": "2026-11-15T10:05:15+00:00",
  "best_model": "gbm",
  "other_model": "lr_full",
  "featured_match_id": "1527688",
@@ -1183,6 +1183,178 @@
   "momentum_window": 18,
   "baseline_min_count": 30
  },
+ "data": {
+  "raw_matches": 1243,
+  "raw_deliveries": 295732,
+  "first_season": 2008,
+  "last_season": 2026,
+  "kept_chases": 1177,
+  "chase_deliveries": 137032,
+  "model_rows": 135855,
+  "terminal_rows": 1177,
+  "wides_in_chases": 4590,
+  "noballs_in_chases": 524,
+  "byes_legbyes_in_chases": 2285,
+  "retired_hurt_in_chases": 10,
+  "run_outs_in_chases": 472,
+  "running_total_ok": 1177,
+  "season_label_note": "Cricsheet season labels such as 2007/08 and 2020/21 do not match the calendar year of the matches, so season = year of the match date.",
+  "n_exclusion_reasons": 5,
+  "seasons": [
+   {
+    "season": 2008,
+    "chases": 53,
+    "chase_win_rate": 0.603774,
+    "mean_target": 164.245283,
+    "share_target_over_200": 0.132075,
+    "split": "train"
+   },
+   {
+    "season": 2009,
+    "chases": 51,
+    "chase_win_rate": 0.54902,
+    "mean_target": 150.352941,
+    "share_target_over_200": 0.019608,
+    "split": "train"
+   },
+   {
+    "season": 2010,
+    "chases": 58,
+    "chase_win_rate": 0.482759,
+    "mean_target": 165.362069,
+    "share_target_over_200": 0.068966,
+    "split": "train"
+   },
+   {
+    "season": 2011,
+    "chases": 68,
+    "chase_win_rate": 0.529412,
+    "mean_target": 157.191176,
+    "share_target_over_200": 0.058824,
+    "split": "train"
+   },
+   {
+    "season": 2012,
+    "chases": 73,
+    "chase_win_rate": 0.534247,
+    "mean_target": 159.369863,
+    "share_target_over_200": 0.054795,
+    "split": "train"
+   },
+   {
+    "season": 2013,
+    "chases": 72,
+    "chase_win_rate": 0.513889,
+    "mean_target": 157.625,
+    "share_target_over_200": 0.055556,
+    "split": "train"
+   },
+   {
+    "season": 2014,
+    "chases": 56,
+    "chase_win_rate": 0.642857,
+    "mean_target": 164.642857,
+    "share_target_over_200": 0.089286,
+    "split": "train"
+   },
+   {
+    "season": 2015,
+    "chases": 52,
+    "chase_win_rate": 0.423077,
+    "mean_target": 168.365385,
+    "share_target_over_200": 0.115385,
+    "split": "train"
+   },
+   {
+    "season": 2016,
+    "chases": 56,
+    "chase_win_rate": 0.678571,
+    "mean_target": 165.339286,
+    "share_target_over_200": 0.071429,
+    "split": "train"
+   },
+   {
+    "season": 2017,
+    "chases": 57,
+    "chase_win_rate": 0.54386,
+    "mean_target": 167.666667,
+    "share_target_over_200": 0.140351,
+    "split": "train"
+   },
+   {
+    "season": 2018,
+    "chases": 57,
+    "chase_win_rate": 0.54386,
+    "mean_target": 173.070175,
+    "share_target_over_200": 0.192982,
+    "split": "train"
+   },
+   {
+    "season": 2019,
+    "chases": 56,
+    "chase_win_rate": 0.625,
+    "mean_target": 168.535714,
+    "share_target_over_200": 0.125,
+    "split": "train"
+   },
+   {
+    "season": 2020,
+    "chases": 56,
+    "chase_win_rate": 0.517857,
+    "mean_target": 170.160714,
+    "share_target_over_200": 0.142857,
+    "split": "train"
+   },
+   {
+    "season": 2021,
+    "chases": 59,
+    "chase_win_rate": 0.627119,
+    "mean_target": 160.322034,
+    "share_target_over_200": 0.101695,
+    "split": "train"
+   },
+   {
+    "season": 2022,
+    "chases": 74,
+    "chase_win_rate": 0.5,
+    "mean_target": 172.121622,
+    "share_target_over_200": 0.175676,
+    "split": "train"
+   },
+   {
+    "season": 2023,
+    "chases": 71,
+    "chase_win_rate": 0.450704,
+    "mean_target": 183.985915,
+    "share_target_over_200": 0.323944,
+    "split": "train"
+   },
+   {
+    "season": 2024,
+    "chases": 70,
+    "chase_win_rate": 0.514286,
+    "mean_target": 191.057143,
+    "share_target_over_200": 0.371429,
+    "split": "val"
+   },
+   {
+    "season": 2025,
+    "chases": 68,
+    "chase_win_rate": 0.514706,
+    "mean_target": 193.352941,
+    "share_target_over_200": 0.470588,
+    "split": "test"
+   },
+   {
+    "season": 2026,
+    "chases": 70,
+    "chase_win_rate": 0.642857,
+    "mean_target": 197.357143,
+    "share_target_over_200": 0.528571,
+    "split": "test"
+   }
+  ]
+ },
  "diagnostics": {
   "target_bins": [
    {
@@ -1190,6 +1362,8 @@
     "n_rows": 2456,
     "n_matches": 25,
     "chase_win_rate": 0.92,
+    "fit_matches": 414,
+    "fit_chase_win_rate": 0.76087,
     "mean_p_baseline": 0.788654,
     "brier_baseline": 0.106804,
     "mean_p_lr_full": 0.807319,
@@ -1204,6 +1378,8 @@
     "n_rows": 2115,
     "n_matches": 19,
     "chase_win_rate": 0.947368,
+    "fit_matches": 293,
+    "fit_chase_win_rate": 0.511945,
     "mean_p_baseline": 0.632953,
     "brier_baseline": 0.165353,
     "mean_p_lr_full": 0.689464,
@@ -1218,6 +1394,8 @@
     "n_rows": 2943,
     "n_matches": 25,
     "chase_win_rate": 0.56,
+    "fit_matches": 191,
+    "fit_chase_win_rate": 0.382199,
     "mean_p_baseline": 0.464192,
     "brier_baseline": 0.156555,
     "mean_p_lr_full": 0.499176,
@@ -1232,6 +1410,8 @@
     "n_rows": 4154,
     "n_matches": 35,
     "chase_win_rate": 0.428571,
+    "fit_matches": 94,
+    "fit_chase_win_rate": 0.244681,
     "mean_p_baseline": 0.334472,
     "brier_baseline": 0.191095,
     "mean_p_lr_full": 0.387945,
@@ -1246,6 +1426,8 @@
     "n_rows": 2372,
     "n_matches": 20,
     "chase_win_rate": 0.35,
+    "fit_matches": 34,
+    "fit_chase_win_rate": 0.058824,
     "mean_p_baseline": 0.250627,
     "brier_baseline": 0.146026,
     "mean_p_lr_full": 0.312083,
@@ -1260,6 +1442,8 @@
     "n_rows": 1736,
     "n_matches": 14,
     "chase_win_rate": 0.214286,
+    "fit_matches": 13,
+    "fit_chase_win_rate": 0.076923,
     "mean_p_baseline": 0.127138,
     "brier_baseline": 0.102925,
     "mean_p_lr_full": 0.184679,

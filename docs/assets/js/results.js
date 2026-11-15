@@ -66,10 +66,12 @@ function render() {
     "for a high target what they saw for the highest targets in training. Logistic regression " +
     "changes smoothly with the target, so it copes better when scoring rises.";
   $("target-bins").replaceChildren(table(
-    ["Target", "Chases", "Chase win rate", ...ORDER.map((k) => `Mean ${label(k)}`), ...ORDER.map((k) => `Brier ${label(k)}`)],
-    tb.map((b) => [b.target_band, int(b.n_matches), pct(b.chase_win_rate),
+    ["Target", "Train+val chases", "Train+val win rate", "Test chases", "Test win rate",
+      ...ORDER.map((k) => `Mean ${label(k)}`), ...ORDER.map((k) => `Brier ${label(k)}`)],
+    tb.map((b) => [b.target_band, int(b.fit_matches), pct(b.fit_chase_win_rate), int(b.n_matches), pct(b.chase_win_rate),
       ...ORDER.map((k) => pct(b[`mean_p_${k}`])), ...ORDER.map((k) => fix(b[`brier_${k}`], 3))]),
-    { caption: "Test seasons by target score: how often chases were won, and each method's average prediction", numeric: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }));
+    { caption: "By target score: how many chases the models learned from, how often chases were won, and each method's average test prediction",
+      numeric: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }));
 
   const bd = (rows, key, keyLabel) => table(
     [keyLabel, "Balls", ...ORDER.map((k) => `Brier ${label(k)}`), ...ORDER.slice(1).map((k) => `BSS ${label(k)}`)],

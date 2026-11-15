@@ -22,7 +22,30 @@ targets above 220 were rare and almost always defended in 2008–2024 but are of
 2025–2026. Logistic regression changes smoothly with the target and handled the shift.
 
 Live site: https://vinit230606.github.io/ipl-win-probability/
-(repository: https://github.com/Vinit230606/ipl-win-probability).
+(repository: https://github.com/Vinit230606/ipl-win-probability). The site's
+[write-up](https://vinit230606.github.io/ipl-win-probability/about.html) walks from the question
+to the conclusions; this repository lets you check every step.
+
+## Where to find what
+| To check | Look at |
+|---|---|
+| Question, prediction rules, claim limits | `docs/about.html` (live write-up), `reports/results.md` |
+| Raw data and its profile | `ipl_json.zip`, `reports/data_profile.md` |
+| Every excluded match and why | `reports/exclusions.csv`, rules in `src/iplwp/clean.py` |
+| Per-season counts, data checks | `reports/data_quality.md` |
+| Exact split of every kept chase | `reports/splits.csv` (match id, season, split, teams, target, result) |
+| Scoreboard rebuild and features | `src/iplwp/states.py`, `src/iplwp/features.py` |
+| Baseline and models | `src/iplwp/baseline.py`, `src/iplwp/models.py` |
+| Tuning (every fit, validation only) | `reports/tuning_lr_full.csv`, `reports/tuning_lr_core.csv`, `reports/tuning_gbm.csv`, `reports/validation_results.md` |
+| Test results, error analysis, figures | `reports/results.md`, `reports/metrics.json`, `reports/figures/` |
+| Post-test diagnosis by target score | `docs/data/results.json` → `diagnostics` (computed by `export.py`, no refit) |
+| Proof the test set was scored once | `reports/TEST_LOCK.json`, `src/iplwp/io_lock.py` |
+| Tests (leakage, states, metrics, bootstrap, lock, export) | `tests/`, `docs/tests/parity.test.mjs` |
+| Every constant and the seed | `config/config.yaml` |
+| AI use | `AI_USE.md` and the section below |
+
+The analysis lives in Python modules and the generated reports rather than notebooks, so one
+command reruns all of it.
 
 ## Data
 Ball-by-ball data from [Cricsheet](https://cricsheet.org/) (`ipl_json.zip`, 1,243 IPL matches,
@@ -30,8 +53,11 @@ JSON format 1.2.0/1.3.0), licensed under the Open Data Commons Attribution Licen
 The pipeline reads them from `data/raw/cricsheet_json/` and never modifies them. That folder is
 not in git (100 MB); on a fresh clone, unzip the committed `ipl_json.zip` (identical files) there:
 ```
-Expand-Archive ipl_json.zip -DestinationPath data/raw/cricsheet_json
+Expand-Archive ipl_json.zip -DestinationPath data/raw/cricsheet_json   # Windows
+unzip ipl_json.zip -d data/raw/cricsheet_json                         # macOS / Linux
 ```
+The latest version of the archive is at https://cricsheet.org/downloads/ipl_json.zip. It grows
+every season, so use the committed copy to reproduce these results.
 
 ## Setup (Windows PowerShell)
 ```
@@ -42,12 +68,8 @@ pip install -e .
 ```
 On macOS/Linux use `python3 -m venv .venv && source .venv/bin/activate`.
 
-The website needs Chart.js 4.4.1, vendored at `docs/assets/vendor/chart.umd.min.js`. Download it
-once and commit it:
-```
-Invoke-WebRequest https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js -OutFile docs/assets/vendor/chart.umd.min.js
-```
-Without it the pages still load their numbers and tables and show a notice instead of charts.
+The website uses Chart.js 4.4.1, vendored at `docs/assets/vendor/chart.umd.min.js`, so it
+never depends on a CDN.
 
 ## Commands
 Every stage runs as `python -m iplwp.cli <stage>`; with `make` installed, `make <stage>` does the same.
@@ -83,6 +105,16 @@ byte-identical `metrics.json`. Timing values (`fit_seconds`) were dropped from t
 after this check. The real `reports/metrics.json`, written before that fix, still contains two
 such timing fields; the metrics themselves are unaffected.
 
+To reproduce on a fresh clone: unzip the data, then run `python -m iplwp.cli all --force --reason
+"reproduction"`. The committed `reports/TEST_LOCK.json` makes `final` refuse to rescore the test
+seasons without `--force`; the forced run is appended to the lock file, so it stays visible.
+Tuning takes about 13 minutes on a 16-thread laptop. Compare the new `reports/metrics.json` with
+the committed one (`git diff reports/metrics.json`); only the two timing fields should change.
+
+`models/` is not committed (it can be rebuilt). The settings chosen on validation are in
+`reports/validation_results.md`, `reports/metrics.json` (`chosen_params`) and the copy of
+`models/selection.json` stored in `reports/TEST_LOCK.json`.
+
 ## Changes to the design plan
 - **D7 (approved):** the data is Cricsheet JSON, so `io_adapters.py` has a third adapter, "J",
   next to the planned Kaggle ("K") and Cricsheet CSV ("C") adapters. It follows the C mapping rules.
@@ -102,8 +134,40 @@ such timing fields; the metrics themselves are unaffected.
   results page explains the choice.
 - **Post-test diagnosis table.** `make export` adds a "by target score" table to `results.json`,
   computed from the stored test predictions. No model is refit or changed.
-- The website is mostly plain HTML/CSS/JS as designed. There is also an `about.js` that fills the
-  About page numbers from `results.json`, a shared `lr_core.js` used by both the calculator and
-  the Node parity test, and `docs/package.json` (marks the JS as ES modules for Node).
+- **Write-up page.** The course asks for the full reasoning on the website, so `about.html` became a
+  write-up in twelve sections (question to citations), filled from `results.json` by `about.js`.
+  `make export` also adds data facts (sizes, quality checks, per-season targets) to
+  `results.json` and copies the report figures to `docs/assets/figures/`. The Replay page opens
+  with a short summary and links to the write-up, results and repository.
+- The website is otherwise plain HTML/CSS/JS as designed, plus a shared `lr_core.js` used by both
+  the calculator and the Node parity test, `repo.js` for repository links, and
+  `docs/package.json` (marks the JS as ES modules for Node).
+- `make features` also writes `reports/splits.csv`, the split of every kept chase.
 - Python 3.13 with the nearest package versions that install on it (see `requirements.txt`),
   because no working Python 3.11 is installed on the development machine.
+
+## AI use
+We used Kiro, an AI coding assistant running Anthropic's Claude, throughout the build. We wrote
+the project proposal, the design (`design.md`) and the task plan first. The assistant then wrote
+most of the code, tests, reports and website, task by task. We made the decisions at fixed review
+points: approving the Cricsheet JSON adapter, the exclusion rules, the recency weighting for the
+Impact Player era, the model settings before the test run, and how to present GBM's test failure.
+`AI_USE.md` logs each step, what the tool did and what we checked by hand.
+
+## Citations
+- Cricsheet. IPL ball-by-ball data, JSON format, https://cricsheet.org/ (accessed 2026).
+  Open Data Commons Attribution License (ODC-By 1.0).
+- Pedregosa, F. et al. (2011). Scikit-learn: Machine learning in Python. *Journal of Machine
+  Learning Research* 12, 2825?2830. (`LogisticRegression`, `HistGradientBoostingClassifier`,
+  `StandardScaler`.)
+- Ke, G. et al. (2017). LightGBM: A highly efficient gradient boosting decision tree. *NeurIPS*.
+  (The histogram method behind `HistGradientBoostingClassifier`.)
+- Brier, G. W. (1950). Verification of forecasts expressed in terms of probability. *Monthly
+  Weather Review* 78(1), 1?3.
+- Efron, B. and Tibshirani, R. J. (1993). *An Introduction to the Bootstrap*. Chapman & Hall.
+- Naeini, M. P., Cooper, G. and Hauskrecht, M. (2015). Obtaining well calibrated probabilities
+  using Bayesian binning. *AAAI*. (Expected calibration error.)
+- The pandas development team, pandas; Harris, C. R. et al. (2020), Array programming with
+  NumPy, *Nature* 585; Hunter, J. D. (2007), Matplotlib: A 2D graphics environment, *Computing in
+  Science & Engineering* 9(3); Chart.js 4.4.1, https://www.chartjs.org/ (MIT licence); Barlow
+  typeface by Jeremy Tribby, Google Fonts (SIL Open Font License).

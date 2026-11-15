@@ -21,7 +21,7 @@
         <a href="index.html">Replay</a>
         <a href="calculator.html">What-if</a>
         <a href="results.html">Results</a>
-        <a href="about.html">About</a>
+        <a href="about.html">Write-up</a>
       </nav>
     </div>
   </header>
@@ -29,6 +29,7 @@
   <main id="main" class="wrap">
     <h1>Does machine learning beat the historical baseline?</h1>
     <p id="intro" class="prose"></p>
+    <p class="prose muted">This page has every table. The reasoning behind them, the error analysis and the limitations are in the <a href="about.html">write-up</a>; the raw reports are in the <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">repository</a>.</p>
 
     <h2>Verdicts on the test seasons</h2>
     <ul id="verdicts" class="verdicts"></ul>
@@ -68,6 +69,9 @@
     <p class="prose muted">The lowest probability the main model gave the eventual winner at any point.</p>
     <div id="upsets"></div>
 
+    <h2>Limitations</h2>
+    <p class="prose">These results cover full 20-over IPL chases only, use the scoreboard alone (no teams, players or venue), rest on a single validation season, and were measured in seasons with higher scoring than the training seasons. Details are in the <a href="about.html#limits">write-up</a>.</p>
+
     <h2>Validation season</h2>
     <p class="prose muted">The numbers used to choose settings and the main model, before the
       test seasons were scored.</p>
@@ -79,7 +83,8 @@
 
   <footer class="site-footer">
     <div class="wrap">Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
-      ES 335 project by Vinit Parmar and Dutt Parmar.</div>
+      ES 335 project by Vinit Parmar and Dutt Parmar.
+      Code, data splits and full results: <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">GitHub repository</a>.</div>
   </footer>
 </body>
 </html>

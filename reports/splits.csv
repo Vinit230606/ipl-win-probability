@@ -1,0 +1,1178 @@
+match_id,date,season,split,batting_team,bowling_team,target,final_runs,final_wickets,chase_won
+335982,2008-04-18,2008,train,Royal Challengers Bangalore,Kolkata Knight Riders,223,82,10,0
+335983,2008-04-19,2008,train,Kings XI Punjab,Chennai Super Kings,241,207,4,0
+335984,2008-04-19,2008,train,Delhi Daredevils,Rajasthan Royals,130,132,1,1
+335985,2008-04-20,2008,train,Royal Challengers Bangalore,Mumbai Indians,166,166,5,1
+335986,2008-04-20,2008,train,Kolkata Knight Riders,Deccan Chargers,111,112,5,1
+335988,2008-04-22,2008,train,Delhi Daredevils,Deccan Chargers,143,143,1,1
+335989,2008-04-23,2008,train,Mumbai Indians,Chennai Super Kings,209,202,7,0
+335990,2008-04-24,2008,train,Rajasthan Royals,Deccan Chargers,215,217,7,1
+335991,2008-04-25,2008,train,Mumbai Indians,Kings XI Punjab,183,116,9,0
+335992,2008-04-26,2008,train,Rajasthan Royals,Royal Challengers Bangalore,136,138,3,1
+335993,2008-04-26,2008,train,Chennai Super Kings,Kolkata Knight Riders,148,152,1,1
+335994,2008-04-27,2008,train,Deccan Chargers,Mumbai Indians,155,155,0,1
+335995,2008-04-27,2008,train,Kings XI Punjab,Delhi Daredevils,159,162,6,1
+335996,2008-04-28,2008,train,Royal Challengers Bangalore,Chennai Super Kings,179,165,10,0
+335997,2008-04-29,2008,train,Mumbai Indians,Kolkata Knight Riders,138,138,3,1
+335998,2008-04-30,2008,train,Royal Challengers Bangalore,Delhi Daredevils,192,181,5,0
+335999,2008-05-01,2008,train,Kings XI Punjab,Deccan Chargers,165,167,3,1
+336000,2008-05-01,2008,train,Kolkata Knight Riders,Rajasthan Royals,197,151,10,0
+336001,2008-05-02,2008,train,Delhi Daredevils,Chennai Super Kings,170,172,2,1
+336003,2008-05-03,2008,train,Kolkata Knight Riders,Kings XI Punjab,179,169,6,0
+336034,2008-05-03,2008,train,Deccan Chargers,Royal Challengers Bangalore,157,153,6,0
+336004,2008-05-04,2008,train,Delhi Daredevils,Mumbai Indians,163,133,10,0
+336005,2008-05-04,2008,train,Rajasthan Royals,Chennai Super Kings,110,110,2,1
+336006,2008-05-05,2008,train,Kings XI Punjab,Royal Challengers Bangalore,127,127,4,1
+336007,2008-05-06,2008,train,Deccan Chargers,Chennai Super Kings,145,148,3,1
+336008,2008-05-07,2008,train,Mumbai Indians,Rajasthan Royals,104,104,3,1
+336009,2008-05-08,2008,train,Chennai Super Kings,Delhi Daredevils,188,188,6,1
+336011,2008-05-09,2008,train,Rajasthan Royals,Deccan Chargers,141,141,2,1
+336013,2008-05-10,2008,train,Kings XI Punjab,Chennai Super Kings,182,163,9,0
+336014,2008-05-11,2008,train,Deccan Chargers,Kolkata Knight Riders,205,181,7,0
+336015,2008-05-11,2008,train,Rajasthan Royals,Delhi Daredevils,157,159,7,1
+336016,2008-05-12,2008,train,Kings XI Punjab,Royal Challengers Bangalore,144,144,1,1
+336017,2008-05-13,2008,train,Delhi Daredevils,Kolkata Knight Riders,134,110,10,0
+336018,2008-05-14,2008,train,Mumbai Indians,Chennai Super Kings,157,158,1,1
+336020,2008-05-15,2008,train,Deccan Chargers,Delhi Daredevils,195,182,9,0
+336021,2008-05-16,2008,train,Mumbai Indians,Kolkata Knight Riders,68,68,2,1
+336023,2008-05-17,2008,train,Royal Challengers Bangalore,Rajasthan Royals,198,132,9,0
+336024,2008-05-18,2008,train,Deccan Chargers,Mumbai Indians,179,153,7,0
+336026,2008-05-19,2008,train,Delhi Daredevils,Royal Challengers Bangalore,155,158,5,1
+336027,2008-05-20,2008,train,Rajasthan Royals,Kolkata Knight Riders,148,150,4,1
+336028,2008-05-21,2008,train,Mumbai Indians,Kings XI Punjab,190,188,10,0
+336029,2008-05-21,2008,train,Chennai Super Kings,Royal Challengers Bangalore,127,112,8,0
+336031,2008-05-23,2008,train,Kings XI Punjab,Deccan Chargers,176,178,4,1
+336032,2008-05-24,2008,train,Delhi Daredevils,Mumbai Indians,177,179,5,1
+336033,2008-05-24,2008,train,Chennai Super Kings,Rajasthan Royals,212,201,7,0
+336002,2008-05-25,2008,train,Royal Challengers Bangalore,Deccan Chargers,166,171,5,1
+336035,2008-05-25,2008,train,Kolkata Knight Riders,Kings XI Punjab,175,175,7,1
+336036,2008-05-26,2008,train,Rajasthan Royals,Mumbai Indians,146,146,5,1
+336037,2008-05-27,2008,train,Chennai Super Kings,Deccan Chargers,148,148,3,1
+336019,2008-05-28,2008,train,Rajasthan Royals,Kings XI Punjab,222,180,7,0
+336038,2008-05-30,2008,train,Delhi Daredevils,Rajasthan Royals,193,87,10,0
+336039,2008-05-31,2008,train,Chennai Super Kings,Kings XI Punjab,113,116,1,1
+336040,2008-06-01,2008,train,Rajasthan Royals,Chennai Super Kings,164,164,7,1
+392181,2009-04-18,2009,train,Chennai Super Kings,Mumbai Indians,166,146,7,0
+392182,2009-04-18,2009,train,Rajasthan Royals,Royal Challengers Bangalore,134,58,10,0
+392184,2009-04-19,2009,train,Deccan Chargers,Kolkata Knight Riders,102,104,2,1
+392185,2009-04-20,2009,train,Royal Challengers Bangalore,Chennai Super Kings,180,87,10,0
+392188,2009-04-22,2009,train,Royal Challengers Bangalore,Deccan Chargers,185,160,8,0
+392189,2009-04-23,2009,train,Chennai Super Kings,Delhi Daredevils,190,180,9,0
+392191,2009-04-24,2009,train,Kings XI Punjab,Royal Challengers Bangalore,169,173,3,1
+392192,2009-04-25,2009,train,Mumbai Indians,Deccan Chargers,169,156,7,0
+392194,2009-04-26,2009,train,Delhi Daredevils,Royal Challengers Bangalore,150,150,4,1
+392195,2009-04-26,2009,train,Rajasthan Royals,Kings XI Punjab,140,112,7,0
+392196,2009-04-27,2009,train,Deccan Chargers,Chennai Super Kings,166,169,4,1
+392198,2009-04-28,2009,train,Rajasthan Royals,Delhi Daredevils,144,147,5,1
+392199,2009-04-29,2009,train,Royal Challengers Bangalore,Kolkata Knight Riders,140,143,5,1
+392200,2009-04-29,2009,train,Mumbai Indians,Kings XI Punjab,120,116,7,0
+392201,2009-04-30,2009,train,Delhi Daredevils,Deccan Chargers,149,150,4,1
+392203,2009-05-01,2009,train,Kolkata Knight Riders,Mumbai Indians,149,139,6,0
+392204,2009-05-01,2009,train,Kings XI Punjab,Royal Challengers Bangalore,146,137,7,0
+392205,2009-05-02,2009,train,Rajasthan Royals,Deccan Chargers,142,142,7,1
+392206,2009-05-02,2009,train,Delhi Daredevils,Chennai Super Kings,164,145,8,0
+392207,2009-05-03,2009,train,Kings XI Punjab,Kolkata Knight Riders,154,154,4,1
+392208,2009-05-03,2009,train,Royal Challengers Bangalore,Mumbai Indians,150,150,1,1
+392209,2009-05-04,2009,train,Deccan Chargers,Chennai Super Kings,179,100,10,0
+392210,2009-05-05,2009,train,Kings XI Punjab,Rajasthan Royals,212,133,8,0
+392211,2009-05-05,2009,train,Delhi Daredevils,Kolkata Knight Riders,155,157,1,1
+392212,2009-05-06,2009,train,Mumbai Indians,Deccan Chargers,146,126,8,0
+392213,2009-05-07,2009,train,Rajasthan Royals,Royal Challengers Bangalore,106,107,3,1
+392215,2009-05-08,2009,train,Delhi Daredevils,Mumbai Indians,117,118,3,1
+392216,2009-05-09,2009,train,Kings XI Punjab,Deccan Chargers,169,169,7,1
+392217,2009-05-09,2009,train,Chennai Super Kings,Rajasthan Royals,141,141,3,1
+392218,2009-05-10,2009,train,Royal Challengers Bangalore,Mumbai Indians,158,141,7,0
+392219,2009-05-10,2009,train,Delhi Daredevils,Kolkata Knight Riders,124,125,3,1
+392220,2009-05-11,2009,train,Rajasthan Royals,Deccan Chargers,167,113,10,0
+392221,2009-05-12,2009,train,Royal Challengers Bangalore,Kolkata Knight Riders,174,176,4,1
+392222,2009-05-12,2009,train,Mumbai Indians,Kings XI Punjab,120,122,2,1
+392223,2009-05-13,2009,train,Deccan Chargers,Delhi Daredevils,174,161,10,0
+392224,2009-05-14,2009,train,Royal Challengers Bangalore,Chennai Super Kings,130,132,8,1
+392225,2009-05-14,2009,train,Mumbai Indians,Rajasthan Royals,146,143,10,0
+392226,2009-05-15,2009,train,Kings XI Punjab,Delhi Daredevils,121,123,4,1
+392227,2009-05-16,2009,train,Chennai Super Kings,Mumbai Indians,148,151,3,1
+392228,2009-05-16,2009,train,Deccan Chargers,Kolkata Knight Riders,161,166,4,1
+392229,2009-05-17,2009,train,Deccan Chargers,Kings XI Punjab,135,133,8,0
+392230,2009-05-17,2009,train,Rajasthan Royals,Delhi Daredevils,151,136,9,0
+392231,2009-05-18,2009,train,Kolkata Knight Riders,Chennai Super Kings,189,189,3,1
+392232,2009-05-19,2009,train,Royal Challengers Bangalore,Delhi Daredevils,135,135,3,1
+392233,2009-05-20,2009,train,Kolkata Knight Riders,Rajasthan Royals,102,102,6,1
+392234,2009-05-20,2009,train,Kings XI Punjab,Chennai Super Kings,117,92,8,0
+392235,2009-05-21,2009,train,Delhi Daredevils,Mumbai Indians,166,166,6,1
+392236,2009-05-21,2009,train,Deccan Chargers,Royal Challengers Bangalore,171,158,6,0
+392237,2009-05-22,2009,train,Deccan Chargers,Delhi Daredevils,154,154,4,1
+392238,2009-05-23,2009,train,Royal Challengers Bangalore,Chennai Super Kings,147,149,4,1
+392239,2009-05-24,2009,train,Royal Challengers Bangalore,Deccan Chargers,144,137,9,0
+419106,2010-03-12,2010,train,Deccan Chargers,Kolkata Knight Riders,162,150,7,0
+419107,2010-03-13,2010,train,Rajasthan Royals,Mumbai Indians,213,208,7,0
+419108,2010-03-13,2010,train,Delhi Daredevils,Kings XI Punjab,143,146,5,1
+419109,2010-03-14,2010,train,Kolkata Knight Riders,Royal Challengers Bangalore,136,136,3,1
+419110,2010-03-14,2010,train,Chennai Super Kings,Deccan Chargers,191,159,9,0
+419111,2010-03-15,2010,train,Delhi Daredevils,Rajasthan Royals,142,142,4,1
+419112,2010-03-16,2010,train,Royal Challengers Bangalore,Kings XI Punjab,204,204,2,1
+419113,2010-03-16,2010,train,Kolkata Knight Riders,Chennai Super Kings,165,109,10,0
+419115,2010-03-18,2010,train,Royal Challengers Bangalore,Rajasthan Royals,93,93,0,1
+419116,2010-03-19,2010,train,Chennai Super Kings,Delhi Daredevils,186,190,5,1
+419117,2010-03-19,2010,train,Kings XI Punjab,Deccan Chargers,171,164,8,0
+419118,2010-03-20,2010,train,Kolkata Knight Riders,Rajasthan Royals,169,134,5,0
+419119,2010-03-20,2010,train,Royal Challengers Bangalore,Mumbai Indians,152,155,3,1
+419120,2010-03-21,2010,train,Delhi Daredevils,Deccan Chargers,172,161,9,0
+419122,2010-03-22,2010,train,Mumbai Indians,Kolkata Knight Riders,156,156,3,1
+419123,2010-03-23,2010,train,Chennai Super Kings,Royal Challengers Bangalore,172,135,7,0
+419124,2010-03-24,2010,train,Kings XI Punjab,Rajasthan Royals,184,152,10,0
+419125,2010-03-25,2010,train,Mumbai Indians,Chennai Super Kings,181,181,5,1
+419128,2010-03-25,2010,train,Royal Challengers Bangalore,Delhi Daredevils,184,166,9,0
+419126,2010-03-26,2010,train,Rajasthan Royals,Deccan Chargers,149,151,2,1
+419127,2010-03-27,2010,train,Kings XI Punjab,Kolkata Knight Riders,184,144,6,0
+419129,2010-03-28,2010,train,Chennai Super Kings,Rajasthan Royals,178,160,6,0
+419130,2010-03-28,2010,train,Deccan Chargers,Mumbai Indians,173,131,10,0
+419131,2010-03-29,2010,train,Kolkata Knight Riders,Delhi Daredevils,178,137,9,0
+419132,2010-03-30,2010,train,Mumbai Indians,Kings XI Punjab,164,164,6,1
+419133,2010-03-31,2010,train,Chennai Super Kings,Royal Challengers Bangalore,162,162,5,1
+419134,2010-03-31,2010,train,Rajasthan Royals,Delhi Daredevils,189,121,10,0
+419135,2010-04-01,2010,train,Deccan Chargers,Kolkata Knight Riders,182,157,5,0
+419136,2010-04-02,2010,train,Royal Challengers Bangalore,Kings XI Punjab,182,184,4,1
+419137,2010-04-03,2010,train,Rajasthan Royals,Chennai Super Kings,247,223,5,0
+419138,2010-04-03,2010,train,Deccan Chargers,Mumbai Indians,179,115,10,0
+419139,2010-04-04,2010,train,Kings XI Punjab,Kolkata Knight Riders,201,204,2,1
+419140,2010-04-04,2010,train,Royal Challengers Bangalore,Delhi Daredevils,185,147,9,0
+419141,2010-04-05,2010,train,Deccan Chargers,Rajasthan Royals,160,157,10,0
+419142,2010-04-06,2010,train,Mumbai Indians,Chennai Super Kings,166,141,9,0
+419143,2010-04-07,2010,train,Rajasthan Royals,Kings XI Punjab,154,157,1,1
+419144,2010-04-07,2010,train,Delhi Daredevils,Kolkata Knight Riders,182,167,8,0
+419145,2010-04-08,2010,train,Deccan Chargers,Royal Challengers Bangalore,185,186,3,1
+419146,2010-04-09,2010,train,Kings XI Punjab,Mumbai Indians,155,158,4,1
+419147,2010-04-10,2010,train,Deccan Chargers,Chennai Super Kings,139,139,4,1
+419148,2010-04-10,2010,train,Royal Challengers Bangalore,Kolkata Knight Riders,161,162,3,1
+419149,2010-04-11,2010,train,Kings XI Punjab,Delhi Daredevils,112,112,3,1
+419150,2010-04-11,2010,train,Rajasthan Royals,Mumbai Indians,175,137,8,0
+419151,2010-04-12,2010,train,Royal Challengers Bangalore,Deccan Chargers,152,138,10,0
+419152,2010-04-13,2010,train,Delhi Daredevils,Mumbai Indians,184,144,7,0
+419153,2010-04-13,2010,train,Chennai Super Kings,Kolkata Knight Riders,140,143,1,1
+419154,2010-04-14,2010,train,Royal Challengers Bangalore,Rajasthan Royals,131,132,5,1
+419155,2010-04-15,2010,train,Delhi Daredevils,Chennai Super Kings,113,113,4,1
+419156,2010-04-16,2010,train,Deccan Chargers,Kings XI Punjab,175,178,5,1
+419157,2010-04-17,2010,train,Royal Challengers Bangalore,Mumbai Indians,192,134,9,0
+419158,2010-04-17,2010,train,Kolkata Knight Riders,Rajasthan Royals,133,133,2,1
+419159,2010-04-18,2010,train,Chennai Super Kings,Kings XI Punjab,193,195,4,1
+419160,2010-04-18,2010,train,Delhi Daredevils,Deccan Chargers,146,134,7,0
+419161,2010-04-19,2010,train,Kolkata Knight Riders,Mumbai Indians,134,135,1,1
+419162,2010-04-21,2010,train,Royal Challengers Bangalore,Mumbai Indians,185,149,9,0
+419163,2010-04-22,2010,train,Deccan Chargers,Chennai Super Kings,143,104,10,0
+419164,2010-04-24,2010,train,Royal Challengers Bangalore,Deccan Chargers,83,86,1,1
+419165,2010-04-25,2010,train,Mumbai Indians,Chennai Super Kings,169,146,9,0
+501198,2011-04-08,2011,train,Kolkata Knight Riders,Chennai Super Kings,154,151,7,0
+501199,2011-04-09,2011,train,Rajasthan Royals,Deccan Chargers,138,141,2,1
+501200,2011-04-09,2011,train,Royal Challengers Bangalore,Kochi Tuskers Kerala,162,162,4,1
+501201,2011-04-10,2011,train,Mumbai Indians,Delhi Daredevils,96,99,2,1
+501203,2011-04-11,2011,train,Deccan Chargers,Kolkata Knight Riders,164,154,8,0
+501204,2011-04-12,2011,train,Rajasthan Royals,Delhi Daredevils,152,152,4,1
+501205,2011-04-12,2011,train,Mumbai Indians,Royal Challengers Bangalore,141,143,1,1
+501206,2011-04-13,2011,train,Kings XI Punjab,Chennai Super Kings,189,193,4,1
+501207,2011-04-13,2011,train,Pune Warriors,Kochi Tuskers Kerala,149,151,6,1
+501208,2011-04-14,2011,train,Royal Challengers Bangalore,Deccan Chargers,176,142,9,0
+501209,2011-04-15,2011,train,Kolkata Knight Riders,Rajasthan Royals,160,160,1,1
+501210,2011-04-15,2011,train,Kochi Tuskers Kerala,Mumbai Indians,183,184,2,1
+501211,2011-04-16,2011,train,Royal Challengers Bangalore,Chennai Super Kings,184,162,7,0
+501212,2011-04-16,2011,train,Kings XI Punjab,Deccan Chargers,166,166,2,1
+501213,2011-04-17,2011,train,Delhi Daredevils,Pune Warriors,188,190,7,1
+501214,2011-04-17,2011,train,Kolkata Knight Riders,Rajasthan Royals,82,85,2,1
+501216,2011-04-19,2011,train,Delhi Daredevils,Deccan Chargers,169,152,7,0
+501218,2011-04-20,2011,train,Mumbai Indians,Pune Warriors,119,124,3,1
+501219,2011-04-20,2011,train,Kolkata Knight Riders,Kochi Tuskers Kerala,133,126,9,0
+501220,2011-04-21,2011,train,Rajasthan Royals,Kings XI Punjab,196,147,7,0
+501221,2011-04-22,2011,train,Chennai Super Kings,Mumbai Indians,165,156,9,0
+501222,2011-04-22,2011,train,Royal Challengers Bangalore,Kolkata Knight Riders,172,175,1,1
+501223,2011-04-23,2011,train,Kings XI Punjab,Delhi Daredevils,232,202,6,0
+501224,2011-04-24,2011,train,Deccan Chargers,Mumbai Indians,173,135,8,0
+501225,2011-04-24,2011,train,Rajasthan Royals,Kochi Tuskers Kerala,110,111,2,1
+501226,2011-04-25,2011,train,Pune Warriors,Chennai Super Kings,143,117,9,0
+501227,2011-04-26,2011,train,Royal Challengers Bangalore,Delhi Daredevils,161,161,7,1
+501228,2011-04-27,2011,train,Chennai Super Kings,Pune Warriors,142,145,2,1
+501229,2011-04-27,2011,train,Kochi Tuskers Kerala,Deccan Chargers,130,74,10,0
+501230,2011-04-28,2011,train,Delhi Daredevils,Kolkata Knight Riders,149,131,9,0
+501231,2011-04-29,2011,train,Rajasthan Royals,Mumbai Indians,95,95,3,1
+501232,2011-04-29,2011,train,Pune Warriors,Royal Challengers Bangalore,182,155,5,0
+501233,2011-04-30,2011,train,Kochi Tuskers Kerala,Delhi Daredevils,158,119,10,0
+501234,2011-04-30,2011,train,Kolkata Knight Riders,Kings XI Punjab,120,120,2,1
+501235,2011-05-01,2011,train,Rajasthan Royals,Pune Warriors,144,144,4,1
+501236,2011-05-01,2011,train,Deccan Chargers,Chennai Super Kings,166,146,8,0
+501237,2011-05-02,2011,train,Kings XI Punjab,Mumbai Indians,160,136,8,0
+501238,2011-05-02,2011,train,Kochi Tuskers Kerala,Delhi Daredevils,141,141,3,1
+501239,2011-05-03,2011,train,Deccan Chargers,Kolkata Knight Riders,170,149,6,0
+501240,2011-05-04,2011,train,Chennai Super Kings,Rajasthan Royals,148,149,2,1
+501241,2011-05-04,2011,train,Pune Warriors,Mumbai Indians,161,139,7,0
+501242,2011-05-05,2011,train,Kolkata Knight Riders,Kochi Tuskers Kerala,157,139,7,0
+501243,2011-05-05,2011,train,Delhi Daredevils,Deccan Chargers,176,179,6,1
+501244,2011-05-06,2011,train,Kings XI Punjab,Royal Challengers Bangalore,206,120,9,0
+501246,2011-05-07,2011,train,Delhi Daredevils,Mumbai Indians,179,146,10,0
+501247,2011-05-08,2011,train,Royal Challengers Bangalore,Kochi Tuskers Kerala,126,128,1,1
+501248,2011-05-08,2011,train,Pune Warriors,Kings XI Punjab,120,120,5,1
+501249,2011-05-09,2011,train,Rajasthan Royals,Chennai Super Kings,197,133,10,0
+501250,2011-05-10,2011,train,Pune Warriors,Deccan Chargers,137,137,4,1
+501251,2011-05-10,2011,train,Mumbai Indians,Kings XI Punjab,164,87,10,0
+501252,2011-05-11,2011,train,Royal Challengers Bangalore,Rajasthan Royals,147,151,1,1
+501253,2011-05-12,2011,train,Delhi Daredevils,Chennai Super Kings,177,158,6,0
+501254,2011-05-13,2011,train,Kings XI Punjab,Kochi Tuskers Kerala,179,181,4,1
+501256,2011-05-14,2011,train,Mumbai Indians,Deccan Chargers,136,125,8,0
+501257,2011-05-15,2011,train,Delhi Daredevils,Kings XI Punjab,171,141,8,0
+501258,2011-05-15,2011,train,Kochi Tuskers Kerala,Rajasthan Royals,98,98,2,1
+501259,2011-05-16,2011,train,Deccan Chargers,Pune Warriors,137,138,4,1
+501260,2011-05-17,2011,train,Royal Challengers Bangalore,Kings XI Punjab,233,121,10,0
+501261,2011-05-18,2011,train,Kochi Tuskers Kerala,Chennai Super Kings,153,141,5,0
+501262,2011-05-19,2011,train,Kolkata Knight Riders,Pune Warriors,119,119,3,1
+501263,2011-05-20,2011,train,Rajasthan Royals,Mumbai Indians,134,134,0,1
+501264,2011-05-21,2011,train,Kings XI Punjab,Deccan Chargers,199,116,10,0
+501266,2011-05-22,2011,train,Royal Challengers Bangalore,Chennai Super Kings,129,129,2,1
+501267,2011-05-22,2011,train,Mumbai Indians,Kolkata Knight Riders,176,178,5,1
+501268,2011-05-24,2011,train,Chennai Super Kings,Royal Challengers Bangalore,176,177,4,1
+501269,2011-05-25,2011,train,Mumbai Indians,Kolkata Knight Riders,148,148,6,1
+501270,2011-05-27,2011,train,Mumbai Indians,Royal Challengers Bangalore,186,142,8,0
+501271,2011-05-28,2011,train,Royal Challengers Bangalore,Chennai Super Kings,206,147,8,0
+548306,2012-04-04,2012,train,Mumbai Indians,Chennai Super Kings,113,115,2,1
+548308,2012-04-06,2012,train,Mumbai Indians,Pune Warriors,130,101,9,0
+548309,2012-04-06,2012,train,Kings XI Punjab,Rajasthan Royals,192,160,9,0
+548310,2012-04-07,2012,train,Delhi Daredevils,Royal Challengers Bangalore,158,137,7,0
+548311,2012-04-07,2012,train,Deccan Chargers,Chennai Super Kings,194,119,10,0
+548312,2012-04-08,2012,train,Kolkata Knight Riders,Rajasthan Royals,165,142,10,0
+548313,2012-04-08,2012,train,Kings XI Punjab,Pune Warriors,167,144,8,0
+548314,2012-04-09,2012,train,Mumbai Indians,Deccan Chargers,139,142,5,1
+548315,2012-04-10,2012,train,Royal Challengers Bangalore,Kolkata Knight Riders,166,123,9,0
+548316,2012-04-10,2012,train,Delhi Daredevils,Chennai Super Kings,111,111,2,1
+548317,2012-04-11,2012,train,Rajasthan Royals,Mumbai Indians,198,170,10,0
+548318,2012-04-12,2012,train,Chennai Super Kings,Royal Challengers Bangalore,206,208,5,1
+548319,2012-04-12,2012,train,Kings XI Punjab,Pune Warriors,116,116,3,1
+548320,2012-04-13,2012,train,Kolkata Knight Riders,Rajasthan Royals,132,137,5,1
+548322,2012-04-14,2012,train,Pune Warriors,Chennai Super Kings,156,156,3,1
+548323,2012-04-15,2012,train,Kolkata Knight Riders,Kings XI Punjab,135,132,7,0
+548324,2012-04-15,2012,train,Royal Challengers Bangalore,Rajasthan Royals,196,136,10,0
+548325,2012-04-16,2012,train,Delhi Daredevils,Mumbai Indians,93,93,3,1
+548326,2012-04-17,2012,train,Rajasthan Royals,Deccan Chargers,197,197,5,1
+548327,2012-04-17,2012,train,Royal Challengers Bangalore,Pune Warriors,183,186,4,1
+548328,2012-04-18,2012,train,Kolkata Knight Riders,Kings XI Punjab,125,127,2,1
+548321,2012-04-19,2012,train,Delhi Daredevils,Deccan Chargers,158,162,5,1
+548330,2012-04-19,2012,train,Pune Warriors,Chennai Super Kings,165,151,7,0
+548331,2012-04-20,2012,train,Royal Challengers Bangalore,Kings XI Punjab,164,166,5,1
+548332,2012-04-21,2012,train,Chennai Super Kings,Rajasthan Royals,147,147,3,1
+548333,2012-04-21,2012,train,Delhi Daredevils,Pune Warriors,193,172,7,0
+548334,2012-04-22,2012,train,Kings XI Punjab,Mumbai Indians,164,164,4,1
+548335,2012-04-22,2012,train,Kolkata Knight Riders,Deccan Chargers,127,127,5,1
+548336,2012-04-23,2012,train,Rajasthan Royals,Royal Challengers Bangalore,190,143,7,0
+548337,2012-04-24,2012,train,Delhi Daredevils,Pune Warriors,147,148,2,1
+548339,2012-04-25,2012,train,Mumbai Indians,Kings XI Punjab,169,171,6,1
+548341,2012-04-26,2012,train,Pune Warriors,Deccan Chargers,178,159,7,0
+548342,2012-04-27,2012,train,Mumbai Indians,Delhi Daredevils,208,170,9,0
+548343,2012-04-28,2012,train,Chennai Super Kings,Kings XI Punjab,157,149,8,0
+548344,2012-04-28,2012,train,Royal Challengers Bangalore,Kolkata Knight Riders,191,143,6,0
+548345,2012-04-29,2012,train,Rajasthan Royals,Delhi Daredevils,153,151,3,0
+548346,2012-04-29,2012,train,Mumbai Indians,Deccan Chargers,101,101,5,1
+548347,2012-04-30,2012,train,Kolkata Knight Riders,Chennai Super Kings,140,140,5,1
+548348,2012-05-01,2012,train,Pune Warriors,Deccan Chargers,187,173,5,0
+548349,2012-05-01,2012,train,Delhi Daredevils,Rajasthan Royals,142,144,4,1
+548350,2012-05-02,2012,train,Kings XI Punjab,Royal Challengers Bangalore,159,163,6,1
+548351,2012-05-03,2012,train,Pune Warriors,Mumbai Indians,121,119,6,0
+548352,2012-05-04,2012,train,Deccan Chargers,Chennai Super Kings,161,150,5,0
+548353,2012-05-05,2012,train,Pune Warriors,Kolkata Knight Riders,151,143,8,0
+548354,2012-05-05,2012,train,Kings XI Punjab,Rajasthan Royals,178,134,8,0
+548355,2012-05-06,2012,train,Mumbai Indians,Chennai Super Kings,174,174,8,1
+548356,2012-05-06,2012,train,Royal Challengers Bangalore,Deccan Chargers,182,185,5,1
+548357,2012-05-07,2012,train,Kolkata Knight Riders,Delhi Daredevils,154,154,4,1
+548358,2012-05-08,2012,train,Rajasthan Royals,Pune Warriors,126,126,3,1
+548359,2012-05-08,2012,train,Deccan Chargers,Kings XI Punjab,171,145,8,0
+548360,2012-05-09,2012,train,Royal Challengers Bangalore,Mumbai Indians,142,142,1,1
+548329,2012-05-10,2012,train,Delhi Daredevils,Deccan Chargers,188,193,1,1
+548361,2012-05-10,2012,train,Chennai Super Kings,Rajasthan Royals,127,127,6,1
+548362,2012-05-11,2012,train,Pune Warriors,Royal Challengers Bangalore,174,138,9,0
+548363,2012-05-12,2012,train,Kolkata Knight Riders,Mumbai Indians,183,155,4,0
+548364,2012-05-12,2012,train,Chennai Super Kings,Delhi Daredevils,115,115,1,1
+548365,2012-05-13,2012,train,Pune Warriors,Rajasthan Royals,171,125,9,0
+548366,2012-05-13,2012,train,Kings XI Punjab,Deccan Chargers,191,194,6,1
+548367,2012-05-14,2012,train,Mumbai Indians,Royal Challengers Bangalore,172,173,5,1
+548368,2012-05-14,2012,train,Chennai Super Kings,Kolkata Knight Riders,159,160,5,1
+548369,2012-05-15,2012,train,Delhi Daredevils,Kings XI Punjab,137,140,5,1
+548370,2012-05-16,2012,train,Mumbai Indians,Kolkata Knight Riders,141,108,10,0
+548371,2012-05-17,2012,train,Kings XI Punjab,Chennai Super Kings,121,123,4,1
+548372,2012-05-17,2012,train,Delhi Daredevils,Royal Challengers Bangalore,216,194,9,0
+548373,2012-05-18,2012,train,Deccan Chargers,Rajasthan Royals,127,128,5,1
+548374,2012-05-19,2012,train,Delhi Daredevils,Kings XI Punjab,142,145,4,1
+548375,2012-05-19,2012,train,Pune Warriors,Kolkata Knight Riders,137,102,8,0
+548376,2012-05-20,2012,train,Royal Challengers Bangalore,Deccan Chargers,133,123,9,0
+548377,2012-05-20,2012,train,Mumbai Indians,Rajasthan Royals,163,163,0,1
+548378,2012-05-22,2012,train,Delhi Daredevils,Kolkata Knight Riders,163,144,8,0
+548379,2012-05-23,2012,train,Mumbai Indians,Chennai Super Kings,188,149,9,0
+548380,2012-05-25,2012,train,Delhi Daredevils,Chennai Super Kings,223,136,10,0
+548381,2012-05-27,2012,train,Kolkata Knight Riders,Chennai Super Kings,191,192,5,1
+597998,2013-04-03,2013,train,Kolkata Knight Riders,Delhi Daredevils,129,129,4,1
+597999,2013-04-04,2013,train,Mumbai Indians,Royal Challengers Bangalore,157,154,5,0
+598000,2013-04-05,2013,train,Pune Warriors,Sunrisers Hyderabad,127,104,10,0
+598001,2013-04-06,2013,train,Delhi Daredevils,Rajasthan Royals,166,160,6,0
+598002,2013-04-06,2013,train,Chennai Super Kings,Mumbai Indians,149,139,9,0
+598003,2013-04-07,2013,train,Kings XI Punjab,Pune Warriors,100,100,2,1
+598005,2013-04-08,2013,train,Kolkata Knight Riders,Rajasthan Royals,145,125,10,0
+598006,2013-04-09,2013,train,Delhi Daredevils,Mumbai Indians,210,165,9,0
+598048,2013-04-09,2013,train,Royal Challengers Bangalore,Sunrisers Hyderabad,162,162,3,1
+598007,2013-04-10,2013,train,Chennai Super Kings,Kings XI Punjab,139,139,0,1
+598008,2013-04-11,2013,train,Royal Challengers Bangalore,Kolkata Knight Riders,155,158,2,1
+598009,2013-04-11,2013,train,Pune Warriors,Rajasthan Royals,146,148,3,1
+598010,2013-04-12,2013,train,Sunrisers Hyderabad,Delhi Daredevils,115,115,7,1
+598011,2013-04-13,2013,train,Pune Warriors,Mumbai Indians,184,142,8,0
+598012,2013-04-13,2013,train,Chennai Super Kings,Royal Challengers Bangalore,166,166,6,1
+598013,2013-04-14,2013,train,Sunrisers Hyderabad,Kolkata Knight Riders,181,132,7,0
+598014,2013-04-14,2013,train,Rajasthan Royals,Kings XI Punjab,125,126,4,1
+598015,2013-04-15,2013,train,Chennai Super Kings,Pune Warriors,160,135,8,0
+598016,2013-04-16,2013,train,Kolkata Knight Riders,Kings XI Punjab,158,153,9,0
+598018,2013-04-17,2013,train,Pune Warriors,Sunrisers Hyderabad,120,108,10,0
+598019,2013-04-17,2013,train,Mumbai Indians,Rajasthan Royals,180,92,10,0
+598020,2013-04-18,2013,train,Delhi Daredevils,Chennai Super Kings,170,83,10,0
+598021,2013-04-19,2013,train,Sunrisers Hyderabad,Kings XI Punjab,124,127,5,1
+598022,2013-04-20,2013,train,Chennai Super Kings,Kolkata Knight Riders,120,124,6,1
+598023,2013-04-20,2013,train,Royal Challengers Bangalore,Rajasthan Royals,118,123,3,1
+598024,2013-04-21,2013,train,Delhi Daredevils,Mumbai Indians,162,165,1,1
+598025,2013-04-21,2013,train,Kings XI Punjab,Pune Warriors,186,186,3,1
+598026,2013-04-22,2013,train,Chennai Super Kings,Rajasthan Royals,186,186,5,1
+598027,2013-04-23,2013,train,Pune Warriors,Royal Challengers Bangalore,264,133,9,0
+598059,2013-04-23,2013,train,Kings XI Punjab,Delhi Daredevils,121,121,5,1
+598029,2013-04-24,2013,train,Mumbai Indians,Kolkata Knight Riders,160,162,5,1
+598030,2013-04-25,2013,train,Chennai Super Kings,Sunrisers Hyderabad,160,160,5,1
+598031,2013-04-26,2013,train,Kolkata Knight Riders,Kings XI Punjab,150,150,4,1
+598032,2013-04-27,2013,train,Rajasthan Royals,Sunrisers Hyderabad,145,146,2,1
+598033,2013-04-27,2013,train,Royal Challengers Bangalore,Mumbai Indians,195,136,7,0
+598034,2013-04-28,2013,train,Kolkata Knight Riders,Chennai Super Kings,201,186,4,0
+598035,2013-04-28,2013,train,Pune Warriors,Delhi Daredevils,165,149,4,0
+598036,2013-04-29,2013,train,Rajasthan Royals,Royal Challengers Bangalore,172,173,6,1
+598037,2013-04-29,2013,train,Kings XI Punjab,Mumbai Indians,175,170,10,0
+598038,2013-04-30,2013,train,Pune Warriors,Chennai Super Kings,165,127,9,0
+598039,2013-05-01,2013,train,Sunrisers Hyderabad,Mumbai Indians,130,130,3,1
+598040,2013-05-01,2013,train,Delhi Daredevils,Kolkata Knight Riders,137,137,3,1
+598041,2013-05-02,2013,train,Kings XI Punjab,Chennai Super Kings,187,171,6,0
+598042,2013-05-02,2013,train,Pune Warriors,Royal Challengers Bangalore,188,170,9,0
+598043,2013-05-03,2013,train,Kolkata Knight Riders,Rajasthan Royals,133,133,2,1
+598044,2013-05-04,2013,train,Sunrisers Hyderabad,Delhi Daredevils,81,81,4,1
+598046,2013-05-05,2013,train,Chennai Super Kings,Mumbai Indians,140,79,10,0
+598047,2013-05-05,2013,train,Rajasthan Royals,Pune Warriors,179,182,5,1
+598064,2013-05-06,2013,train,Kings XI Punjab,Royal Challengers Bangalore,191,194,4,1
+598049,2013-05-07,2013,train,Rajasthan Royals,Delhi Daredevils,155,155,1,1
+598050,2013-05-07,2013,train,Kolkata Knight Riders,Mumbai Indians,171,105,10,0
+598051,2013-05-08,2013,train,Sunrisers Hyderabad,Chennai Super Kings,224,146,8,0
+598052,2013-05-09,2013,train,Rajasthan Royals,Kings XI Punjab,146,147,2,1
+598053,2013-05-09,2013,train,Pune Warriors,Kolkata Knight Riders,153,106,10,0
+598054,2013-05-10,2013,train,Delhi Daredevils,Royal Challengers Bangalore,184,179,7,0
+598055,2013-05-11,2013,train,Mumbai Indians,Pune Warriors,113,116,5,1
+598056,2013-05-11,2013,train,Kings XI Punjab,Sunrisers Hyderabad,151,120,9,0
+598057,2013-05-12,2013,train,Kolkata Knight Riders,Royal Challengers Bangalore,116,116,5,1
+598058,2013-05-12,2013,train,Rajasthan Royals,Chennai Super Kings,142,144,5,1
+598060,2013-05-13,2013,train,Mumbai Indians,Sunrisers Hyderabad,179,184,3,1
+598045,2013-05-14,2013,train,Kings XI Punjab,Royal Challengers Bangalore,175,176,3,1
+598062,2013-05-14,2013,train,Delhi Daredevils,Chennai Super Kings,169,135,9,0
+598061,2013-05-15,2013,train,Kolkata Knight Riders,Pune Warriors,171,163,7,0
+598063,2013-05-15,2013,train,Rajasthan Royals,Mumbai Indians,167,152,7,0
+598028,2013-05-16,2013,train,Delhi Daredevils,Kings XI Punjab,172,164,7,0
+598065,2013-05-17,2013,train,Rajasthan Royals,Sunrisers Hyderabad,137,113,9,0
+598067,2013-05-19,2013,train,Delhi Daredevils,Pune Warriors,173,134,9,0
+598069,2013-05-19,2013,train,Sunrisers Hyderabad,Kolkata Knight Riders,131,132,5,1
+598070,2013-05-21,2013,train,Mumbai Indians,Chennai Super Kings,193,144,10,0
+598071,2013-05-22,2013,train,Rajasthan Royals,Sunrisers Hyderabad,133,135,6,1
+598072,2013-05-24,2013,train,Mumbai Indians,Rajasthan Royals,166,169,6,1
+598073,2013-05-26,2013,train,Chennai Super Kings,Mumbai Indians,149,125,9,0
+729279,2014-04-16,2014,train,Mumbai Indians,Kolkata Knight Riders,164,122,7,0
+729281,2014-04-17,2014,train,Royal Challengers Bangalore,Delhi Daredevils,146,146,2,1
+729283,2014-04-18,2014,train,Kings XI Punjab,Chennai Super Kings,206,206,4,1
+729285,2014-04-18,2014,train,Rajasthan Royals,Sunrisers Hyderabad,134,135,6,1
+729287,2014-04-19,2014,train,Royal Challengers Bangalore,Mumbai Indians,116,116,3,1
+729289,2014-04-19,2014,train,Delhi Daredevils,Kolkata Knight Riders,167,167,6,1
+729291,2014-04-20,2014,train,Kings XI Punjab,Rajasthan Royals,192,193,3,1
+729295,2014-04-22,2014,train,Sunrisers Hyderabad,Kings XI Punjab,194,121,10,0
+729297,2014-04-23,2014,train,Rajasthan Royals,Chennai Super Kings,141,133,10,0
+729299,2014-04-24,2014,train,Royal Challengers Bangalore,Kolkata Knight Riders,151,148,5,0
+729301,2014-04-25,2014,train,Delhi Daredevils,Sunrisers Hyderabad,185,180,4,0
+729303,2014-04-25,2014,train,Chennai Super Kings,Mumbai Indians,142,142,3,1
+729305,2014-04-26,2014,train,Rajasthan Royals,Royal Challengers Bangalore,71,71,4,1
+729307,2014-04-26,2014,train,Kolkata Knight Riders,Kings XI Punjab,133,109,10,0
+729309,2014-04-27,2014,train,Delhi Daredevils,Mumbai Indians,126,126,4,1
+729311,2014-04-27,2014,train,Chennai Super Kings,Sunrisers Hyderabad,146,146,5,1
+729313,2014-04-28,2014,train,Kings XI Punjab,Royal Challengers Bangalore,125,127,5,1
+729317,2014-04-30,2014,train,Mumbai Indians,Sunrisers Hyderabad,173,157,7,0
+733973,2014-05-03,2014,train,Mumbai Indians,Kings XI Punjab,169,170,5,1
+733975,2014-05-03,2014,train,Rajasthan Royals,Delhi Daredevils,153,156,3,1
+733977,2014-05-04,2014,train,Royal Challengers Bangalore,Sunrisers Hyderabad,156,158,6,1
+733979,2014-05-05,2014,train,Kolkata Knight Riders,Rajasthan Royals,171,160,6,0
+733981,2014-05-05,2014,train,Chennai Super Kings,Delhi Daredevils,179,181,2,1
+733983,2014-05-06,2014,train,Royal Challengers Bangalore,Mumbai Indians,188,168,8,0
+733985,2014-05-07,2014,train,Kolkata Knight Riders,Delhi Daredevils,161,161,2,1
+733987,2014-05-07,2014,train,Chennai Super Kings,Kings XI Punjab,232,187,6,0
+733989,2014-05-08,2014,train,Rajasthan Royals,Sunrisers Hyderabad,135,102,10,0
+733991,2014-05-09,2014,train,Royal Challengers Bangalore,Kings XI Punjab,199,166,9,0
+733995,2014-05-10,2014,train,Chennai Super Kings,Mumbai Indians,158,160,6,1
+733997,2014-05-11,2014,train,Kolkata Knight Riders,Kings XI Punjab,150,150,1,1
+733999,2014-05-11,2014,train,Rajasthan Royals,Royal Challengers Bangalore,191,191,5,1
+734001,2014-05-12,2014,train,Mumbai Indians,Sunrisers Hyderabad,158,160,3,1
+734003,2014-05-13,2014,train,Chennai Super Kings,Rajasthan Royals,149,149,5,1
+734005,2014-05-13,2014,train,Delhi Daredevils,Royal Challengers Bangalore,187,170,7,0
+734007,2014-05-14,2014,train,Kings XI Punjab,Sunrisers Hyderabad,206,211,4,1
+734009,2014-05-14,2014,train,Kolkata Knight Riders,Mumbai Indians,142,142,4,1
+734011,2014-05-15,2014,train,Delhi Daredevils,Rajasthan Royals,202,139,9,0
+734013,2014-05-18,2014,train,Royal Challengers Bangalore,Chennai Super Kings,139,142,5,1
+734015,2014-05-18,2014,train,Kolkata Knight Riders,Sunrisers Hyderabad,143,146,3,1
+734017,2014-05-19,2014,train,Rajasthan Royals,Mumbai Indians,179,153,8,0
+734019,2014-05-19,2014,train,Kings XI Punjab,Delhi Daredevils,165,165,6,1
+734021,2014-05-20,2014,train,Sunrisers Hyderabad,Royal Challengers Bangalore,161,161,3,1
+734023,2014-05-20,2014,train,Kolkata Knight Riders,Chennai Super Kings,155,156,2,1
+734025,2014-05-21,2014,train,Mumbai Indians,Kings XI Punjab,157,159,3,1
+734027,2014-05-22,2014,train,Royal Challengers Bangalore,Kolkata Knight Riders,196,165,5,0
+734029,2014-05-22,2014,train,Sunrisers Hyderabad,Chennai Super Kings,186,189,4,1
+734031,2014-05-23,2014,train,Delhi Daredevils,Mumbai Indians,174,158,4,0
+734033,2014-05-23,2014,train,Rajasthan Royals,Kings XI Punjab,180,163,8,0
+734035,2014-05-24,2014,train,Chennai Super Kings,Royal Challengers Bangalore,155,160,2,1
+734037,2014-05-24,2014,train,Kolkata Knight Riders,Sunrisers Hyderabad,161,161,6,1
+734039,2014-05-25,2014,train,Kings XI Punjab,Delhi Daredevils,116,119,3,1
+734041,2014-05-25,2014,train,Mumbai Indians,Rajasthan Royals,190,195,5,1
+734043,2014-05-27,2014,train,Kings XI Punjab,Kolkata Knight Riders,164,135,8,0
+734045,2014-05-28,2014,train,Chennai Super Kings,Mumbai Indians,174,176,3,1
+734047,2014-05-30,2014,train,Chennai Super Kings,Kings XI Punjab,227,202,7,0
+734049,2014-06-01,2014,train,Kolkata Knight Riders,Kings XI Punjab,200,200,7,1
+829705,2015-04-08,2015,train,Kolkata Knight Riders,Mumbai Indians,169,170,3,1
+829707,2015-04-09,2015,train,Delhi Daredevils,Chennai Super Kings,151,149,9,0
+829709,2015-04-10,2015,train,Kings XI Punjab,Rajasthan Royals,163,136,8,0
+829711,2015-04-11,2015,train,Sunrisers Hyderabad,Chennai Super Kings,210,164,6,0
+829713,2015-04-11,2015,train,Royal Challengers Bangalore,Kolkata Knight Riders,178,179,7,1
+829715,2015-04-12,2015,train,Rajasthan Royals,Delhi Daredevils,185,186,7,1
+829717,2015-04-12,2015,train,Mumbai Indians,Kings XI Punjab,178,159,7,0
+829719,2015-04-13,2015,train,Sunrisers Hyderabad,Royal Challengers Bangalore,167,172,2,1
+829721,2015-04-14,2015,train,Rajasthan Royals,Mumbai Indians,165,165,3,1
+829725,2015-04-15,2015,train,Delhi Daredevils,Kings XI Punjab,166,169,5,1
+829727,2015-04-16,2015,train,Rajasthan Royals,Sunrisers Hyderabad,128,131,4,1
+829729,2015-04-17,2015,train,Chennai Super Kings,Mumbai Indians,184,189,4,1
+829731,2015-04-18,2015,train,Sunrisers Hyderabad,Delhi Daredevils,168,163,8,0
+829733,2015-04-18,2015,train,Kolkata Knight Riders,Kings XI Punjab,156,159,6,1
+829735,2015-04-19,2015,train,Rajasthan Royals,Chennai Super Kings,157,157,2,1
+829737,2015-04-19,2015,train,Royal Challengers Bangalore,Mumbai Indians,210,191,7,0
+829739,2015-04-20,2015,train,Kolkata Knight Riders,Delhi Daredevils,147,147,4,1
+829745,2015-04-22,2015,train,Royal Challengers Bangalore,Chennai Super Kings,182,154,8,0
+829747,2015-04-23,2015,train,Mumbai Indians,Delhi Daredevils,191,153,9,0
+829749,2015-04-24,2015,train,Royal Challengers Bangalore,Rajasthan Royals,131,134,1,1
+829751,2015-04-25,2015,train,Sunrisers Hyderabad,Mumbai Indians,158,137,8,0
+829753,2015-04-25,2015,train,Kings XI Punjab,Chennai Super Kings,193,95,9,0
+829757,2015-04-26,2015,train,Royal Challengers Bangalore,Delhi Daredevils,96,99,0,1
+829759,2015-04-27,2015,train,Kings XI Punjab,Sunrisers Hyderabad,151,130,9,0
+829765,2015-04-28,2015,train,Kolkata Knight Riders,Chennai Super Kings,135,132,9,0
+829723,2015-04-30,2015,train,Kolkata Knight Riders,Chennai Super Kings,166,169,3,1
+829767,2015-05-01,2015,train,Delhi Daredevils,Kings XI Punjab,119,119,1,1
+829769,2015-05-01,2015,train,Rajasthan Royals,Mumbai Indians,188,179,7,0
+829773,2015-05-02,2015,train,Chennai Super Kings,Sunrisers Hyderabad,193,170,6,0
+829775,2015-05-03,2015,train,Kings XI Punjab,Mumbai Indians,173,149,7,0
+829777,2015-05-03,2015,train,Delhi Daredevils,Rajasthan Royals,190,175,7,0
+829779,2015-05-04,2015,train,Royal Challengers Bangalore,Chennai Super Kings,149,124,10,0
+829781,2015-05-04,2015,train,Sunrisers Hyderabad,Kolkata Knight Riders,168,132,9,0
+829783,2015-05-05,2015,train,Mumbai Indians,Delhi Daredevils,153,153,5,1
+829785,2015-05-06,2015,train,Kings XI Punjab,Royal Challengers Bangalore,227,88,10,0
+829761,2015-05-07,2015,train,Delhi Daredevils,Kolkata Knight Riders,172,158,6,0
+829787,2015-05-07,2015,train,Rajasthan Royals,Sunrisers Hyderabad,202,194,7,0
+829789,2015-05-08,2015,train,Mumbai Indians,Chennai Super Kings,159,159,4,1
+829791,2015-05-09,2015,train,Kolkata Knight Riders,Kings XI Punjab,184,184,9,1
+829793,2015-05-09,2015,train,Delhi Daredevils,Sunrisers Hyderabad,164,157,4,0
+829795,2015-05-10,2015,train,Mumbai Indians,Royal Challengers Bangalore,236,196,7,0
+829797,2015-05-10,2015,train,Rajasthan Royals,Chennai Super Kings,158,145,9,0
+829799,2015-05-11,2015,train,Kings XI Punjab,Sunrisers Hyderabad,186,180,7,0
+829801,2015-05-12,2015,train,Delhi Daredevils,Chennai Super Kings,120,120,4,1
+829805,2015-05-14,2015,train,Kolkata Knight Riders,Mumbai Indians,172,166,7,0
+829809,2015-05-16,2015,train,Chennai Super Kings,Kings XI Punjab,131,134,3,1
+829811,2015-05-16,2015,train,Kolkata Knight Riders,Rajasthan Royals,200,190,9,0
+829815,2015-05-17,2015,train,Mumbai Indians,Sunrisers Hyderabad,114,114,1,1
+829817,2015-05-19,2015,train,Chennai Super Kings,Mumbai Indians,188,162,10,0
+829819,2015-05-20,2015,train,Rajasthan Royals,Royal Challengers Bangalore,181,109,10,0
+829821,2015-05-22,2015,train,Chennai Super Kings,Royal Challengers Bangalore,140,140,7,1
+829823,2015-05-24,2015,train,Chennai Super Kings,Mumbai Indians,203,161,8,0
+980901,2016-04-09,2016,train,Rising Pune Supergiants,Mumbai Indians,122,126,1,1
+980903,2016-04-10,2016,train,Kolkata Knight Riders,Delhi Daredevils,99,99,1,1
+980905,2016-04-11,2016,train,Gujarat Lions,Kings XI Punjab,162,162,5,1
+980907,2016-04-12,2016,train,Sunrisers Hyderabad,Royal Challengers Bangalore,228,182,6,0
+980909,2016-04-13,2016,train,Mumbai Indians,Kolkata Knight Riders,188,188,4,1
+980911,2016-04-14,2016,train,Gujarat Lions,Rising Pune Supergiants,164,164,3,1
+980913,2016-04-15,2016,train,Delhi Daredevils,Kings XI Punjab,112,113,2,1
+980915,2016-04-16,2016,train,Kolkata Knight Riders,Sunrisers Hyderabad,143,146,2,1
+980917,2016-04-16,2016,train,Gujarat Lions,Mumbai Indians,144,147,7,1
+980919,2016-04-17,2016,train,Kings XI Punjab,Rising Pune Supergiants,153,153,4,1
+980921,2016-04-17,2016,train,Delhi Daredevils,Royal Challengers Bangalore,192,192,3,1
+980923,2016-04-18,2016,train,Sunrisers Hyderabad,Mumbai Indians,143,145,3,1
+980925,2016-04-19,2016,train,Kolkata Knight Riders,Kings XI Punjab,139,141,4,1
+980927,2016-04-20,2016,train,Mumbai Indians,Royal Challengers Bangalore,171,171,4,1
+980929,2016-04-21,2016,train,Sunrisers Hyderabad,Gujarat Lions,136,137,0,1
+980931,2016-04-22,2016,train,Rising Pune Supergiants,Royal Challengers Bangalore,186,172,8,0
+980933,2016-04-23,2016,train,Mumbai Indians,Delhi Daredevils,165,154,7,0
+980935,2016-04-23,2016,train,Sunrisers Hyderabad,Kings XI Punjab,144,146,5,1
+980937,2016-04-24,2016,train,Gujarat Lions,Royal Challengers Bangalore,181,182,4,1
+980939,2016-04-24,2016,train,Kolkata Knight Riders,Rising Pune Supergiants,161,162,8,1
+980941,2016-04-25,2016,train,Kings XI Punjab,Mumbai Indians,190,164,7,0
+980945,2016-04-27,2016,train,Delhi Daredevils,Gujarat Lions,173,171,5,0
+980947,2016-04-28,2016,train,Mumbai Indians,Kolkata Knight Riders,175,178,4,1
+980949,2016-04-29,2016,train,Gujarat Lions,Rising Pune Supergiants,196,196,7,1
+980951,2016-04-30,2016,train,Kolkata Knight Riders,Delhi Daredevils,187,159,10,0
+980953,2016-04-30,2016,train,Royal Challengers Bangalore,Sunrisers Hyderabad,195,179,6,0
+980955,2016-05-01,2016,train,Gujarat Lions,Kings XI Punjab,155,131,9,0
+980957,2016-05-01,2016,train,Mumbai Indians,Rising Pune Supergiants,160,161,2,1
+980959,2016-05-02,2016,train,Kolkata Knight Riders,Royal Challengers Bangalore,186,189,5,1
+980961,2016-05-03,2016,train,Delhi Daredevils,Gujarat Lions,150,150,2,1
+980963,2016-05-04,2016,train,Kings XI Punjab,Kolkata Knight Riders,165,157,9,0
+980965,2016-05-05,2016,train,Rising Pune Supergiants,Delhi Daredevils,163,166,3,1
+980967,2016-05-06,2016,train,Sunrisers Hyderabad,Gujarat Lions,127,129,5,1
+980969,2016-05-07,2016,train,Royal Challengers Bangalore,Rising Pune Supergiants,192,195,3,1
+980971,2016-05-07,2016,train,Delhi Daredevils,Kings XI Punjab,182,172,5,0
+980973,2016-05-08,2016,train,Mumbai Indians,Sunrisers Hyderabad,178,92,10,0
+980975,2016-05-08,2016,train,Gujarat Lions,Kolkata Knight Riders,159,164,5,1
+980977,2016-05-09,2016,train,Kings XI Punjab,Royal Challengers Bangalore,176,174,4,0
+980979,2016-05-10,2016,train,Rising Pune Supergiants,Sunrisers Hyderabad,138,133,8,0
+980981,2016-05-11,2016,train,Mumbai Indians,Royal Challengers Bangalore,152,153,4,1
+980983,2016-05-12,2016,train,Delhi Daredevils,Sunrisers Hyderabad,147,150,3,1
+980985,2016-05-13,2016,train,Kings XI Punjab,Mumbai Indians,125,127,3,1
+980987,2016-05-14,2016,train,Gujarat Lions,Royal Challengers Bangalore,249,104,10,0
+980991,2016-05-15,2016,train,Sunrisers Hyderabad,Kings XI Punjab,180,180,3,1
+980993,2016-05-15,2016,train,Delhi Daredevils,Mumbai Indians,207,126,10,0
+980995,2016-05-16,2016,train,Royal Challengers Bangalore,Kolkata Knight Riders,184,186,1,1
+981001,2016-05-19,2016,train,Gujarat Lions,Kolkata Knight Riders,125,125,4,1
+981003,2016-05-20,2016,train,Delhi Daredevils,Sunrisers Hyderabad,159,161,4,1
+981005,2016-05-21,2016,train,Rising Pune Supergiants,Kings XI Punjab,173,173,6,1
+981007,2016-05-21,2016,train,Gujarat Lions,Mumbai Indians,173,173,4,1
+981009,2016-05-22,2016,train,Sunrisers Hyderabad,Kolkata Knight Riders,172,149,8,0
+981011,2016-05-22,2016,train,Royal Challengers Bangalore,Delhi Daredevils,139,139,4,1
+981013,2016-05-24,2016,train,Royal Challengers Bangalore,Gujarat Lions,159,159,6,1
+981015,2016-05-25,2016,train,Kolkata Knight Riders,Sunrisers Hyderabad,163,140,8,0
+981017,2016-05-27,2016,train,Sunrisers Hyderabad,Gujarat Lions,163,163,6,1
+981019,2016-05-29,2016,train,Royal Challengers Bangalore,Sunrisers Hyderabad,209,200,7,0
+1082591,2017-04-05,2017,train,Royal Challengers Bangalore,Sunrisers Hyderabad,208,172,10,0
+1082592,2017-04-06,2017,train,Rising Pune Supergiant,Mumbai Indians,185,187,3,1
+1082593,2017-04-07,2017,train,Kolkata Knight Riders,Gujarat Lions,184,184,0,1
+1082594,2017-04-08,2017,train,Kings XI Punjab,Rising Pune Supergiant,164,164,4,1
+1082595,2017-04-08,2017,train,Delhi Daredevils,Royal Challengers Bangalore,158,142,9,0
+1082596,2017-04-09,2017,train,Sunrisers Hyderabad,Gujarat Lions,136,140,1,1
+1082597,2017-04-09,2017,train,Mumbai Indians,Kolkata Knight Riders,179,180,6,1
+1082598,2017-04-10,2017,train,Kings XI Punjab,Royal Challengers Bangalore,149,150,2,1
+1082599,2017-04-11,2017,train,Rising Pune Supergiant,Delhi Daredevils,206,108,10,0
+1082600,2017-04-12,2017,train,Mumbai Indians,Sunrisers Hyderabad,159,159,6,1
+1082601,2017-04-13,2017,train,Kolkata Knight Riders,Kings XI Punjab,171,171,2,1
+1082602,2017-04-14,2017,train,Mumbai Indians,Royal Challengers Bangalore,143,145,6,1
+1082603,2017-04-14,2017,train,Gujarat Lions,Rising Pune Supergiant,172,172,3,1
+1082604,2017-04-15,2017,train,Sunrisers Hyderabad,Kolkata Knight Riders,173,155,6,0
+1082605,2017-04-15,2017,train,Kings XI Punjab,Delhi Daredevils,189,137,9,0
+1082606,2017-04-16,2017,train,Mumbai Indians,Gujarat Lions,177,177,4,1
+1082607,2017-04-16,2017,train,Royal Challengers Bangalore,Rising Pune Supergiant,162,134,9,0
+1082608,2017-04-17,2017,train,Kolkata Knight Riders,Delhi Daredevils,169,169,6,1
+1082609,2017-04-17,2017,train,Kings XI Punjab,Sunrisers Hyderabad,160,154,10,0
+1082610,2017-04-18,2017,train,Gujarat Lions,Royal Challengers Bangalore,214,192,7,0
+1082611,2017-04-19,2017,train,Delhi Daredevils,Sunrisers Hyderabad,192,176,5,0
+1082612,2017-04-20,2017,train,Mumbai Indians,Kings XI Punjab,199,199,2,1
+1082613,2017-04-21,2017,train,Gujarat Lions,Kolkata Knight Riders,188,188,6,1
+1082614,2017-04-22,2017,train,Delhi Daredevils,Mumbai Indians,143,128,7,0
+1082615,2017-04-22,2017,train,Rising Pune Supergiant,Sunrisers Hyderabad,177,179,4,1
+1082616,2017-04-23,2017,train,Gujarat Lions,Kings XI Punjab,189,162,7,0
+1082617,2017-04-23,2017,train,Royal Challengers Bangalore,Kolkata Knight Riders,132,49,10,0
+1082618,2017-04-24,2017,train,Mumbai Indians,Rising Pune Supergiant,161,157,8,0
+1082620,2017-04-26,2017,train,Kolkata Knight Riders,Rising Pune Supergiant,183,184,3,1
+1082621,2017-04-27,2017,train,Gujarat Lions,Royal Challengers Bangalore,135,135,3,1
+1082622,2017-04-28,2017,train,Kolkata Knight Riders,Delhi Daredevils,161,161,3,1
+1082623,2017-04-28,2017,train,Kings XI Punjab,Sunrisers Hyderabad,208,181,9,0
+1082624,2017-04-29,2017,train,Royal Challengers Bangalore,Rising Pune Supergiant,158,96,9,0
+1082626,2017-04-30,2017,train,Kings XI Punjab,Delhi Daredevils,68,68,0,1
+1082627,2017-04-30,2017,train,Kolkata Knight Riders,Sunrisers Hyderabad,210,161,7,0
+1082628,2017-05-01,2017,train,Mumbai Indians,Royal Challengers Bangalore,163,165,5,1
+1082629,2017-05-01,2017,train,Rising Pune Supergiant,Gujarat Lions,162,167,5,1
+1082630,2017-05-02,2017,train,Delhi Daredevils,Sunrisers Hyderabad,186,189,4,1
+1082631,2017-05-03,2017,train,Rising Pune Supergiant,Kolkata Knight Riders,156,158,6,1
+1082632,2017-05-04,2017,train,Delhi Daredevils,Gujarat Lions,209,214,3,1
+1082633,2017-05-05,2017,train,Royal Challengers Bangalore,Kings XI Punjab,139,119,10,0
+1082634,2017-05-06,2017,train,Sunrisers Hyderabad,Rising Pune Supergiant,149,136,9,0
+1082635,2017-05-06,2017,train,Delhi Daredevils,Mumbai Indians,213,66,10,0
+1082636,2017-05-07,2017,train,Kolkata Knight Riders,Royal Challengers Bangalore,159,159,4,1
+1082637,2017-05-07,2017,train,Gujarat Lions,Kings XI Punjab,190,192,4,1
+1082638,2017-05-08,2017,train,Sunrisers Hyderabad,Mumbai Indians,139,140,3,1
+1082639,2017-05-09,2017,train,Kolkata Knight Riders,Kings XI Punjab,168,153,6,0
+1082640,2017-05-10,2017,train,Delhi Daredevils,Gujarat Lions,196,197,8,1
+1082641,2017-05-11,2017,train,Mumbai Indians,Kings XI Punjab,231,223,6,0
+1082642,2017-05-12,2017,train,Rising Pune Supergiant,Delhi Daredevils,169,161,7,0
+1082643,2017-05-13,2017,train,Sunrisers Hyderabad,Gujarat Lions,155,158,2,1
+1082644,2017-05-13,2017,train,Kolkata Knight Riders,Mumbai Indians,174,164,8,0
+1082645,2017-05-14,2017,train,Rising Pune Supergiant,Kings XI Punjab,74,78,1,1
+1082646,2017-05-14,2017,train,Delhi Daredevils,Royal Challengers Bangalore,162,151,10,0
+1082647,2017-05-16,2017,train,Mumbai Indians,Rising Pune Supergiant,163,142,9,0
+1082649,2017-05-19,2017,train,Mumbai Indians,Kolkata Knight Riders,108,111,4,1
+1082650,2017-05-21,2017,train,Rising Pune Supergiant,Mumbai Indians,130,128,6,0
+1136561,2018-04-07,2018,train,Chennai Super Kings,Mumbai Indians,166,169,9,1
+1136562,2018-04-08,2018,train,Kings XI Punjab,Delhi Daredevils,167,167,4,1
+1136563,2018-04-08,2018,train,Kolkata Knight Riders,Royal Challengers Bangalore,177,177,6,1
+1136564,2018-04-09,2018,train,Sunrisers Hyderabad,Rajasthan Royals,126,127,1,1
+1136565,2018-04-10,2018,train,Chennai Super Kings,Kolkata Knight Riders,203,205,5,1
+1136567,2018-04-12,2018,train,Sunrisers Hyderabad,Mumbai Indians,148,151,9,1
+1136568,2018-04-13,2018,train,Royal Challengers Bangalore,Kings XI Punjab,156,159,6,1
+1136569,2018-04-14,2018,train,Delhi Daredevils,Mumbai Indians,195,195,3,1
+1136570,2018-04-14,2018,train,Sunrisers Hyderabad,Kolkata Knight Riders,139,139,5,1
+1136571,2018-04-15,2018,train,Royal Challengers Bangalore,Rajasthan Royals,218,198,6,0
+1136572,2018-04-15,2018,train,Chennai Super Kings,Kings XI Punjab,198,193,5,0
+1136573,2018-04-16,2018,train,Delhi Daredevils,Kolkata Knight Riders,201,129,10,0
+1136574,2018-04-17,2018,train,Royal Challengers Bangalore,Mumbai Indians,214,167,8,0
+1136575,2018-04-18,2018,train,Kolkata Knight Riders,Rajasthan Royals,161,163,3,1
+1136576,2018-04-19,2018,train,Sunrisers Hyderabad,Kings XI Punjab,194,178,4,0
+1136577,2018-04-20,2018,train,Rajasthan Royals,Chennai Super Kings,205,140,10,0
+1136579,2018-04-21,2018,train,Royal Challengers Bangalore,Delhi Daredevils,175,176,4,1
+1136580,2018-04-22,2018,train,Sunrisers Hyderabad,Chennai Super Kings,183,178,6,0
+1136581,2018-04-22,2018,train,Rajasthan Royals,Mumbai Indians,168,168,7,1
+1136582,2018-04-23,2018,train,Delhi Daredevils,Kings XI Punjab,144,139,8,0
+1136583,2018-04-24,2018,train,Mumbai Indians,Sunrisers Hyderabad,119,87,10,0
+1136584,2018-04-25,2018,train,Chennai Super Kings,Royal Challengers Bangalore,206,207,5,1
+1136585,2018-04-26,2018,train,Kings XI Punjab,Sunrisers Hyderabad,133,119,10,0
+1136586,2018-04-27,2018,train,Kolkata Knight Riders,Delhi Daredevils,220,164,9,0
+1136587,2018-04-28,2018,train,Mumbai Indians,Chennai Super Kings,170,170,2,1
+1136588,2018-04-29,2018,train,Rajasthan Royals,Sunrisers Hyderabad,152,140,6,0
+1136589,2018-04-29,2018,train,Kolkata Knight Riders,Royal Challengers Bangalore,176,176,4,1
+1136590,2018-04-30,2018,train,Delhi Daredevils,Chennai Super Kings,212,198,5,0
+1136591,2018-05-01,2018,train,Mumbai Indians,Royal Challengers Bangalore,168,153,7,0
+1136593,2018-05-03,2018,train,Kolkata Knight Riders,Chennai Super Kings,178,180,4,1
+1136594,2018-05-04,2018,train,Mumbai Indians,Kings XI Punjab,175,176,4,1
+1136595,2018-05-05,2018,train,Chennai Super Kings,Royal Challengers Bangalore,128,128,4,1
+1136596,2018-05-05,2018,train,Sunrisers Hyderabad,Delhi Daredevils,164,164,3,1
+1136597,2018-05-06,2018,train,Kolkata Knight Riders,Mumbai Indians,182,168,6,0
+1136598,2018-05-06,2018,train,Kings XI Punjab,Rajasthan Royals,153,155,4,1
+1136599,2018-05-07,2018,train,Royal Challengers Bangalore,Sunrisers Hyderabad,147,141,6,0
+1136600,2018-05-08,2018,train,Kings XI Punjab,Rajasthan Royals,159,143,7,0
+1136601,2018-05-09,2018,train,Kolkata Knight Riders,Mumbai Indians,211,108,10,0
+1136602,2018-05-10,2018,train,Sunrisers Hyderabad,Delhi Daredevils,188,191,1,1
+1136603,2018-05-11,2018,train,Rajasthan Royals,Chennai Super Kings,177,177,6,1
+1136604,2018-05-12,2018,train,Kings XI Punjab,Kolkata Knight Riders,246,214,8,0
+1136605,2018-05-12,2018,train,Royal Challengers Bangalore,Delhi Daredevils,182,187,5,1
+1136606,2018-05-13,2018,train,Chennai Super Kings,Sunrisers Hyderabad,180,180,2,1
+1136607,2018-05-13,2018,train,Rajasthan Royals,Mumbai Indians,169,171,3,1
+1136608,2018-05-14,2018,train,Royal Challengers Bangalore,Kings XI Punjab,89,92,0,1
+1136609,2018-05-15,2018,train,Kolkata Knight Riders,Rajasthan Royals,143,145,4,1
+1136610,2018-05-16,2018,train,Kings XI Punjab,Mumbai Indians,187,183,5,0
+1136611,2018-05-17,2018,train,Sunrisers Hyderabad,Royal Challengers Bangalore,219,204,3,0
+1136612,2018-05-18,2018,train,Chennai Super Kings,Delhi Daredevils,163,128,6,0
+1136613,2018-05-19,2018,train,Royal Challengers Bangalore,Rajasthan Royals,165,134,10,0
+1136614,2018-05-19,2018,train,Kolkata Knight Riders,Sunrisers Hyderabad,173,173,5,1
+1136615,2018-05-20,2018,train,Mumbai Indians,Delhi Daredevils,175,163,10,0
+1136616,2018-05-20,2018,train,Chennai Super Kings,Kings XI Punjab,154,159,5,1
+1136617,2018-05-22,2018,train,Chennai Super Kings,Sunrisers Hyderabad,140,140,8,1
+1136618,2018-05-23,2018,train,Rajasthan Royals,Kolkata Knight Riders,170,144,4,0
+1136619,2018-05-25,2018,train,Kolkata Knight Riders,Sunrisers Hyderabad,175,160,9,0
+1136620,2018-05-27,2018,train,Chennai Super Kings,Sunrisers Hyderabad,179,181,2,1
+1175356,2019-03-23,2019,train,Chennai Super Kings,Royal Challengers Bangalore,71,71,3,1
+1175357,2019-03-24,2019,train,Kolkata Knight Riders,Sunrisers Hyderabad,182,183,4,1
+1175359,2019-03-25,2019,train,Rajasthan Royals,Kings XI Punjab,185,170,9,0
+1175360,2019-03-26,2019,train,Chennai Super Kings,Delhi Capitals,148,150,4,1
+1175361,2019-03-27,2019,train,Kings XI Punjab,Kolkata Knight Riders,219,190,4,0
+1175362,2019-03-28,2019,train,Royal Challengers Bangalore,Mumbai Indians,188,181,5,0
+1175363,2019-03-29,2019,train,Sunrisers Hyderabad,Rajasthan Royals,199,201,5,1
+1175364,2019-03-30,2019,train,Kings XI Punjab,Mumbai Indians,177,177,2,1
+1175366,2019-03-31,2019,train,Royal Challengers Bangalore,Sunrisers Hyderabad,232,113,10,0
+1175367,2019-03-31,2019,train,Rajasthan Royals,Chennai Super Kings,176,167,8,0
+1175368,2019-04-01,2019,train,Delhi Capitals,Kings XI Punjab,167,152,10,0
+1175369,2019-04-02,2019,train,Rajasthan Royals,Royal Challengers Bangalore,159,164,3,1
+1175370,2019-04-03,2019,train,Chennai Super Kings,Mumbai Indians,171,133,8,0
+1175371,2019-04-04,2019,train,Sunrisers Hyderabad,Delhi Capitals,130,131,5,1
+1175372,2019-04-05,2019,train,Kolkata Knight Riders,Royal Challengers Bangalore,206,206,5,1
+1178393,2019-04-06,2019,train,Kings XI Punjab,Chennai Super Kings,161,138,5,0
+1178394,2019-04-06,2019,train,Sunrisers Hyderabad,Mumbai Indians,137,96,10,0
+1178395,2019-04-07,2019,train,Delhi Capitals,Royal Challengers Bangalore,150,152,6,1
+1178396,2019-04-07,2019,train,Kolkata Knight Riders,Rajasthan Royals,140,140,2,1
+1178397,2019-04-08,2019,train,Kings XI Punjab,Sunrisers Hyderabad,151,151,4,1
+1178398,2019-04-09,2019,train,Chennai Super Kings,Kolkata Knight Riders,109,111,3,1
+1178399,2019-04-10,2019,train,Mumbai Indians,Kings XI Punjab,198,198,7,1
+1178400,2019-04-11,2019,train,Chennai Super Kings,Rajasthan Royals,152,155,6,1
+1178401,2019-04-12,2019,train,Delhi Capitals,Kolkata Knight Riders,179,180,3,1
+1178402,2019-04-13,2019,train,Rajasthan Royals,Mumbai Indians,188,188,6,1
+1178403,2019-04-13,2019,train,Royal Challengers Bangalore,Kings XI Punjab,174,174,2,1
+1178404,2019-04-14,2019,train,Chennai Super Kings,Kolkata Knight Riders,162,162,5,1
+1178405,2019-04-14,2019,train,Sunrisers Hyderabad,Delhi Capitals,156,116,10,0
+1178406,2019-04-15,2019,train,Mumbai Indians,Royal Challengers Bangalore,172,172,5,1
+1178407,2019-04-16,2019,train,Rajasthan Royals,Kings XI Punjab,183,170,7,0
+1178408,2019-04-17,2019,train,Sunrisers Hyderabad,Chennai Super Kings,133,137,4,1
+1178409,2019-04-18,2019,train,Delhi Capitals,Mumbai Indians,169,128,9,0
+1178410,2019-04-19,2019,train,Kolkata Knight Riders,Royal Challengers Bangalore,214,203,5,0
+1178411,2019-04-20,2019,train,Rajasthan Royals,Mumbai Indians,162,162,5,1
+1178412,2019-04-20,2019,train,Delhi Capitals,Kings XI Punjab,164,166,5,1
+1178413,2019-04-21,2019,train,Sunrisers Hyderabad,Kolkata Knight Riders,160,161,1,1
+1178414,2019-04-21,2019,train,Chennai Super Kings,Royal Challengers Bangalore,162,160,8,0
+1178415,2019-04-22,2019,train,Delhi Capitals,Rajasthan Royals,192,193,4,1
+1178416,2019-04-23,2019,train,Chennai Super Kings,Sunrisers Hyderabad,176,176,4,1
+1178417,2019-04-24,2019,train,Kings XI Punjab,Royal Challengers Bangalore,203,185,7,0
+1178418,2019-04-25,2019,train,Rajasthan Royals,Kolkata Knight Riders,176,177,7,1
+1178419,2019-04-26,2019,train,Chennai Super Kings,Mumbai Indians,156,109,10,0
+1178420,2019-04-27,2019,train,Rajasthan Royals,Sunrisers Hyderabad,161,161,3,1
+1178421,2019-04-28,2019,train,Royal Challengers Bangalore,Delhi Capitals,188,171,7,0
+1178422,2019-04-28,2019,train,Mumbai Indians,Kolkata Knight Riders,233,198,7,0
+1178423,2019-04-29,2019,train,Kings XI Punjab,Sunrisers Hyderabad,213,167,8,0
+1178425,2019-05-01,2019,train,Delhi Capitals,Chennai Super Kings,180,99,10,0
+1178427,2019-05-03,2019,train,Kolkata Knight Riders,Kings XI Punjab,184,185,3,1
+1178428,2019-05-04,2019,train,Delhi Capitals,Rajasthan Royals,116,121,5,1
+1178429,2019-05-04,2019,train,Royal Challengers Bangalore,Sunrisers Hyderabad,176,178,6,1
+1178430,2019-05-05,2019,train,Kings XI Punjab,Chennai Super Kings,171,173,4,1
+1178431,2019-05-05,2019,train,Mumbai Indians,Kolkata Knight Riders,134,134,1,1
+1181764,2019-05-07,2019,train,Mumbai Indians,Chennai Super Kings,132,132,4,1
+1181766,2019-05-08,2019,train,Delhi Capitals,Sunrisers Hyderabad,163,165,8,1
+1181767,2019-05-10,2019,train,Chennai Super Kings,Delhi Capitals,148,151,4,1
+1181768,2019-05-12,2019,train,Chennai Super Kings,Mumbai Indians,150,148,7,0
+1216492,2020-09-19,2020,train,Chennai Super Kings,Mumbai Indians,163,166,5,1
+1216534,2020-09-21,2020,train,Sunrisers Hyderabad,Royal Challengers Bangalore,164,153,10,0
+1216496,2020-09-22,2020,train,Chennai Super Kings,Rajasthan Royals,217,200,6,0
+1216508,2020-09-23,2020,train,Kolkata Knight Riders,Mumbai Indians,196,146,9,0
+1216510,2020-09-24,2020,train,Royal Challengers Bangalore,Kings XI Punjab,207,109,10,0
+1216539,2020-09-25,2020,train,Chennai Super Kings,Delhi Capitals,176,131,7,0
+1216545,2020-09-26,2020,train,Kolkata Knight Riders,Sunrisers Hyderabad,143,145,3,1
+1216527,2020-09-27,2020,train,Rajasthan Royals,Kings XI Punjab,224,226,6,1
+1216532,2020-09-29,2020,train,Delhi Capitals,Sunrisers Hyderabad,163,147,7,0
+1216504,2020-09-30,2020,train,Rajasthan Royals,Kolkata Knight Riders,175,137,9,0
+1216503,2020-10-01,2020,train,Kings XI Punjab,Mumbai Indians,192,143,8,0
+1216516,2020-10-02,2020,train,Chennai Super Kings,Sunrisers Hyderabad,165,157,5,0
+1216514,2020-10-03,2020,train,Royal Challengers Bangalore,Rajasthan Royals,155,158,2,1
+1216515,2020-10-03,2020,train,Kolkata Knight Riders,Delhi Capitals,229,210,8,0
+1216513,2020-10-04,2020,train,Chennai Super Kings,Kings XI Punjab,179,181,0,1
+1216538,2020-10-04,2020,train,Sunrisers Hyderabad,Mumbai Indians,209,174,7,0
+1216519,2020-10-05,2020,train,Royal Challengers Bangalore,Delhi Capitals,197,137,9,0
+1216511,2020-10-06,2020,train,Rajasthan Royals,Mumbai Indians,194,136,10,0
+1216501,2020-10-07,2020,train,Chennai Super Kings,Kolkata Knight Riders,168,157,5,0
+1216542,2020-10-08,2020,train,Kings XI Punjab,Sunrisers Hyderabad,202,132,10,0
+1216500,2020-10-09,2020,train,Rajasthan Royals,Delhi Capitals,185,138,10,0
+1216523,2020-10-10,2020,train,Kings XI Punjab,Kolkata Knight Riders,165,162,5,0
+1216525,2020-10-10,2020,train,Chennai Super Kings,Royal Challengers Bangalore,170,132,8,0
+1216507,2020-10-11,2020,train,Rajasthan Royals,Sunrisers Hyderabad,159,163,5,1
+1216529,2020-10-11,2020,train,Mumbai Indians,Delhi Capitals,163,166,5,1
+1216540,2020-10-12,2020,train,Kolkata Knight Riders,Royal Challengers Bangalore,195,112,9,0
+1216528,2020-10-13,2020,train,Sunrisers Hyderabad,Chennai Super Kings,168,147,8,0
+1216543,2020-10-14,2020,train,Rajasthan Royals,Delhi Capitals,162,148,8,0
+1216531,2020-10-15,2020,train,Kings XI Punjab,Royal Challengers Bangalore,172,177,2,1
+1216526,2020-10-16,2020,train,Mumbai Indians,Kolkata Knight Riders,149,149,2,1
+1216509,2020-10-17,2020,train,Delhi Capitals,Chennai Super Kings,180,185,5,1
+1216522,2020-10-17,2020,train,Royal Challengers Bangalore,Rajasthan Royals,178,179,3,1
+1216533,2020-10-19,2020,train,Rajasthan Royals,Chennai Super Kings,126,126,3,1
+1216546,2020-10-20,2020,train,Kings XI Punjab,Delhi Capitals,165,167,5,1
+1216494,2020-10-21,2020,train,Royal Challengers Bangalore,Kolkata Knight Riders,85,85,2,1
+1216518,2020-10-22,2020,train,Sunrisers Hyderabad,Rajasthan Royals,155,156,2,1
+1216521,2020-10-23,2020,train,Mumbai Indians,Chennai Super Kings,115,116,0,1
+1216497,2020-10-24,2020,train,Delhi Capitals,Kolkata Knight Riders,195,135,9,0
+1216498,2020-10-24,2020,train,Sunrisers Hyderabad,Kings XI Punjab,127,114,10,0
+1216541,2020-10-25,2020,train,Rajasthan Royals,Mumbai Indians,196,196,2,1
+1216544,2020-10-25,2020,train,Chennai Super Kings,Royal Challengers Bangalore,146,150,2,1
+1216520,2020-10-26,2020,train,Kings XI Punjab,Kolkata Knight Riders,150,150,2,1
+1216524,2020-10-27,2020,train,Delhi Capitals,Sunrisers Hyderabad,220,131,10,0
+1216499,2020-10-28,2020,train,Mumbai Indians,Royal Challengers Bangalore,165,166,5,1
+1216536,2020-10-29,2020,train,Chennai Super Kings,Kolkata Knight Riders,173,178,4,1
+1216537,2020-10-30,2020,train,Rajasthan Royals,Kings XI Punjab,186,186,3,1
+1216502,2020-10-31,2020,train,Sunrisers Hyderabad,Royal Challengers Bangalore,121,121,5,1
+1216535,2020-10-31,2020,train,Mumbai Indians,Delhi Capitals,111,111,1,1
+1216506,2020-11-01,2020,train,Chennai Super Kings,Kings XI Punjab,154,154,1,1
+1216530,2020-11-01,2020,train,Rajasthan Royals,Kolkata Knight Riders,192,131,9,0
+1216505,2020-11-02,2020,train,Delhi Capitals,Royal Challengers Bangalore,153,154,4,1
+1216495,2020-11-03,2020,train,Sunrisers Hyderabad,Mumbai Indians,150,151,0,1
+1237177,2020-11-05,2020,train,Delhi Capitals,Mumbai Indians,201,143,8,0
+1237178,2020-11-06,2020,train,Sunrisers Hyderabad,Royal Challengers Bangalore,132,132,4,1
+1237180,2020-11-08,2020,train,Sunrisers Hyderabad,Delhi Capitals,190,172,8,0
+1237181,2020-11-10,2020,train,Mumbai Indians,Delhi Capitals,157,157,5,1
+1254058,2021-04-09,2021,train,Royal Challengers Bangalore,Mumbai Indians,160,160,8,1
+1254059,2021-04-10,2021,train,Delhi Capitals,Chennai Super Kings,189,190,3,1
+1254060,2021-04-11,2021,train,Sunrisers Hyderabad,Kolkata Knight Riders,188,177,5,0
+1254061,2021-04-12,2021,train,Rajasthan Royals,Punjab Kings,222,217,7,0
+1254062,2021-04-13,2021,train,Kolkata Knight Riders,Mumbai Indians,153,142,7,0
+1254063,2021-04-14,2021,train,Sunrisers Hyderabad,Royal Challengers Bangalore,150,143,9,0
+1254064,2021-04-15,2021,train,Rajasthan Royals,Delhi Capitals,148,150,7,1
+1254065,2021-04-16,2021,train,Chennai Super Kings,Punjab Kings,107,107,4,1
+1254066,2021-04-17,2021,train,Sunrisers Hyderabad,Mumbai Indians,151,137,10,0
+1254067,2021-04-18,2021,train,Kolkata Knight Riders,Royal Challengers Bangalore,205,166,8,0
+1254068,2021-04-18,2021,train,Delhi Capitals,Punjab Kings,196,198,4,1
+1254069,2021-04-19,2021,train,Rajasthan Royals,Chennai Super Kings,189,143,9,0
+1254070,2021-04-20,2021,train,Delhi Capitals,Mumbai Indians,138,138,4,1
+1254071,2021-04-21,2021,train,Sunrisers Hyderabad,Punjab Kings,121,121,1,1
+1254072,2021-04-21,2021,train,Kolkata Knight Riders,Chennai Super Kings,221,202,10,0
+1254073,2021-04-22,2021,train,Royal Challengers Bangalore,Rajasthan Royals,178,181,0,1
+1254074,2021-04-23,2021,train,Punjab Kings,Mumbai Indians,132,132,1,1
+1254075,2021-04-24,2021,train,Rajasthan Royals,Kolkata Knight Riders,134,134,4,1
+1254076,2021-04-25,2021,train,Royal Challengers Bangalore,Chennai Super Kings,192,122,9,0
+1254078,2021-04-26,2021,train,Kolkata Knight Riders,Punjab Kings,124,126,5,1
+1254079,2021-04-27,2021,train,Delhi Capitals,Royal Challengers Bangalore,172,170,4,0
+1254080,2021-04-28,2021,train,Chennai Super Kings,Sunrisers Hyderabad,172,173,3,1
+1254081,2021-04-29,2021,train,Mumbai Indians,Rajasthan Royals,172,172,3,1
+1254082,2021-04-29,2021,train,Delhi Capitals,Kolkata Knight Riders,155,156,3,1
+1254083,2021-04-30,2021,train,Royal Challengers Bangalore,Punjab Kings,180,145,8,0
+1254084,2021-05-01,2021,train,Mumbai Indians,Chennai Super Kings,219,219,6,1
+1254085,2021-05-02,2021,train,Sunrisers Hyderabad,Rajasthan Royals,221,165,8,0
+1254086,2021-05-02,2021,train,Delhi Capitals,Punjab Kings,167,167,3,1
+1254104,2021-09-19,2021,train,Mumbai Indians,Chennai Super Kings,157,136,8,0
+1254087,2021-09-20,2021,train,Kolkata Knight Riders,Royal Challengers Bangalore,93,94,1,1
+1254111,2021-09-21,2021,train,Punjab Kings,Rajasthan Royals,186,183,4,0
+1254105,2021-09-22,2021,train,Delhi Capitals,Sunrisers Hyderabad,135,139,2,1
+1254096,2021-09-23,2021,train,Kolkata Knight Riders,Mumbai Indians,156,159,3,1
+1254113,2021-09-24,2021,train,Chennai Super Kings,Royal Challengers Bangalore,157,157,4,1
+1254097,2021-09-25,2021,train,Rajasthan Royals,Delhi Capitals,155,121,6,0
+1254107,2021-09-25,2021,train,Sunrisers Hyderabad,Punjab Kings,126,120,7,0
+1254098,2021-09-26,2021,train,Chennai Super Kings,Kolkata Knight Riders,172,172,8,1
+1254108,2021-09-26,2021,train,Mumbai Indians,Royal Challengers Bangalore,166,111,10,0
+1254100,2021-09-27,2021,train,Sunrisers Hyderabad,Rajasthan Royals,165,167,3,1
+1254092,2021-09-28,2021,train,Kolkata Knight Riders,Delhi Capitals,128,130,7,1
+1254099,2021-09-28,2021,train,Mumbai Indians,Punjab Kings,136,137,4,1
+1254103,2021-09-29,2021,train,Royal Challengers Bangalore,Rajasthan Royals,150,153,3,1
+1254091,2021-09-30,2021,train,Chennai Super Kings,Sunrisers Hyderabad,135,139,4,1
+1254102,2021-10-01,2021,train,Punjab Kings,Kolkata Knight Riders,166,168,5,1
+1254089,2021-10-02,2021,train,Rajasthan Royals,Chennai Super Kings,190,190,3,1
+1254112,2021-10-02,2021,train,Delhi Capitals,Mumbai Indians,130,132,6,1
+1254090,2021-10-03,2021,train,Punjab Kings,Royal Challengers Bangalore,165,158,6,0
+1254109,2021-10-03,2021,train,Kolkata Knight Riders,Sunrisers Hyderabad,116,119,4,1
+1254110,2021-10-04,2021,train,Delhi Capitals,Chennai Super Kings,137,139,7,1
+1254093,2021-10-05,2021,train,Mumbai Indians,Rajasthan Royals,91,94,2,1
+1254095,2021-10-06,2021,train,Royal Challengers Bangalore,Sunrisers Hyderabad,142,137,6,0
+1254094,2021-10-07,2021,train,Punjab Kings,Chennai Super Kings,135,139,4,1
+1254106,2021-10-07,2021,train,Rajasthan Royals,Kolkata Knight Riders,172,85,10,0
+1254088,2021-10-08,2021,train,Sunrisers Hyderabad,Mumbai Indians,236,193,8,0
+1254101,2021-10-08,2021,train,Royal Challengers Bangalore,Delhi Capitals,165,166,3,1
+1254114,2021-10-10,2021,train,Chennai Super Kings,Delhi Capitals,173,173,6,1
+1254115,2021-10-11,2021,train,Kolkata Knight Riders,Royal Challengers Bangalore,139,139,6,1
+1254116,2021-10-13,2021,train,Kolkata Knight Riders,Delhi Capitals,136,136,7,1
+1254117,2021-10-15,2021,train,Kolkata Knight Riders,Chennai Super Kings,193,165,9,0
+1304047,2022-03-26,2022,train,Kolkata Knight Riders,Chennai Super Kings,132,133,4,1
+1304048,2022-03-27,2022,train,Delhi Capitals,Mumbai Indians,178,179,6,1
+1304049,2022-03-27,2022,train,Punjab Kings,Royal Challengers Bangalore,206,208,5,1
+1304050,2022-03-28,2022,train,Gujarat Titans,Lucknow Super Giants,159,161,5,1
+1304051,2022-03-29,2022,train,Sunrisers Hyderabad,Rajasthan Royals,211,149,7,0
+1304052,2022-03-30,2022,train,Royal Challengers Bangalore,Kolkata Knight Riders,129,132,7,1
+1304053,2022-03-31,2022,train,Lucknow Super Giants,Chennai Super Kings,211,211,4,1
+1304054,2022-04-01,2022,train,Kolkata Knight Riders,Punjab Kings,138,141,4,1
+1304055,2022-04-02,2022,train,Mumbai Indians,Rajasthan Royals,194,170,8,0
+1304056,2022-04-02,2022,train,Delhi Capitals,Gujarat Titans,172,157,9,0
+1304057,2022-04-03,2022,train,Chennai Super Kings,Punjab Kings,181,126,10,0
+1304058,2022-04-04,2022,train,Sunrisers Hyderabad,Lucknow Super Giants,170,157,9,0
+1304059,2022-04-05,2022,train,Royal Challengers Bangalore,Rajasthan Royals,170,173,6,1
+1304060,2022-04-06,2022,train,Kolkata Knight Riders,Mumbai Indians,162,162,5,1
+1304061,2022-04-07,2022,train,Lucknow Super Giants,Delhi Capitals,150,155,4,1
+1304062,2022-04-08,2022,train,Gujarat Titans,Punjab Kings,190,190,4,1
+1304063,2022-04-09,2022,train,Sunrisers Hyderabad,Chennai Super Kings,155,155,2,1
+1304064,2022-04-09,2022,train,Royal Challengers Bangalore,Mumbai Indians,152,152,3,1
+1304065,2022-04-10,2022,train,Kolkata Knight Riders,Delhi Capitals,216,171,10,0
+1304066,2022-04-10,2022,train,Lucknow Super Giants,Rajasthan Royals,166,162,8,0
+1304067,2022-04-11,2022,train,Sunrisers Hyderabad,Gujarat Titans,163,168,2,1
+1304068,2022-04-12,2022,train,Royal Challengers Bangalore,Chennai Super Kings,217,193,9,0
+1304069,2022-04-13,2022,train,Mumbai Indians,Punjab Kings,199,186,9,0
+1304070,2022-04-14,2022,train,Rajasthan Royals,Gujarat Titans,193,155,9,0
+1304071,2022-04-15,2022,train,Sunrisers Hyderabad,Kolkata Knight Riders,176,176,3,1
+1304072,2022-04-16,2022,train,Mumbai Indians,Lucknow Super Giants,200,181,9,0
+1304073,2022-04-16,2022,train,Delhi Capitals,Royal Challengers Bangalore,190,173,7,0
+1304074,2022-04-17,2022,train,Sunrisers Hyderabad,Punjab Kings,152,152,3,1
+1304075,2022-04-17,2022,train,Gujarat Titans,Chennai Super Kings,170,170,7,1
+1304076,2022-04-18,2022,train,Kolkata Knight Riders,Rajasthan Royals,218,210,10,0
+1304077,2022-04-19,2022,train,Lucknow Super Giants,Royal Challengers Bangalore,182,163,8,0
+1304078,2022-04-20,2022,train,Delhi Capitals,Punjab Kings,116,119,1,1
+1304079,2022-04-21,2022,train,Chennai Super Kings,Mumbai Indians,156,156,7,1
+1304080,2022-04-22,2022,train,Delhi Capitals,Rajasthan Royals,223,207,8,0
+1304081,2022-04-23,2022,train,Kolkata Knight Riders,Gujarat Titans,157,148,8,0
+1304082,2022-04-23,2022,train,Sunrisers Hyderabad,Royal Challengers Bangalore,69,72,1,1
+1304083,2022-04-24,2022,train,Mumbai Indians,Lucknow Super Giants,169,132,8,0
+1304084,2022-04-25,2022,train,Chennai Super Kings,Punjab Kings,188,176,6,0
+1304085,2022-04-26,2022,train,Royal Challengers Bangalore,Rajasthan Royals,145,115,10,0
+1304086,2022-04-27,2022,train,Gujarat Titans,Sunrisers Hyderabad,196,199,5,1
+1304087,2022-04-28,2022,train,Delhi Capitals,Kolkata Knight Riders,147,150,6,1
+1304088,2022-04-29,2022,train,Punjab Kings,Lucknow Super Giants,154,133,8,0
+1304089,2022-04-30,2022,train,Gujarat Titans,Royal Challengers Bangalore,171,174,4,1
+1304090,2022-04-30,2022,train,Mumbai Indians,Rajasthan Royals,159,161,5,1
+1304091,2022-05-01,2022,train,Delhi Capitals,Lucknow Super Giants,196,189,7,0
+1304092,2022-05-01,2022,train,Sunrisers Hyderabad,Chennai Super Kings,203,189,6,0
+1304093,2022-05-02,2022,train,Kolkata Knight Riders,Rajasthan Royals,153,158,3,1
+1304094,2022-05-03,2022,train,Punjab Kings,Gujarat Titans,144,145,2,1
+1304095,2022-05-04,2022,train,Chennai Super Kings,Royal Challengers Bangalore,174,160,8,0
+1304096,2022-05-05,2022,train,Sunrisers Hyderabad,Delhi Capitals,208,186,8,0
+1304097,2022-05-06,2022,train,Gujarat Titans,Mumbai Indians,178,172,5,0
+1304098,2022-05-07,2022,train,Rajasthan Royals,Punjab Kings,190,190,4,1
+1304099,2022-05-07,2022,train,Kolkata Knight Riders,Lucknow Super Giants,177,101,10,0
+1304100,2022-05-08,2022,train,Sunrisers Hyderabad,Royal Challengers Bangalore,193,125,10,0
+1304101,2022-05-08,2022,train,Delhi Capitals,Chennai Super Kings,209,117,10,0
+1304102,2022-05-09,2022,train,Mumbai Indians,Kolkata Knight Riders,166,113,10,0
+1304103,2022-05-10,2022,train,Lucknow Super Giants,Gujarat Titans,145,82,10,0
+1304104,2022-05-11,2022,train,Delhi Capitals,Rajasthan Royals,161,161,2,1
+1304105,2022-05-12,2022,train,Mumbai Indians,Chennai Super Kings,98,103,5,1
+1304106,2022-05-13,2022,train,Royal Challengers Bangalore,Punjab Kings,210,155,9,0
+1304107,2022-05-14,2022,train,Sunrisers Hyderabad,Kolkata Knight Riders,178,123,8,0
+1304108,2022-05-15,2022,train,Gujarat Titans,Chennai Super Kings,134,137,3,1
+1304109,2022-05-15,2022,train,Lucknow Super Giants,Rajasthan Royals,179,154,8,0
+1304110,2022-05-16,2022,train,Punjab Kings,Delhi Capitals,160,142,9,0
+1304111,2022-05-17,2022,train,Mumbai Indians,Sunrisers Hyderabad,194,190,7,0
+1304112,2022-05-18,2022,train,Kolkata Knight Riders,Lucknow Super Giants,211,208,8,0
+1304113,2022-05-19,2022,train,Royal Challengers Bangalore,Gujarat Titans,169,170,2,1
+1304114,2022-05-20,2022,train,Rajasthan Royals,Chennai Super Kings,151,151,5,1
+1304115,2022-05-21,2022,train,Mumbai Indians,Delhi Capitals,160,160,5,1
+1304116,2022-05-22,2022,train,Punjab Kings,Sunrisers Hyderabad,158,160,5,1
+1312197,2022-05-24,2022,train,Gujarat Titans,Rajasthan Royals,189,191,3,1
+1312198,2022-05-25,2022,train,Lucknow Super Giants,Royal Challengers Bangalore,208,193,6,0
+1312199,2022-05-27,2022,train,Rajasthan Royals,Royal Challengers Bangalore,158,161,3,1
+1312200,2022-05-29,2022,train,Gujarat Titans,Rajasthan Royals,131,133,3,1
+1359475,2023-03-31,2023,train,Gujarat Titans,Chennai Super Kings,179,182,5,1
+1359477,2023-04-01,2023,train,Delhi Capitals,Lucknow Super Giants,194,143,9,0
+1359478,2023-04-02,2023,train,Sunrisers Hyderabad,Rajasthan Royals,204,131,8,0
+1359479,2023-04-02,2023,train,Royal Challengers Bangalore,Mumbai Indians,172,172,2,1
+1359480,2023-04-03,2023,train,Lucknow Super Giants,Chennai Super Kings,218,205,7,0
+1359481,2023-04-04,2023,train,Gujarat Titans,Delhi Capitals,163,163,4,1
+1359482,2023-04-05,2023,train,Rajasthan Royals,Punjab Kings,198,192,7,0
+1359483,2023-04-06,2023,train,Royal Challengers Bangalore,Kolkata Knight Riders,205,123,10,0
+1359484,2023-04-07,2023,train,Lucknow Super Giants,Sunrisers Hyderabad,122,127,5,1
+1359485,2023-04-08,2023,train,Delhi Capitals,Rajasthan Royals,200,142,9,0
+1359486,2023-04-08,2023,train,Chennai Super Kings,Mumbai Indians,158,159,3,1
+1359487,2023-04-09,2023,train,Kolkata Knight Riders,Gujarat Titans,205,207,7,1
+1359488,2023-04-09,2023,train,Sunrisers Hyderabad,Punjab Kings,144,145,2,1
+1359489,2023-04-10,2023,train,Lucknow Super Giants,Royal Challengers Bangalore,213,213,9,1
+1359490,2023-04-11,2023,train,Mumbai Indians,Delhi Capitals,173,173,4,1
+1359491,2023-04-12,2023,train,Chennai Super Kings,Rajasthan Royals,176,172,6,0
+1359492,2023-04-13,2023,train,Gujarat Titans,Punjab Kings,154,154,4,1
+1359493,2023-04-14,2023,train,Kolkata Knight Riders,Sunrisers Hyderabad,229,205,7,0
+1359494,2023-04-15,2023,train,Delhi Capitals,Royal Challengers Bangalore,175,151,9,0
+1359495,2023-04-15,2023,train,Punjab Kings,Lucknow Super Giants,160,161,8,1
+1359496,2023-04-16,2023,train,Mumbai Indians,Kolkata Knight Riders,186,186,5,1
+1359497,2023-04-16,2023,train,Rajasthan Royals,Gujarat Titans,178,179,7,1
+1359498,2023-04-17,2023,train,Royal Challengers Bangalore,Chennai Super Kings,227,218,8,0
+1359499,2023-04-18,2023,train,Sunrisers Hyderabad,Mumbai Indians,193,178,10,0
+1359500,2023-04-19,2023,train,Rajasthan Royals,Lucknow Super Giants,155,144,6,0
+1359501,2023-04-20,2023,train,Punjab Kings,Royal Challengers Bangalore,175,150,10,0
+1359502,2023-04-20,2023,train,Delhi Capitals,Kolkata Knight Riders,128,128,6,1
+1359503,2023-04-21,2023,train,Chennai Super Kings,Sunrisers Hyderabad,135,138,3,1
+1359504,2023-04-22,2023,train,Lucknow Super Giants,Gujarat Titans,136,128,7,0
+1359505,2023-04-22,2023,train,Mumbai Indians,Punjab Kings,215,201,6,0
+1359506,2023-04-23,2023,train,Rajasthan Royals,Royal Challengers Bangalore,190,182,6,0
+1359507,2023-04-23,2023,train,Kolkata Knight Riders,Chennai Super Kings,236,186,8,0
+1359508,2023-04-24,2023,train,Sunrisers Hyderabad,Delhi Capitals,145,137,6,0
+1359509,2023-04-25,2023,train,Mumbai Indians,Gujarat Titans,208,152,9,0
+1359510,2023-04-26,2023,train,Royal Challengers Bangalore,Kolkata Knight Riders,201,179,8,0
+1359511,2023-04-27,2023,train,Chennai Super Kings,Rajasthan Royals,203,170,6,0
+1359512,2023-04-28,2023,train,Punjab Kings,Lucknow Super Giants,258,201,10,0
+1359513,2023-04-29,2023,train,Gujarat Titans,Kolkata Knight Riders,180,180,3,1
+1359514,2023-04-29,2023,train,Delhi Capitals,Sunrisers Hyderabad,198,188,6,0
+1359515,2023-04-30,2023,train,Punjab Kings,Chennai Super Kings,201,201,6,1
+1359516,2023-04-30,2023,train,Mumbai Indians,Rajasthan Royals,213,214,4,1
+1359517,2023-05-01,2023,train,Lucknow Super Giants,Royal Challengers Bangalore,127,108,10,0
+1359518,2023-05-02,2023,train,Gujarat Titans,Delhi Capitals,131,125,6,0
+1359520,2023-05-03,2023,train,Mumbai Indians,Punjab Kings,215,216,4,1
+1359521,2023-05-04,2023,train,Sunrisers Hyderabad,Kolkata Knight Riders,172,166,8,0
+1359522,2023-05-05,2023,train,Gujarat Titans,Rajasthan Royals,119,119,1,1
+1359523,2023-05-06,2023,train,Chennai Super Kings,Mumbai Indians,140,140,4,1
+1359524,2023-05-06,2023,train,Delhi Capitals,Royal Challengers Bangalore,182,187,3,1
+1359525,2023-05-07,2023,train,Lucknow Super Giants,Gujarat Titans,228,171,7,0
+1359526,2023-05-07,2023,train,Sunrisers Hyderabad,Rajasthan Royals,215,217,6,1
+1359527,2023-05-08,2023,train,Kolkata Knight Riders,Punjab Kings,180,182,5,1
+1359528,2023-05-09,2023,train,Mumbai Indians,Royal Challengers Bangalore,200,200,4,1
+1359529,2023-05-10,2023,train,Delhi Capitals,Chennai Super Kings,168,140,8,0
+1359530,2023-05-11,2023,train,Rajasthan Royals,Kolkata Knight Riders,150,151,1,1
+1359531,2023-05-12,2023,train,Gujarat Titans,Mumbai Indians,219,191,8,0
+1359532,2023-05-13,2023,train,Lucknow Super Giants,Sunrisers Hyderabad,183,185,3,1
+1359533,2023-05-13,2023,train,Delhi Capitals,Punjab Kings,168,136,8,0
+1359534,2023-05-14,2023,train,Rajasthan Royals,Royal Challengers Bangalore,172,59,10,0
+1359535,2023-05-14,2023,train,Kolkata Knight Riders,Chennai Super Kings,145,147,4,1
+1359536,2023-05-15,2023,train,Sunrisers Hyderabad,Gujarat Titans,189,154,9,0
+1359537,2023-05-16,2023,train,Mumbai Indians,Lucknow Super Giants,178,172,5,0
+1359538,2023-05-17,2023,train,Punjab Kings,Delhi Capitals,214,198,8,0
+1359539,2023-05-18,2023,train,Royal Challengers Bangalore,Sunrisers Hyderabad,187,187,2,1
+1359540,2023-05-19,2023,train,Rajasthan Royals,Punjab Kings,188,189,6,1
+1359541,2023-05-20,2023,train,Delhi Capitals,Chennai Super Kings,224,146,9,0
+1359542,2023-05-20,2023,train,Kolkata Knight Riders,Lucknow Super Giants,177,175,7,0
+1359543,2023-05-21,2023,train,Mumbai Indians,Sunrisers Hyderabad,201,201,2,1
+1359544,2023-05-21,2023,train,Gujarat Titans,Royal Challengers Bangalore,198,198,4,1
+1370350,2023-05-23,2023,train,Gujarat Titans,Chennai Super Kings,173,157,10,0
+1370351,2023-05-24,2023,train,Lucknow Super Giants,Mumbai Indians,183,101,10,0
+1370352,2023-05-26,2023,train,Mumbai Indians,Gujarat Titans,234,171,10,0
+1422119,2024-03-22,2024,val,Chennai Super Kings,Royal Challengers Bengaluru,174,176,4,1
+1422120,2024-03-23,2024,val,Punjab Kings,Delhi Capitals,175,177,6,1
+1422121,2024-03-23,2024,val,Sunrisers Hyderabad,Kolkata Knight Riders,209,204,7,0
+1422122,2024-03-24,2024,val,Lucknow Super Giants,Rajasthan Royals,194,173,6,0
+1422123,2024-03-24,2024,val,Mumbai Indians,Gujarat Titans,169,162,9,0
+1422124,2024-03-25,2024,val,Royal Challengers Bengaluru,Punjab Kings,177,178,6,1
+1422125,2024-03-26,2024,val,Gujarat Titans,Chennai Super Kings,207,143,8,0
+1422126,2024-03-27,2024,val,Mumbai Indians,Sunrisers Hyderabad,278,246,5,0
+1422127,2024-03-28,2024,val,Delhi Capitals,Rajasthan Royals,186,173,5,0
+1422128,2024-03-29,2024,val,Kolkata Knight Riders,Royal Challengers Bengaluru,183,186,3,1
+1422129,2024-03-30,2024,val,Punjab Kings,Lucknow Super Giants,200,178,5,0
+1422130,2024-03-31,2024,val,Gujarat Titans,Sunrisers Hyderabad,163,168,3,1
+1422131,2024-03-31,2024,val,Chennai Super Kings,Delhi Capitals,192,171,6,0
+1422132,2024-04-01,2024,val,Rajasthan Royals,Mumbai Indians,126,127,4,1
+1422133,2024-04-02,2024,val,Royal Challengers Bengaluru,Lucknow Super Giants,182,153,10,0
+1422134,2024-04-03,2024,val,Delhi Capitals,Kolkata Knight Riders,273,166,10,0
+1422135,2024-04-04,2024,val,Punjab Kings,Gujarat Titans,200,200,7,1
+1422136,2024-04-05,2024,val,Sunrisers Hyderabad,Chennai Super Kings,166,166,4,1
+1422137,2024-04-06,2024,val,Rajasthan Royals,Royal Challengers Bengaluru,184,189,4,1
+1422138,2024-04-07,2024,val,Delhi Capitals,Mumbai Indians,235,205,8,0
+1422139,2024-04-07,2024,val,Gujarat Titans,Lucknow Super Giants,164,130,10,0
+1426260,2024-04-08,2024,val,Chennai Super Kings,Kolkata Knight Riders,138,141,3,1
+1426261,2024-04-09,2024,val,Punjab Kings,Sunrisers Hyderabad,183,180,6,0
+1426262,2024-04-10,2024,val,Gujarat Titans,Rajasthan Royals,197,199,7,1
+1426263,2024-04-11,2024,val,Mumbai Indians,Royal Challengers Bengaluru,197,199,3,1
+1426264,2024-04-12,2024,val,Delhi Capitals,Lucknow Super Giants,168,170,4,1
+1426265,2024-04-13,2024,val,Rajasthan Royals,Punjab Kings,148,152,7,1
+1426266,2024-04-14,2024,val,Kolkata Knight Riders,Lucknow Super Giants,162,162,2,1
+1426267,2024-04-14,2024,val,Mumbai Indians,Chennai Super Kings,207,186,6,0
+1426268,2024-04-15,2024,val,Royal Challengers Bengaluru,Sunrisers Hyderabad,288,262,7,0
+1426269,2024-04-16,2024,val,Rajasthan Royals,Kolkata Knight Riders,224,224,8,1
+1426270,2024-04-17,2024,val,Delhi Capitals,Gujarat Titans,90,92,4,1
+1426271,2024-04-18,2024,val,Punjab Kings,Mumbai Indians,193,183,10,0
+1426272,2024-04-19,2024,val,Lucknow Super Giants,Chennai Super Kings,177,180,2,1
+1426273,2024-04-20,2024,val,Delhi Capitals,Sunrisers Hyderabad,267,199,10,0
+1426274,2024-04-21,2024,val,Royal Challengers Bengaluru,Kolkata Knight Riders,223,221,10,0
+1426275,2024-04-21,2024,val,Gujarat Titans,Punjab Kings,143,146,7,1
+1426276,2024-04-22,2024,val,Rajasthan Royals,Mumbai Indians,180,183,1,1
+1426277,2024-04-23,2024,val,Lucknow Super Giants,Chennai Super Kings,211,213,4,1
+1426278,2024-04-24,2024,val,Gujarat Titans,Delhi Capitals,225,220,8,0
+1426279,2024-04-25,2024,val,Sunrisers Hyderabad,Royal Challengers Bengaluru,207,171,8,0
+1426280,2024-04-26,2024,val,Punjab Kings,Kolkata Knight Riders,262,262,2,1
+1426281,2024-04-27,2024,val,Mumbai Indians,Delhi Capitals,258,247,9,0
+1426282,2024-04-27,2024,val,Rajasthan Royals,Lucknow Super Giants,197,199,3,1
+1426283,2024-04-28,2024,val,Royal Challengers Bengaluru,Gujarat Titans,201,206,1,1
+1426284,2024-04-28,2024,val,Sunrisers Hyderabad,Chennai Super Kings,213,134,10,0
+1426285,2024-04-29,2024,val,Kolkata Knight Riders,Delhi Capitals,154,157,3,1
+1426286,2024-04-30,2024,val,Lucknow Super Giants,Mumbai Indians,145,145,6,1
+1426287,2024-05-01,2024,val,Punjab Kings,Chennai Super Kings,163,163,3,1
+1426288,2024-05-02,2024,val,Rajasthan Royals,Sunrisers Hyderabad,202,200,7,0
+1426289,2024-05-03,2024,val,Mumbai Indians,Kolkata Knight Riders,170,145,10,0
+1426290,2024-05-04,2024,val,Royal Challengers Bengaluru,Gujarat Titans,148,152,6,1
+1426291,2024-05-05,2024,val,Punjab Kings,Chennai Super Kings,168,139,9,0
+1426292,2024-05-05,2024,val,Lucknow Super Giants,Kolkata Knight Riders,236,137,10,0
+1426293,2024-05-06,2024,val,Mumbai Indians,Sunrisers Hyderabad,174,174,3,1
+1426294,2024-05-07,2024,val,Rajasthan Royals,Delhi Capitals,222,201,8,0
+1426295,2024-05-08,2024,val,Sunrisers Hyderabad,Lucknow Super Giants,166,167,0,1
+1426296,2024-05-09,2024,val,Punjab Kings,Royal Challengers Bengaluru,242,181,10,0
+1426297,2024-05-10,2024,val,Chennai Super Kings,Gujarat Titans,232,196,8,0
+1426299,2024-05-12,2024,val,Chennai Super Kings,Rajasthan Royals,142,145,5,1
+1426300,2024-05-12,2024,val,Delhi Capitals,Royal Challengers Bengaluru,188,140,10,0
+1426302,2024-05-14,2024,val,Lucknow Super Giants,Delhi Capitals,209,189,9,0
+1426303,2024-05-15,2024,val,Punjab Kings,Rajasthan Royals,145,145,5,1
+1426305,2024-05-17,2024,val,Mumbai Indians,Lucknow Super Giants,215,196,6,0
+1426306,2024-05-18,2024,val,Chennai Super Kings,Royal Challengers Bengaluru,219,191,7,0
+1426307,2024-05-19,2024,val,Sunrisers Hyderabad,Punjab Kings,215,215,6,1
+1426309,2024-05-21,2024,val,Kolkata Knight Riders,Sunrisers Hyderabad,160,164,2,1
+1426310,2024-05-22,2024,val,Rajasthan Royals,Royal Challengers Bengaluru,173,174,6,1
+1426311,2024-05-24,2024,val,Rajasthan Royals,Sunrisers Hyderabad,176,139,7,0
+1426312,2024-05-26,2024,val,Kolkata Knight Riders,Sunrisers Hyderabad,114,114,2,1
+1473438,2025-03-22,2025,test,Royal Challengers Bengaluru,Kolkata Knight Riders,175,177,3,1
+1473439,2025-03-23,2025,test,Rajasthan Royals,Sunrisers Hyderabad,287,242,6,0
+1473440,2025-03-23,2025,test,Chennai Super Kings,Mumbai Indians,156,158,6,1
+1473441,2025-03-24,2025,test,Delhi Capitals,Lucknow Super Giants,210,211,9,1
+1473442,2025-03-25,2025,test,Gujarat Titans,Punjab Kings,244,232,5,0
+1473443,2025-03-26,2025,test,Kolkata Knight Riders,Rajasthan Royals,152,153,2,1
+1473444,2025-03-27,2025,test,Lucknow Super Giants,Sunrisers Hyderabad,191,193,5,1
+1473445,2025-03-28,2025,test,Chennai Super Kings,Royal Challengers Bengaluru,197,146,8,0
+1473446,2025-03-29,2025,test,Mumbai Indians,Gujarat Titans,197,160,6,0
+1473447,2025-03-30,2025,test,Delhi Capitals,Sunrisers Hyderabad,164,166,3,1
+1473448,2025-03-30,2025,test,Chennai Super Kings,Rajasthan Royals,183,176,6,0
+1473449,2025-03-31,2025,test,Mumbai Indians,Kolkata Knight Riders,117,121,2,1
+1473450,2025-04-01,2025,test,Punjab Kings,Lucknow Super Giants,172,177,2,1
+1473451,2025-04-02,2025,test,Gujarat Titans,Royal Challengers Bengaluru,170,170,2,1
+1473452,2025-04-03,2025,test,Sunrisers Hyderabad,Kolkata Knight Riders,201,120,10,0
+1473453,2025-04-04,2025,test,Mumbai Indians,Lucknow Super Giants,204,191,5,0
+1473454,2025-04-05,2025,test,Chennai Super Kings,Delhi Capitals,184,158,5,0
+1473455,2025-04-05,2025,test,Punjab Kings,Rajasthan Royals,206,155,9,0
+1473457,2025-04-06,2025,test,Gujarat Titans,Sunrisers Hyderabad,153,153,3,1
+1473458,2025-04-07,2025,test,Mumbai Indians,Royal Challengers Bengaluru,222,209,9,0
+1473456,2025-04-08,2025,test,Kolkata Knight Riders,Lucknow Super Giants,239,234,7,0
+1473459,2025-04-08,2025,test,Chennai Super Kings,Punjab Kings,220,201,5,0
+1473460,2025-04-09,2025,test,Rajasthan Royals,Gujarat Titans,218,159,10,0
+1473461,2025-04-10,2025,test,Delhi Capitals,Royal Challengers Bengaluru,164,169,4,1
+1473462,2025-04-11,2025,test,Kolkata Knight Riders,Chennai Super Kings,104,107,2,1
+1473463,2025-04-12,2025,test,Lucknow Super Giants,Gujarat Titans,181,186,4,1
+1473464,2025-04-12,2025,test,Sunrisers Hyderabad,Punjab Kings,246,247,2,1
+1473465,2025-04-13,2025,test,Royal Challengers Bengaluru,Rajasthan Royals,174,175,1,1
+1473466,2025-04-13,2025,test,Delhi Capitals,Mumbai Indians,206,193,10,0
+1473467,2025-04-14,2025,test,Chennai Super Kings,Lucknow Super Giants,167,168,5,1
+1473468,2025-04-15,2025,test,Kolkata Knight Riders,Punjab Kings,112,95,10,0
+1473470,2025-04-17,2025,test,Mumbai Indians,Sunrisers Hyderabad,163,166,6,1
+1473472,2025-04-19,2025,test,Gujarat Titans,Delhi Capitals,204,204,3,1
+1473473,2025-04-19,2025,test,Rajasthan Royals,Lucknow Super Giants,181,178,5,0
+1473474,2025-04-20,2025,test,Royal Challengers Bengaluru,Punjab Kings,158,159,3,1
+1473475,2025-04-20,2025,test,Mumbai Indians,Chennai Super Kings,177,177,1,1
+1473476,2025-04-21,2025,test,Kolkata Knight Riders,Gujarat Titans,199,159,8,0
+1473477,2025-04-22,2025,test,Delhi Capitals,Lucknow Super Giants,160,161,2,1
+1473478,2025-04-23,2025,test,Mumbai Indians,Sunrisers Hyderabad,144,146,3,1
+1473479,2025-04-24,2025,test,Rajasthan Royals,Royal Challengers Bengaluru,206,194,9,0
+1473480,2025-04-25,2025,test,Sunrisers Hyderabad,Chennai Super Kings,155,155,5,1
+1473482,2025-04-27,2025,test,Lucknow Super Giants,Mumbai Indians,216,161,10,0
+1473483,2025-04-27,2025,test,Royal Challengers Bengaluru,Delhi Capitals,163,165,4,1
+1473484,2025-04-28,2025,test,Rajasthan Royals,Gujarat Titans,210,212,2,1
+1473485,2025-04-29,2025,test,Delhi Capitals,Kolkata Knight Riders,205,190,9,0
+1473486,2025-04-30,2025,test,Punjab Kings,Chennai Super Kings,191,194,6,1
+1473487,2025-05-01,2025,test,Rajasthan Royals,Mumbai Indians,218,117,10,0
+1473488,2025-05-02,2025,test,Sunrisers Hyderabad,Gujarat Titans,225,186,6,0
+1473489,2025-05-03,2025,test,Chennai Super Kings,Royal Challengers Bengaluru,214,211,5,0
+1473490,2025-05-04,2025,test,Rajasthan Royals,Kolkata Knight Riders,207,205,8,0
+1473491,2025-05-04,2025,test,Lucknow Super Giants,Punjab Kings,237,199,7,0
+1473494,2025-05-07,2025,test,Chennai Super Kings,Kolkata Knight Riders,180,183,8,1
+1473497,2025-05-18,2025,test,Rajasthan Royals,Punjab Kings,220,209,7,0
+1473498,2025-05-18,2025,test,Gujarat Titans,Delhi Capitals,200,205,0,1
+1473499,2025-05-19,2025,test,Sunrisers Hyderabad,Lucknow Super Giants,206,206,4,1
+1473500,2025-05-20,2025,test,Rajasthan Royals,Chennai Super Kings,188,188,4,1
+1473501,2025-05-21,2025,test,Delhi Capitals,Mumbai Indians,181,121,10,0
+1473502,2025-05-22,2025,test,Gujarat Titans,Lucknow Super Giants,236,202,9,0
+1473503,2025-05-23,2025,test,Royal Challengers Bengaluru,Sunrisers Hyderabad,232,189,10,0
+1485779,2025-05-24,2025,test,Delhi Capitals,Punjab Kings,207,208,4,1
+1473504,2025-05-25,2025,test,Gujarat Titans,Chennai Super Kings,231,147,10,0
+1473505,2025-05-25,2025,test,Kolkata Knight Riders,Sunrisers Hyderabad,279,168,10,0
+1473506,2025-05-26,2025,test,Punjab Kings,Mumbai Indians,185,187,3,1
+1473507,2025-05-27,2025,test,Royal Challengers Bengaluru,Lucknow Super Giants,228,230,4,1
+1473508,2025-05-29,2025,test,Royal Challengers Bengaluru,Punjab Kings,102,106,2,1
+1473509,2025-05-30,2025,test,Gujarat Titans,Mumbai Indians,229,208,6,0
+1473510,2025-06-01,2025,test,Punjab Kings,Mumbai Indians,204,207,5,1
+1473511,2025-06-03,2025,test,Punjab Kings,Royal Challengers Bengaluru,191,184,7,0
+1527674,2026-03-28,2026,test,Royal Challengers Bengaluru,Sunrisers Hyderabad,202,203,4,1
+1527675,2026-03-29,2026,test,Mumbai Indians,Kolkata Knight Riders,221,224,4,1
+1527676,2026-03-30,2026,test,Rajasthan Royals,Chennai Super Kings,128,128,2,1
+1527677,2026-03-31,2026,test,Punjab Kings,Gujarat Titans,163,165,7,1
+1527678,2026-04-01,2026,test,Delhi Capitals,Lucknow Super Giants,142,145,4,1
+1527679,2026-04-02,2026,test,Kolkata Knight Riders,Sunrisers Hyderabad,227,161,10,0
+1527680,2026-04-03,2026,test,Punjab Kings,Chennai Super Kings,210,210,5,1
+1527681,2026-04-04,2026,test,Delhi Capitals,Mumbai Indians,163,164,4,1
+1527682,2026-04-04,2026,test,Gujarat Titans,Rajasthan Royals,211,204,8,0
+1527683,2026-04-05,2026,test,Lucknow Super Giants,Sunrisers Hyderabad,157,160,5,1
+1527684,2026-04-05,2026,test,Chennai Super Kings,Royal Challengers Bengaluru,251,207,10,0
+1527687,2026-04-08,2026,test,Delhi Capitals,Gujarat Titans,211,209,8,0
+1527688,2026-04-09,2026,test,Lucknow Super Giants,Kolkata Knight Riders,182,182,7,1
+1527689,2026-04-10,2026,test,Rajasthan Royals,Royal Challengers Bengaluru,202,202,4,1
+1527690,2026-04-11,2026,test,Punjab Kings,Sunrisers Hyderabad,220,223,4,1
+1527691,2026-04-11,2026,test,Delhi Capitals,Chennai Super Kings,213,189,10,0
+1527692,2026-04-12,2026,test,Gujarat Titans,Lucknow Super Giants,165,165,3,1
+1527693,2026-04-12,2026,test,Mumbai Indians,Royal Challengers Bengaluru,241,222,5,0
+1529264,2026-04-13,2026,test,Rajasthan Royals,Sunrisers Hyderabad,217,159,10,0
+1529265,2026-04-14,2026,test,Kolkata Knight Riders,Chennai Super Kings,193,160,7,0
+1529266,2026-04-15,2026,test,Royal Challengers Bengaluru,Lucknow Super Giants,147,149,5,1
+1529267,2026-04-16,2026,test,Punjab Kings,Mumbai Indians,196,198,3,1
+1529268,2026-04-17,2026,test,Gujarat Titans,Kolkata Knight Riders,181,181,5,1
+1529269,2026-04-18,2026,test,Delhi Capitals,Royal Challengers Bengaluru,176,179,4,1
+1529270,2026-04-18,2026,test,Chennai Super Kings,Sunrisers Hyderabad,195,184,8,0
+1529271,2026-04-19,2026,test,Kolkata Knight Riders,Rajasthan Royals,156,161,6,1
+1529272,2026-04-19,2026,test,Lucknow Super Giants,Punjab Kings,255,200,5,0
+1529273,2026-04-20,2026,test,Gujarat Titans,Mumbai Indians,200,100,10,0
+1529274,2026-04-21,2026,test,Delhi Capitals,Sunrisers Hyderabad,243,195,9,0
+1529275,2026-04-22,2026,test,Lucknow Super Giants,Rajasthan Royals,160,119,10,0
+1529276,2026-04-23,2026,test,Mumbai Indians,Chennai Super Kings,208,104,10,0
+1529277,2026-04-24,2026,test,Royal Challengers Bengaluru,Gujarat Titans,206,206,5,1
+1529278,2026-04-25,2026,test,Punjab Kings,Delhi Capitals,265,265,4,1
+1529279,2026-04-25,2026,test,Sunrisers Hyderabad,Rajasthan Royals,229,229,5,1
+1529280,2026-04-26,2026,test,Gujarat Titans,Chennai Super Kings,159,162,2,1
+1529282,2026-04-27,2026,test,Royal Challengers Bengaluru,Delhi Capitals,76,77,1,1
+1529283,2026-04-28,2026,test,Rajasthan Royals,Punjab Kings,223,228,4,1
+1529284,2026-04-29,2026,test,Sunrisers Hyderabad,Mumbai Indians,244,249,4,1
+1529285,2026-04-30,2026,test,Gujarat Titans,Royal Challengers Bengaluru,156,158,6,1
+1529286,2026-05-01,2026,test,Delhi Capitals,Rajasthan Royals,226,226,3,1
+1529287,2026-05-02,2026,test,Chennai Super Kings,Mumbai Indians,160,160,2,1
+1529288,2026-05-03,2026,test,Kolkata Knight Riders,Sunrisers Hyderabad,166,169,3,1
+1529289,2026-05-03,2026,test,Gujarat Titans,Punjab Kings,164,167,6,1
+1529290,2026-05-04,2026,test,Mumbai Indians,Lucknow Super Giants,229,229,4,1
+1529291,2026-05-05,2026,test,Chennai Super Kings,Delhi Capitals,156,159,2,1
+1529292,2026-05-06,2026,test,Punjab Kings,Sunrisers Hyderabad,236,202,7,0
+1529294,2026-05-08,2026,test,Kolkata Knight Riders,Delhi Capitals,143,147,2,1
+1529295,2026-05-09,2026,test,Rajasthan Royals,Gujarat Titans,230,152,10,0
+1529296,2026-05-10,2026,test,Chennai Super Kings,Lucknow Super Giants,204,208,5,1
+1529297,2026-05-10,2026,test,Royal Challengers Bengaluru,Mumbai Indians,167,167,8,1
+1529298,2026-05-11,2026,test,Delhi Capitals,Punjab Kings,211,216,7,1
+1529299,2026-05-12,2026,test,Sunrisers Hyderabad,Gujarat Titans,169,86,10,0
+1529300,2026-05-13,2026,test,Royal Challengers Bengaluru,Kolkata Knight Riders,193,194,4,1
+1529301,2026-05-14,2026,test,Mumbai Indians,Punjab Kings,201,205,4,1
+1529302,2026-05-15,2026,test,Lucknow Super Giants,Chennai Super Kings,188,188,3,1
+1529303,2026-05-16,2026,test,Gujarat Titans,Kolkata Knight Riders,248,218,4,0
+1529304,2026-05-17,2026,test,Punjab Kings,Royal Challengers Bengaluru,223,199,8,0
+1529305,2026-05-17,2026,test,Delhi Capitals,Rajasthan Royals,194,197,5,1
+1529306,2026-05-18,2026,test,Sunrisers Hyderabad,Chennai Super Kings,181,181,5,1
+1529307,2026-05-19,2026,test,Rajasthan Royals,Lucknow Super Giants,221,225,3,1
+1529308,2026-05-20,2026,test,Kolkata Knight Riders,Mumbai Indians,148,148,6,1
+1529309,2026-05-21,2026,test,Chennai Super Kings,Gujarat Titans,230,140,10,0
+1529310,2026-05-22,2026,test,Royal Challengers Bengaluru,Sunrisers Hyderabad,256,200,4,0
+1529311,2026-05-23,2026,test,Punjab Kings,Lucknow Super Giants,197,200,3,1
+1529312,2026-05-24,2026,test,Mumbai Indians,Rajasthan Royals,206,175,9,0
+1529313,2026-05-24,2026,test,Kolkata Knight Riders,Delhi Capitals,204,163,10,0
+1535462,2026-05-26,2026,test,Gujarat Titans,Royal Challengers Bengaluru,255,162,10,0
+1535463,2026-05-27,2026,test,Sunrisers Hyderabad,Rajasthan Royals,244,196,10,0
+1535464,2026-05-29,2026,test,Gujarat Titans,Rajasthan Royals,215,219,3,1
+1535465,2026-05-31,2026,test,Royal Challengers Bengaluru,Gujarat Titans,156,161,5,1

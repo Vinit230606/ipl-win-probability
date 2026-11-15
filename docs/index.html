@@ -21,13 +21,23 @@
         <a href="index.html">Replay</a>
         <a href="calculator.html">What-if</a>
         <a href="results.html">Results</a>
-        <a href="about.html">About</a>
+        <a href="about.html">Write-up</a>
       </nav>
     </div>
   </header>
 
   <main id="main" class="wrap">
-    <h1 class="visually-hidden">Replay a chase</h1>
+    <section class="intro prose" aria-labelledby="intro-title">
+      <h1 id="intro-title">Can machine learning read a chase better than history?</h1>
+      <p>After every ball of an IPL chase we estimate how likely the chasing team is to win, from
+        the scoreboard alone, and test whether machine-learning models beat a simple table of
+        historical win rates. <span id="intro-answer"></span></p>
+      <p>Graders: the <a href="about.html">write-up</a> covers the question, data, preprocessing,
+        models, evaluation, results, error analysis and limitations. The
+        <a href="results.html">results</a> page has every table, and the
+        <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">repository</a>
+        lets you reproduce it all. Below, replay any test-season chase ball by ball.</p>
+    </section>
 
     <section class="filters" aria-label="Choose a chase">
       <label>Season <select id="season"></select></label>
@@ -83,7 +93,8 @@
 
   <footer class="site-footer">
     <div class="wrap">Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
-      ES 335 project by Vinit Parmar and Dutt Parmar.</div>
+      ES 335 project by Vinit Parmar and Dutt Parmar.
+      Code, data splits and full results: <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">GitHub repository</a>.</div>
   </footer>
 </body>
 </html>

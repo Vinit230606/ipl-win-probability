@@ -45,6 +45,7 @@ async function init() {
   $("win18").textContent = String(WINDOW);
   if (!chartAvailable()) showError(CHART_MISSING);
   writeModelNote();
+  writeIntroAnswer();
   populateFilters();
 
   const want = new URLSearchParams(location.search).get("match");
@@ -79,6 +80,18 @@ function writeModelNote() {
     `not changed afterwards. On the test seasons: ${best.verdict} ${other.verdict} ` +
     `${labels.other} is drawn as a second line so you can see where the two disagree. `;
   ui.note.append(el("a", { href: "results.html", text: "See the full results" }), ".");
+}
+
+function writeIntroAnswer() {
+  const T = results.test;
+  const beats = ["lr_full", "lr_core", "gbm"].filter((k) => T[k].bss_ci[0] > 0);
+  const lab = (k) => results.methods[k].label;
+  const seasons = results.splits.seasons.test.join(" and ");
+  $("intro-answer").textContent = beats.length
+    ? `On the ${seasons} seasons, ${beats.map(lab).join(" and ")} beat the baseline; ` +
+      `${["lr_full", "lr_core", "gbm"].filter((k) => !beats.includes(k)).map(lab).join(" and ") || "every model did"}` +
+      `${beats.length < 3 ? " did not" : ""}.`
+    : `On the ${seasons} seasons, no model was shown to beat the baseline.`;
 }
 
 // ---------- filters ----------

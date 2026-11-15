@@ -7,6 +7,7 @@ is validated against its JSON schema in `json_schemas/` before the stage reports
 from __future__ import annotations
 
 import json
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -90,8 +91,56 @@ def _method_descriptions(chosen: dict) -> dict[str, dict[str, str]]:
     }
 
 
-def target_bins(rows: pd.DataFrame, edges: tuple[int, ...]) -> list[dict]:
-    """Post-test diagnosis: chase win rate and each method's mean prediction and Brier by target."""
+def data_facts(cfg: Config, feats: pd.DataFrame, chases: pd.DataFrame, metrics: dict) -> dict:
+    """Size, key quality facts and a per-season table for the website write-up.
+
+    Uses only earlier-stage outputs (interim deliveries, chases, chase_features). The season table
+    shows the mean target per season, which is the scoring rise behind the drift results.
+    """
+    deliv = read_table(cfg, cfg.io.interim_dir, "deliveries")
+    matches = read_table(cfg, cfg.io.interim_dir, "matches")
+    kept = set(chases.index)
+    chase_d = deliv[(deliv["innings"] == 2) & deliv["match_id"].isin(kept)]
+    kinds = chase_d["dismissal_kind"].fillna("")
+    last = feats.sort_values("seq").groupby("match_id").tail(1).set_index("match_id")
+    rt_ok = int((last.loc[chases.index, "runs_scored"] == chases["final_runs"]).sum())
+    split_of = feats.groupby("match_id")["split"].first()
+    per = chases.assign(split=split_of.reindex(chases.index).values)
+    seasons = (per.groupby("season")
+               .agg(chases=("target", "size"), chase_win_rate=("chase_won", "mean"),
+                    mean_target=("target", "mean"),
+                    share_target_over_200=("target", lambda t: float((t > 200).mean())),
+                    split=("split", "first"))
+               .reset_index().to_dict("records"))
+    return {
+        "raw_matches": int(len(matches)),
+        "raw_deliveries": int(len(deliv)),
+        "first_season": int(matches["season"].min()),
+        "last_season": int(matches["season"].max()),
+        "kept_chases": int(len(chases)),
+        "chase_deliveries": int(len(feats)),
+        "model_rows": int(feats["is_model_row"].sum()),
+        "terminal_rows": int((~feats["is_model_row"]).sum()),
+        "wides_in_chases": int(chase_d["is_wide"].sum()),
+        "noballs_in_chases": int(chase_d["is_noball"].sum()),
+        "byes_legbyes_in_chases": int((chase_d["is_bye"] | chase_d["is_legbye"]).sum()),
+        "retired_hurt_in_chases": int(kinds.isin(list(cfg.rules.non_wicket_dismissals)).sum()),
+        "run_outs_in_chases": int((kinds == "run out").sum()),
+        "running_total_ok": rt_ok,
+        "season_label_note": "Cricsheet season labels such as 2007/08 and 2020/21 do not match "
+                             "the calendar year of the matches, so season = year of the match date.",
+        "n_exclusion_reasons": len(metrics["exclusions"]),
+        "seasons": seasons,
+    }
+
+
+def target_bins(rows: pd.DataFrame, edges: tuple[int, ...], fit_matches: pd.DataFrame) -> list[dict]:
+    """Post-test diagnosis: chase win rate and each method's mean prediction and Brier by target.
+
+    `fit_matches` (one row per train+validation chase: target, y) adds how many chases the models
+    saw in each band and how often they were won, which shows where the trees had to extrapolate.
+    """
+    fb = np.digitize(fit_matches["target"].to_numpy(), np.asarray(edges), right=True)
     labels = ([f"up to {edges[0]}"] + [f"{a + 1}–{b}" for a, b in zip(edges[:-1], edges[1:])]
               + [f"over {edges[-1]}"])
     b = np.digitize(rows["target"].to_numpy(), np.asarray(edges), right=True)
@@ -101,8 +150,11 @@ def target_bins(rows: pd.DataFrame, edges: tuple[int, ...]) -> list[dict]:
         if not m.any():
             continue
         sub = rows[m]
+        fm = fit_matches[fb == k]
         e = {"target_band": lab, "n_rows": int(m.sum()), "n_matches": int(sub["match_id"].nunique()),
-             "chase_win_rate": float(sub.groupby("match_id")["y"].first().mean())}
+             "chase_win_rate": float(sub.groupby("match_id")["y"].first().mean()),
+             "fit_matches": int(len(fm)),
+             "fit_chase_win_rate": float(fm["y"].mean()) if len(fm) else None}
         for meth in METHODS:
             e[f"mean_p_{meth}"] = float(sub[f"p_{meth}"].mean())
             e[f"brier_{meth}"] = brier(sub[f"p_{meth}"], sub["y"])
@@ -252,8 +304,11 @@ def export_site(cfg: Config) -> dict:
                        "big_over_runs": cfg.rules.big_over_runs,
                        "momentum_window": cfg.rules.momentum_window_legal_balls,
                        "baseline_min_count": cfg.baseline.min_count},
+        "data": data_facts(cfg, feats, chases, metrics),
         "diagnostics": {
-            "target_bins": target_bins(model_rows, cfg.export.diagnostic_target_bins),
+            "target_bins": target_bins(
+                model_rows, cfg.export.diagnostic_target_bins,
+                feats[feats["split"].isin(["train", "val"])].groupby("match_id")[["target", "y"]].first()),
             "note": "Computed by `make export` from the stored test predictions after the single "
                     "test run, to explain the results. No model was refit or changed.",
         },
@@ -264,6 +319,14 @@ def export_site(cfg: Config) -> dict:
     lr_core = build_lr_core(cfg, metrics)
     validate(lr_core, "lr_core", "lr_core.json")
     _write(lr_core, out_dir / "lr_core.json", compact=False)
+
+    # report figures (made by `make final`) shown as static images in the write-up
+    fig_dir = out_dir.parent / "assets" / "figures"
+    fig_dir.mkdir(parents=True, exist_ok=True)
+    for old in fig_dir.glob("*.png"):
+        old.unlink()
+    for png in sorted((cfg.io.reports_dir / "figures").glob("*.png")):
+        shutil.copyfile(png, fig_dir / png.name)
 
     size = sum(p.stat().st_size for p in out_dir.rglob("*.json"))
     if size > cfg.export.max_site_data_mb * 1024 * 1024:

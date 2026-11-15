@@ -1,4 +1,5 @@
 // Shared helpers: JSON loading with a visible error panel, formatters, nav highlighting, team names.
+import { linkRepo } from "./repo.js";
 
 export const LOAD_ERROR =
   "Match data didn't load. Refresh the page. If it keeps failing, the data files are missing from this deployment.";
@@ -94,6 +95,7 @@ export function cssVar(name) {
 }
 
 export function highlightNav() {
+  linkRepo();
   const here = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".site-nav a").forEach((a) => {
     if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");

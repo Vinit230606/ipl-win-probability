@@ -105,6 +105,20 @@ button.primary { background: var(--outfield); color: var(--surface); border-colo
 .error-panel { margin: 1rem 0; padding: .9rem 1rem; border: 1px solid var(--ball-red);
   border-left-width: 6px; background: var(--panel); max-width: 72ch; }
 
+/* ---------- write-up ---------- */
+.intro { margin-top: 1.5rem; }
+.intro h1 { margin-top: .5rem; }
+.toc ol { columns: 2 14rem; padding-left: 1.4rem; margin: .5rem 0 1rem; }
+.toc li { margin: .15rem 0; break-inside: avoid; }
+.figure { margin: 1rem 0 1.5rem; max-width: 900px; }
+.figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line);
+  border-radius: 6px; background: #fff; }
+.figure figcaption { margin-top: .4rem; color: var(--muted); font-size: .95rem; max-width: 72ch; }
+dl dt { font-weight: 600; margin-top: .6rem; }
+dl dd { margin: .1rem 0 0 0; max-width: 72ch; }
+td { white-space: normal; }
+td.r, th { white-space: nowrap; }
+
 /* ---------- replay ---------- */
 .match-title { margin: 1.25rem 0 .2rem; }
 .match-meta { margin: 0; color: var(--muted); max-width: 72ch; }

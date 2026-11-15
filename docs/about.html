@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About · IPL win probability</title>
-  <meta name="description" content="The question, data, cleaning, features, methods, evaluation design and limits of the IPL win probability project.">
+  <title>Write-up · IPL win probability</title>
+  <meta name="description" content="The full reasoning of the project: question, data, preprocessing, baseline and models, evaluation, results, error analysis and limitations.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap">
@@ -20,112 +20,249 @@
         <a href="index.html">Replay</a>
         <a href="calculator.html">What-if</a>
         <a href="results.html">Results</a>
-        <a href="about.html">About</a>
+        <a href="about.html">Write-up</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="wrap prose">
-    <h1>About this project</h1>
+  <main id="main" class="wrap">
+    <div class="prose">
+      <h1>Write-up</h1>
+      <p class="muted">The whole project on one page, from the question to the conclusions. Every
+        number here is produced by the pipeline. Code, full reports and data splits are in the
+        <a class="repo-link" href="#">GitHub repository</a>.</p>
+      <nav aria-label="Sections" class="toc">
+        <ol>
+          <li><a href="#question">Question and answer</a></li>
+          <li><a href="#row">What one row is</a></li>
+          <li><a href="#data">Data</a></li>
+          <li><a href="#prep">Preprocessing, and why</a></li>
+          <li><a href="#models">Baseline and models</a></li>
+          <li><a href="#eval">How we evaluated</a></li>
+          <li><a href="#results">Results</a></li>
+          <li><a href="#errors">Error analysis</a></li>
+          <li><a href="#limits">Limitations</a></li>
+          <li><a href="#explore">Explore it yourself</a></li>
+          <li><a href="#repro">Reproduce and check</a></li>
+          <li><a href="#credits">Team, AI use and citations</a></li>
+        </ol>
+      </nav>
 
-    <h2>The question</h2>
-    <p>How accurately can we estimate the chasing team's win probability after each delivery,
-      using only the match state known at that moment, and does a machine-learning model beat a
-      simple historical baseline?</p>
+      <h2 id="question">1. Question and answer</h2>
+      <p><strong>Question.</strong> How accurately can we estimate the chasing team's win
+        probability after each delivery of an IPL chase, using only the match state known at that
+        moment, and does a machine-learning model beat a simple historical baseline?</p>
+      <p><strong>Short answer.</strong> <span id="answer"></span></p>
+    </div>
 
-    <h2>What the numbers do and don't cover</h2>
-    <ul>
-      <li>They describe historical IPL chases with a full 20-over target only.</li>
-      <li>They do not cover first innings, rain-reduced (DLS) or shortened matches, ties or
-        no-results.</li>
-      <li>They are league-average: the models do not know the teams, players, venue or
-        conditions.</li>
-      <li>This is not a betting tool, and it does not explain why teams win.</li>
-    </ul>
+    <div class="prose">
+      <h2 id="row">2. What one row is</h2>
+      <p>One row is one delivery of the second innings of a completed IPL match with a full
+        20-over target. The row holds the scoreboard immediately after that delivery. Its label is
+        1 if the chasing team went on to win the match and 0 if it lost, so every row of a chase
+        has the same label. The prediction is a probability for that label, made from the row's
+        inputs only.</p>
+      <p id="row-example-intro"></p>
+    </div>
+    <div id="row-example"></div>
 
-    <h2>Data</h2>
-    <p>Ball-by-ball data for every IPL match comes from <a href="https://cricsheet.org/">Cricsheet</a>
-      (<code>ipl_json.zip</code>), released under the
-      <a href="https://opendatacommons.org/licenses/by/1-0/">Open Data Commons Attribution License
-      (ODC-By 1.0)</a>. We thank Cricsheet for collecting and publishing it.</p>
+    <div class="prose">
+      <h2 id="data">3. Data</h2>
+      <p id="data-source"></p>
+      <h3>Key variables</h3>
+    </div>
+    <div id="variables"></div>
+    <div class="prose">
+      <h3>Quality issues we found and how we handled them</h3>
+      <ul id="quality"></ul>
+    </div>
 
-    <h2>Cleaning</h2>
-    <p id="cleaning-summary"></p>
+    <div class="prose">
+      <h2 id="prep">4. Preprocessing, and why</h2>
+      <h3>Which matches we kept</h3>
+      <p id="cleaning-summary"></p>
+    </div>
     <div id="exclusions"></div>
-    <div id="splits"></div>
-    <p>A season is the calendar year of the match date. Every removed match is listed with its
-      reason in <code>reports/exclusions.csv</code> in the project repository.</p>
+    <div class="prose">
+      <h3>Rebuilding the scoreboard</h3>
+      <ul>
+        <li>Wides and no-balls add runs but do not use up a ball, because they are bowled again.</li>
+        <li>Byes and leg-byes add runs and count as a legal ball.</li>
+        <li>"Retired hurt" and "retired not out" do not count as wickets, because the batter can
+          come back.</li>
+        <li>Season is the calendar year of the match date, because Cricsheet's season labels do
+          not always match it.</li>
+      </ul>
+      <h3>Settled balls are left out of training and scoring</h3>
+      <p id="terminal-text"></p>
+      <h3>Inputs, and why each one</h3>
+      <ul id="features"></ul>
+      <p>No team names, venues or player names are used. They would make the model describe
+        particular teams instead of match situations, and team strength changes every season.</p>
+    </div>
 
-    <h2>What the models see</h2>
-    <p>After each ball of the chase the models get the scoreboard and nothing else:</p>
-    <ul>
-      <li>runs still needed, legal balls left and wickets in hand;</li>
-      <li>the target;</li>
-      <li>the required run rate;</li>
-      <li id="momentum-item">runs scored and wickets lost in the most recent legal balls,
-        including any wides and no-balls bowled among them.</li>
-    </ul>
-    <p>Wides and no-balls add runs but do not use up a ball. Byes and leg-byes count as legal
-      balls. "Retired hurt" and "retired not out" are not wickets. No team names, venues or
-      player names are used.</p>
-
-    <h2>Methods</h2>
+    <div class="prose">
+      <h2 id="models">5. Baseline and models</h2>
+    </div>
     <div id="methods"></div>
+    <div class="prose">
+      <p id="selection"></p>
+    </div>
 
-    <h2>How we evaluated</h2>
-    <ul id="evaluation">
-      <li>Seasons are split by time: the oldest seasons train the models, the next season chooses
-        settings, and the latest seasons are the test.</li>
-      <li>All settings, including which model the replay features, were chosen on the validation
-        season. The test seasons were then scored exactly once, and the run is recorded in
-        <code>reports/TEST_LOCK.json</code>.</li>
-      <li>The main score is the Brier score. Skill (BSS) compares each model with the baseline.
-        Uncertainty comes from resampling whole matches, because the balls of one chase are
-        strongly linked.</li>
-      <li>A model is only called better than the baseline when the whole 95% interval of its
-        skill is above zero.</li>
-      <li>Balls where the result was already settled by the rules are left out of the scores and
-        shown on the replay as decided.</li>
-    </ul>
+    <div class="prose">
+      <h2 id="eval">6. How we evaluated</h2>
+      <h3>Split by season</h3>
+      <p>We train on older seasons and test on the most recent ones, as the model would be used:
+        to predict seasons it has not seen. Splitting by season also keeps every ball of a chase
+        in one split. A random split by ball would put balls of the same match in training and
+        test, and the label would leak.</p>
+    </div>
+    <div id="splits"></div>
+    <div class="prose">
+      <p id="split-note"></p>
+      <h3>Metrics</h3>
+      <ul id="metrics-list"></ul>
+      <h3>Rules that keep the test honest</h3>
+      <ul>
+        <li>Every input for a ball uses only that ball and earlier balls of the same innings, plus
+          the target. A test cuts 50 real chases at random points and checks that the earlier
+          inputs do not change.</li>
+        <li>Scalers and lookup tables are fit on training rows only. The tuning stages never read
+          the test seasons.</li>
+        <li>All settings, and the choice of main model, were fixed on the validation season. The
+          test seasons were then scored once; the run is recorded in
+          <a class="repo-file" data-path="reports/TEST_LOCK.json" href="#">TEST_LOCK.json</a>.</li>
+      </ul>
+    </div>
 
-    <h2>How we kept the future out</h2>
-    <ul>
-      <li>Every input for a ball is built from that ball and the balls before it in the same
-        innings, plus the target. A test cuts real chases at random points and checks that the
-        earlier inputs do not change.</li>
-      <li>The split is by season, never by ball or by random match, so no chase is shared between
-        training and testing.</li>
-      <li>Scalers and lookup tables are fit on the training rows only, inside the same pipeline as
-        the model.</li>
-      <li>The stages that tune models never read the test seasons.</li>
-    </ul>
+    <div class="prose">
+      <h2 id="results">7. Results</h2>
+      <ul id="verdicts" class="verdicts"></ul>
+    </div>
+    <div id="test-metrics"></div>
+    <figure class="figure">
+      <img src="assets/figures/bss_intervals_test.png" alt="Brier skill score with 95% intervals on the test seasons: both logistic regression models are above zero, GBM against the baseline straddles zero, and GBM against LR-full is below zero." loading="lazy">
+      <figcaption>Skill against the baseline on the test seasons, with 95% match-bootstrap
+        intervals. Green: whole interval above 0. Red: whole interval below 0.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/figures/calibration_test.png" alt="Calibration curves on the test seasons for the four methods against the diagonal of perfect calibration." loading="lazy">
+      <figcaption>Calibration on the test seasons. Points above the diagonal mean the method was
+        too pessimistic about the chasing team.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/figures/phase_brier_test.png" alt="Brier score by phase of the chase for each method on the test seasons." loading="lazy">
+      <figcaption>Brier score by phase of the chase (lower is better).</figcaption>
+    </figure>
+    <div class="prose"><p id="phase-text"></p>
+      <p>More tables (by phase, by season, calibration values, validation numbers) are on the
+        <a href="results.html">Results page</a>.</p></div>
 
-    <h2>Decisions made along the way</h2>
-    <ul id="decisions">
-      <li>The data arrived as Cricsheet JSON, so the pipeline has an adapter for that format.</li>
-      <li>Rare scoreboard states fall back to coarser buckets in the baseline instead of straight
-        to the overall win rate, so the baseline is not unfairly weak.</li>
-      <li>The calculator uses a model built on its three inputs only (LR-core), so it never has to
-        invent a target or recent-form values.</li>
-      <li>To account for the Impact Player rule (from 2023), recent seasons could be weighted more
-        heavily during training; how much was chosen on validation.</li>
-      <li id="selection-decision"></li>
-    </ul>
+    <div class="prose">
+      <h2 id="errors">8. Error analysis</h2>
+      <h3>Why GBM failed: high targets it had rarely seen</h3>
+      <p id="target-text"></p>
+    </div>
+    <div id="target-table"></div>
+    <div class="prose">
+      <h3>Scoring rose, and every method under-predicted chases</h3>
+      <p id="drift-text"></p>
+    </div>
+    <div id="season-table"></div>
+    <figure class="figure">
+      <img src="assets/figures/season_drift.png" alt="Observed chase win rate against the main model's mean start-of-chase prediction for the validation and test seasons." loading="lazy">
+      <figcaption>Scoring drift: observed chase win rate against the main model's average
+        prediction at the start of each chase.</figcaption>
+    </figure>
+    <div class="prose">
+      <h3>The worst matches</h3>
+      <p id="failure-text"></p>
+    </div>
+    <div id="failures"></div>
+    <figure class="figure">
+      <img id="example-fig" alt="Ball-by-ball win probability for the featured chase: the main model and the baseline, with wickets marked." loading="lazy">
+      <figcaption id="example-caption"></figcaption>
+    </figure>
 
-    <h2>Team</h2>
-    <p>Vinit Parmar (24110239) and Dutt Parmar (24110115), ES 335 Machine Learning.</p>
+    <div class="prose">
+      <h2 id="limits">9. Limitations</h2>
+      <ul id="limitations">
+        <li>The results describe historical IPL chases with a full 20-over target only. They do
+          not cover first innings, rain-reduced (DLS) or shortened matches, ties or no-results.</li>
+        <li>The models see the scoreboard only. They give a league-average answer and ignore team
+          strength, players, venue, pitch and dew. They do not explain why teams win.</li>
+        <li id="lim-val"></li>
+        <li id="lim-drift"></li>
+        <li>Balls within a chase are strongly linked. We handle this in the intervals by resampling
+          whole matches, but the effective sample is the number of chases, not the number of
+          balls.</li>
+        <li>This is not a betting tool.</li>
+      </ul>
 
-    <h2>Use of AI tools</h2>
-    <p>We used Kiro (an AI coding assistant running Claude) to help write the data pipeline, the
-      tests and this website, following a design and task plan we wrote first. We reviewed the
-      generated code, checked the data-quality reports and the results by hand, and made the
-      modelling decisions ourselves at fixed review points. The project's <code>AI_USE.md</code>
-      logs what the tool did and what we checked.</p>
+      <h2 id="explore">10. Explore it yourself</h2>
+      <ul>
+        <li><a href="index.html">Replay</a>: pick any test-season chase and step through it ball
+          by ball. Two lines show the two models, so you can see where they disagree; the
+          high-target chases listed in the error analysis show GBM's failure directly.</li>
+        <li><a href="calculator.html">What-if calculator</a>: set runs needed, balls left and
+          wickets left and watch how the simple model's probability moves, including how much a
+          wicket is worth late in a chase.</li>
+        <li><a href="results.html">Results</a>: every metric table, with links from each failure
+          case to its replay.</li>
+      </ul>
+
+      <h2 id="repro">11. Reproduce and check</h2>
+      <p>The <a class="repo-link" href="#">repository</a> holds the code, the raw data (as the
+        original Cricsheet zip), the configuration with every constant and seed, and all reports.
+        Useful files:</p>
+      <ul>
+        <li><a class="repo-file" data-path="README.md" href="#">README.md</a>: setup, commands
+          (one command runs everything), data access and citations.</li>
+        <li><a class="repo-file" data-path="reports/exclusions.csv" href="#">exclusions.csv</a>:
+          every removed match and its reason.</li>
+        <li><a class="repo-file" data-path="reports/splits.csv" href="#">splits.csv</a>: every
+          kept chase and its split.</li>
+        <li><a class="repo-file" data-path="reports/data_quality.md" href="#">data_quality.md</a>,
+          <a class="repo-file" data-path="reports/validation_results.md" href="#">validation_results.md</a>,
+          <a class="repo-file" data-path="reports/results.md" href="#">results.md</a>: the full
+          reports at each stage; the tuning logs are the CSV files next to them.</li>
+        <li><a class="repo-file" data-path="src/iplwp" href="#">src/iplwp</a>: one module per
+          stage, with tests in <a class="repo-file" data-path="tests" href="#">tests</a>.</li>
+      </ul>
+
+      <h2>Decisions made along the way</h2>
+      <ul id="decisions">
+        <li>The data arrived as Cricsheet JSON, so the pipeline has an adapter for that format.</li>
+        <li>Rare scoreboard states fall back to coarser buckets in the baseline instead of straight
+          to the overall win rate, so the baseline is not unfairly weak.</li>
+        <li>The calculator uses a model built on its three inputs only (LR-core), so it never has to
+          invent a target or recent-form values.</li>
+        <li>To allow for the Impact Player rule (from 2023), training could weight recent seasons
+          more; how much was chosen on validation.</li>
+        <li id="selection-decision"></li>
+      </ul>
+
+      <h2 id="credits">12. Team, AI use and citations</h2>
+      <p>Vinit Parmar (24110239) and Dutt Parmar (24110115), ES 335 Machine Learning.</p>
+      <p><strong>AI use.</strong> We used Kiro (an AI coding assistant running Claude) to help
+        write the data pipeline, the tests and this website, following a design and task plan we
+        wrote first. We made the modelling decisions ourselves at fixed review points, and reviewed
+        the data-quality, validation and test reports before approving each next step.
+        <a class="repo-file" data-path="AI_USE.md" href="#">AI_USE.md</a> logs what the tool did
+        and what we checked.</p>
+      <p><strong>Data.</strong> Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a>,
+        released under the <a href="https://opendatacommons.org/licenses/by/1-0/">Open Data
+        Commons Attribution License (ODC-By 1.0)</a>.</p>
+      <p><strong>Software.</strong> scikit-learn (Pedregosa et al., 2011), pandas, NumPy,
+        matplotlib and Chart.js. Brier score: Brier (1950). Bootstrap intervals: Efron and
+        Tibshirani (1993). Full references are in the README.</p>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
-      ES 335 project by Vinit Parmar and Dutt Parmar.</div>
+      ES 335 project by Vinit Parmar and Dutt Parmar.
+      Code, data splits and full results: <a class="repo-link" href="#">GitHub repository</a>.</div>
   </footer>
 </body>
 </html>
