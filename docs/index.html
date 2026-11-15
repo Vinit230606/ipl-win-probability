@@ -20,6 +20,7 @@
       <nav class="site-nav" aria-label="Main">
         <a href="index.html">Replay</a>
         <a href="calculator.html">What-if</a>
+        <a href="edge-cases.html">Edge cases</a>
         <a href="results.html">Results</a>
         <a href="about.html">Write-up</a>
       </nav>
@@ -52,6 +53,7 @@
     <p id="match-meta" class="match-meta"></p>
 
     <div class="strip" aria-hidden="true">
+      <p id="strip-lead" class="strip-lead"></p>
       <p id="strip-state" class="strip-state"></p>
       <dl class="strip-probs">
         <div><dt><span class="sw"></span><span id="lab-model"></span></dt><dd id="p-model"></dd></div>
@@ -65,6 +67,8 @@
         <li><span class="sw"></span><span id="leg-model"></span></li>
         <li><span class="sw other"></span><span id="leg-other"></span></li>
         <li><span class="sw base"></span><span id="leg-base"></span></li>
+        <li><span id="sw-bat" class="sw team"></span><span id="leg-bat">Chasing side ahead</span></li>
+        <li><span id="sw-bowl" class="sw team"></span><span id="leg-bowl">Defending side ahead</span></li>
         <li><span class="sw wkt"></span>Wicket</li>
         <li><span class="sw big"></span><span id="leg-big">Big over</span></li>
       </ul>

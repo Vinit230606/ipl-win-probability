@@ -320,6 +320,19 @@ def export_site(cfg: Config) -> dict:
     validate(lr_core, "lr_core", "lr_core.json")
     _write(lr_core, out_dir / "lr_core.json", compact=False)
 
+    # edge-case fix (post-test addition, `make edgecases`): calculator model + report for the page
+    sim_path = cfg.io.models_dir / "simulation_final.json"
+    edge_path = cfg.io.reports_dir / "edge_cases.json"
+    if not (sim_path.exists() and edge_path.exists()):
+        raise ExportValidationError("calculator model missing; run `make edgecases` first")
+    calc = json.loads(sim_path.read_text(encoding="utf-8"))
+    validate(calc, "calculator", "calculator.json")
+    _write(calc, out_dir / "calculator.json", compact=True)
+    edge = json.loads(edge_path.read_text(encoding="utf-8"))
+    edge["lr_core_test"] = metrics["test"]["lr_core"]
+    validate(edge, "edge_cases", "edge_cases.json")
+    _write(edge, out_dir / "edge_cases.json", compact=False)
+
     # report figures (made by `make final`) shown as static images in the write-up
     fig_dir = out_dir.parent / "assets" / "figures"
     fig_dir.mkdir(parents=True, exist_ok=True)

@@ -41,6 +41,7 @@ to the conclusions; this repository lets you check every step.
 | Post-test diagnosis by target score | `docs/data/results.json` → `diagnostics` (computed by `export.py`, no refit) |
 | Proof the test set was scored once | `reports/TEST_LOCK.json`, `src/iplwp/io_lock.py` |
 | Tests (leakage, states, metrics, bootstrap, lock, export) | `tests/`, `docs/tests/parity.test.mjs` |
+| Edge cases and the calculator fix (post-test) | `reports/edge_cases.md`, `reports/edge_cases.json`, `reports/tuning_edge_cases.csv`, `src/iplwp/simulate.py`, `src/iplwp/edge_cases.py` |
 | Every constant and the seed | `config/config.yaml` |
 | AI use | `AI_USE.md` and the section below |
 
@@ -83,6 +84,7 @@ Every stage runs as `python -m iplwp.cli <stage>`; with `make` installed, `make 
 | `tune` | tune LR and GBM on validation only | ~13 min |
 | `final` | refit on train + validation, evaluate the test seasons once | 1 min |
 | `export` | write and validate the website JSON in `docs/data/` | 20 s |
+| `edgecases` | post-test addition: ball-by-ball simulation and blended calculator for rare states | 30 s |
 | `all` | every stage above in order | ~15 min |
 
 `final` refuses to run again once `reports/TEST_LOCK.json` exists. A rerun needs
@@ -116,6 +118,22 @@ the committed one (`git diff reports/metrics.json`); only the two timing fields 
 `models/selection.json` stored in `reports/TEST_LOCK.json`.
 
 ## Changes to the design plan
+- **D9 (post-test): calculator fix for situations the data never reached.** LR-core extrapolated to
+  near-certainties there, for example 0.06% (shown as 0%) for 42 needed off 42 balls with one wicket
+  left. `make edgecases` adds a ball-by-ball simulation: delivery outcome chances per
+  phase × wickets × required-rate context, shrunk towards coarser contexts, solved exactly by
+  dynamic programming and Platt-recalibrated. The calculator then blends LR-core and the simulation
+  with weight n / (n + k), where n is the number of fitting chases in a 5-run × 6-ball cell, and
+  applies a monotone envelope so cricket logic holds. Shrinkage and k were chosen on validation log
+  loss. Because the test seasons had already been scored, the test numbers for this fix are
+  reported as a post-test check (`reports/edge_cases.md`), and the main results and the replay are
+  unchanged. The fix costs a little validation accuracy on common states (log loss 0.3829 vs
+  0.3813) and is sometimes confidently wrong where data is thin; both are reported on the site's
+  Edge cases page. `docs/tests/parity.test.mjs` checks that the JavaScript calculator matches
+  Python on 250 states and has no monotonicity violations.
+- **Site theme.** At the team's request the site uses a single dark "space" theme instead of
+  light and dark modes. On the replay the page takes on a shade of the team the main model
+  favours, and a glow follows the cursor (off for touch screens and reduced motion).
 - **D7 (approved):** the data is Cricsheet JSON, so `io_adapters.py` has a third adapter, "J",
   next to the planned Kaggle ("K") and Cricsheet CSV ("C") adapters. It follows the C mapping rules.
 - The canonical deliveries table has one extra column, `dismissal_kind_2`, holding the kind of a

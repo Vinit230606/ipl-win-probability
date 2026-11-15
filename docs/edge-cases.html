@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edge cases · IPL win probability</title>
+  <meta name="description" content="Situations the data never reached, why the simple model gave impossible 0% answers there, and how a ball-by-ball simulation fixes it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/vendor/chart.umd.min.js" defer></script>
+  <script type="module" src="assets/js/edge_cases.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="site-title" href="index.html">IPL win probability</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Replay</a>
+        <a href="calculator.html">What-if</a>
+        <a href="edge-cases.html">Edge cases</a>
+        <a href="results.html">Results</a>
+        <a href="about.html">Write-up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="prose">
+      <h1>Edge cases: when the data runs out</h1>
+      <p id="lede"></p>
+      <p class="notice">This page was added after the test seasons had been scored. The fix was
+        tuned on the validation season like everything else, but its test numbers below are a
+        check made after seeing the test results, not a clean test. The main results on the
+        <a href="results.html">Results page</a> are unchanged.</p>
+
+      <h2>1. The problem</h2>
+      <p id="problem"></p>
+    </div>
+    <div id="scenarios"></div>
+    <div class="prose">
+      <h3>Why the simple model does this</h3>
+      <p id="why"></p>
+    </div>
+    <div id="reach"></div>
+
+    <div class="prose">
+      <h2>2. Explore it</h2>
+      <p>Pick a situation and compare the three answers as the balls run out. Points where no past
+        chase passed through a similar spot are where the simple model is on its own.</p>
+    </div>
+    <form id="ex-form" class="filters" novalidate>
+      <label>Runs needed <input id="ex-runs" type="number" inputmode="numeric" value="42" min="1" max="300" aria-describedby="ex-err"></label>
+      <label>Balls left <input id="ex-balls" type="number" inputmode="numeric" value="42" min="1" max="120" aria-describedby="ex-err"></label>
+      <label>Wickets left <input id="ex-wkts" type="number" inputmode="numeric" value="1" min="1" max="10" aria-describedby="ex-err"></label>
+    </form>
+    <p id="ex-err" class="field-error" hidden></p>
+    <div class="strip" aria-live="polite">
+      <p id="ex-state" class="strip-state"></p>
+      <dl class="strip-probs">
+        <div><dt><span class="sw other"></span>Simple model (LR-core)</dt><dd id="ex-lr"></dd></div>
+        <div><dt><span class="sw base"></span>Ball-by-ball simulation</dt><dd id="ex-sim"></dd></div>
+        <div><dt><span class="sw"></span>Calculator</dt><dd id="ex-calc"></dd></div>
+      </dl>
+      <p id="ex-support" class="strip-lead"></p>
+    </div>
+    <figure class="chart-panel">
+      <ul class="legend">
+        <li><span class="sw other"></span>Simple model (LR-core)</li>
+        <li><span class="sw base"></span>Ball-by-ball simulation</li>
+        <li><span class="sw"></span>Calculator (blend, then cricket logic)</li>
+        <li><span class="sw big"></span>No past chase nearby</li>
+      </ul>
+      <div class="chart-box"><canvas id="ex-chart" role="img" aria-label="Win probability against balls left for the three methods"></canvas></div>
+      <figcaption id="ex-caption" class="detail muted"></figcaption>
+    </figure>
+
+    <div class="prose">
+      <h2>3. The fix</h2>
+      <ol class="steps">
+        <li class="step">
+          <h3>Measure how much data backs each situation</h3>
+          <p id="fix-support"></p>
+          <dl><dt>Function</dt><dd><a class="repo-file" data-path="src/iplwp/edge_cases.py" href="#"><code>support_grid</code></a>, <code>support_of</code></dd></dl>
+        </li>
+        <li class="step">
+          <h3>Add a model that does not need to have seen the situation</h3>
+          <p>Instead of learning the chance of winning from a state, the simulation learns the
+            chance of each outcome of a single delivery, then works out the chase exactly.</p>
+          <ul id="fix-sim"></ul>
+          <dl><dt>Functions</dt><dd><a class="repo-file" data-path="src/iplwp/simulate.py" href="#"><code>delivery_table</code></a>,
+            <code>fit_outcomes</code>, <code>solve</code>, <code>fit_calibration</code></dd></dl>
+        </li>
+        <li class="step">
+          <h3>Blend the two according to the data</h3>
+          <p id="fix-blend"></p>
+          <dl><dt>Function</dt><dd><a class="repo-file" data-path="src/iplwp/edge_cases.py" href="#"><code>calculator_table</code></a>, <code>blend_weight</code></dd></dl>
+        </li>
+        <li class="step">
+          <h3>Make the answers obey cricket logic</h3>
+          <p>One more run needed, one ball fewer or one wicket fewer should never raise the chance.
+            Gluing two models together can break this, so the final table is replaced by the
+            average of its tightest monotone upper and lower bounds. This moves values only where
+            they disagree with a neighbour.</p>
+          <p id="fix-env"></p>
+          <dl><dt>Function</dt><dd><a class="repo-file" data-path="src/iplwp/edge_cases.py" href="#"><code>monotone_envelope</code></a></dd></dl>
+        </li>
+        <li class="step">
+          <h3>Never print a certainty for an open chase</h3>
+          <p id="fix-floor"></p>
+        </li>
+      </ol>
+
+      <h2>4. How the settings were chosen</h2>
+      <p id="tune-text"></p>
+    </div>
+    <div id="tuning"></div>
+
+    <div class="prose">
+      <h2>5. Checks</h2>
+      <h3>Cricket logic</h3>
+    </div>
+    <div id="mono"></div>
+    <div class="prose">
+      <h3>Accuracy after the fix (post-test check)</h3>
+      <p id="post-text"></p>
+    </div>
+    <div id="post"></div>
+    <div class="prose">
+      <h3>Browser matches Python</h3>
+      <p>The calculator is computed in your browser. A test (<a class="repo-file" data-path="docs/tests/parity.test.mjs" href="#">parity.test.mjs</a>)
+        rebuilds the whole table in JavaScript and compares it with Python on 250 random
+        situations; they agree to within a billionth.</p>
+
+      <h2>6. What this does not fix</h2>
+      <ul id="limits">
+        <li>The simulation treats deliveries as independent given the score, phase, wickets and
+          required rate. It ignores who is batting, free hits and pressure, so it is a reasoned
+          guess where data is missing, not a measurement.</li>
+        <li>Situations no chase reached cannot be checked against real results. The numbers there
+          are plausible, not proven.</li>
+        <li>The replay and the main results use the models as chosen before the test run; only the
+          calculator uses this fix.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
+      ES 335 project by Vinit Parmar and Dutt Parmar.
+      Code, data splits and full results: <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">GitHub repository</a>.</div>
+  </footer>
+</body>
+</html>

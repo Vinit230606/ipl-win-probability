@@ -1,7 +1,8 @@
 // Match replay (design 13.3): filters, deep links, chart, scoreboard strip, keyboard, table.
 import {
   CHART_MISSING, chartAvailable, chartFonts, cssVar, el, fix, fmtDate, highlightNav, loadJSON,
-  onThemeChange, pct, plural, reducedMotion, showError, table, teamName, teamShort,
+  onThemeChange, pct, plural, reducedMotion, setTeamTint, showError, table, teamColors, teamName,
+  teamShort,
 } from "./common.js";
 
 const $ = (id) => document.getElementById(id);
@@ -11,7 +12,10 @@ const ui = {
   state: $("strip-state"), pModel: $("p-model"), pOther: $("p-other"), pBase: $("p-base"),
   box: $("chart-box"), canvas: $("chart"), detail: $("detail"), summary: $("summary"),
   toggle: $("table-toggle"), tableWrap: $("ball-table-wrap"), live: $("live"), note: $("note-models"),
+  lead: $("strip-lead"), teamBat: $("sw-bat"), teamBowl: $("sw-bowl"),
+  teamBatName: $("leg-bat"), teamBowlName: $("leg-bowl"),
 };
+let teamTint = { batting: "#7DD3FC", bowling: "#F472B6" };
 
 let index = null;     // matches.json
 let results = null;   // results.json
@@ -161,6 +165,11 @@ async function openMatch(id) {
   if ([...ui.select.options].some((o) => o.value === id)) ui.select.value = id;
   history.replaceState(null, "", `?match=${encodeURIComponent(id)}`);
 
+  teamTint = teamColors(m.batting_team, m.bowling_team);
+  ui.teamBat.style.background = teamTint.batting;
+  ui.teamBowl.style.background = teamTint.bowling;
+  ui.teamBatName.textContent = `${teamShort(m.batting_team)} ahead`;
+  ui.teamBowlName.textContent = `${teamShort(m.bowling_team)} ahead`;
   ui.title.textContent = `${teamName(m.batting_team)} v ${teamName(m.bowling_team)}`;
   ui.meta.textContent = `${m.venue ? m.venue + ", " : ""}${fmtDate(m.date)}. Target ${m.target}. ${m.result_text}.`;
   const s = m.summary;
@@ -187,9 +196,23 @@ function detailText(p) {
     `Last ${WINDOW}: ${plural(p.r18, "run")}, ${p.w18}w.${p.terminal ? " Decided." : ""}`;
 }
 
+// Page tint follows the main model: the colour of the side it favours, stronger as it gets surer.
+function tint(p) {
+  const v = p.p_model;
+  const chasing = v >= 0.5;
+  const team = chasing ? match.batting_team : match.bowling_team;
+  setTeamTint(chasing ? teamTint.batting : teamTint.bowling, Math.abs(v - 0.5) * 2);
+  const share = chasing ? v : 1 - v;
+  ui.lead.textContent = p.terminal
+    ? `${teamName(match.chase_won ? match.batting_team : match.bowling_team)} won`
+    : Math.abs(v - 0.5) < 0.02 ? "Level: anyone's game"
+      : `${teamName(team)} ahead · ${pct(share)} by ${labels.model}`;
+}
+
 function select(k, announce = true) {
   sel = Math.max(0, Math.min(points.length - 1, k));
   const p = points[sel];
+  tint(p);
   ui.state.textContent = stateText(p);
   ui.pModel.textContent = probText(p, p.p_model);
   ui.pOther.textContent = probText(p, p.p_other);
@@ -234,22 +257,50 @@ const bigOverPlugin = {
   },
 };
 
+// Selected ball: a soft glowing band and a glowing dot on the main line, in the leading side's colour.
 const cursorPlugin = {
   id: "cursor",
   afterDatasetsDraw(ch) {
-    const { ctx, chartArea: a, scales: { x } } = ch;
+    const { ctx, chartArea: a, scales: { x, y } } = ch;
+    const p = points[sel];
+    if (!p) return;
     const px = x.getPixelForValue(sel);
+    const py = y.getPixelForValue(100 * p.p_model);
+    const col = p.p_model >= 0.5 ? teamTint.batting : teamTint.bowling;
     ctx.save();
-    ctx.strokeStyle = colors().ink;
-    ctx.globalAlpha = 0.35;
+    const band = ctx.createLinearGradient(px - 28, 0, px + 28, 0);
+    band.addColorStop(0, "rgba(0,0,0,0)");
+    band.addColorStop(0.5, hexA(col, 0.18));
+    band.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = band;
+    ctx.fillRect(px - 28, a.top, 56, a.bottom - a.top);
+    ctx.strokeStyle = hexA(col, 0.7);
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(px, a.top);
     ctx.lineTo(px, a.bottom);
     ctx.stroke();
+    const halo = ctx.createRadialGradient(px, py, 0, px, py, 26);
+    halo.addColorStop(0, hexA(col, 0.65));
+    halo.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = halo;
+    ctx.beginPath();
+    ctx.arc(px, py, 26, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = col;
+    ctx.shadowColor = col;
+    ctx.shadowBlur = 14;
+    ctx.beginPath();
+    ctx.arc(px, py, 5, 0, Math.PI * 2);
+    ctx.fill();
     ctx.restore();
   },
 };
+
+function hexA(hex, a) {
+  const n = Number.parseInt(hex.slice(1), 16);
+  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${a})`;
+}
 
 // Draw-in of the model line and its wicket markers on match change (the one motion moment).
 const drawInPlugin = {
@@ -292,7 +343,11 @@ function buildChart(animate) {
     type: "line",
     data: {
       datasets: [
-        { label: labels.model, data: line("p_model"), borderColor: c.model, borderWidth: 2.5, pointRadius: 0, order: 1 },
+        {
+          label: labels.model, data: line("p_model"), borderColor: c.model, borderWidth: 2.5, pointRadius: 0, order: 1,
+          // shade between the main line and 50%: chasing side's colour above, defending side's below
+          fill: { target: { value: 50 }, above: hexA(teamTint.batting, 0.16), below: hexA(teamTint.bowling, 0.16) },
+        },
         { label: labels.other, data: line("p_other"), borderColor: c.other, borderWidth: 1.5, pointRadius: 0, order: 2 },
         { label: labels.base, data: line("p_base"), borderColor: c.base, borderWidth: 1.5, borderDash: [6, 4], pointRadius: 0, order: 3 },
         {

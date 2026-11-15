@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "docs/data/calculator.json: ball-by-ball simulation model and blend settings for the calculator",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["classes", "rrr_bands", "wicket_groups", "balls", "wickets", "max_runs", "outcome_probs",
+               "platt", "blend_k", "support_bucket", "support", "display_floor", "parity_vectors"],
+  "properties": {
+    "classes": {"type": "array", "minItems": 2, "items": {
+      "type": "array", "prefixItems": [{"enum": ["L", "X"]}, {"type": "integer", "minimum": 0},
+                                        {"enum": [0, 1]}], "minItems": 3, "maxItems": 3}},
+    "rrr_bands": {"type": "array", "items": {"type": "number"}},
+    "wicket_groups": {"type": "array", "items": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2}},
+    "balls": {"type": "integer", "minimum": 1},
+    "wickets": {"type": "integer", "minimum": 1},
+    "max_runs": {"type": "integer", "minimum": 1},
+    "outcome_probs": {"type": "array", "items": {"type": "array", "items": {"type": "number", "minimum": 0, "maximum": 1}}},
+    "platt": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+    "blend_k": {"type": "number", "exclusiveMinimum": 0},
+    "support_bucket": {"type": "array", "items": {"type": "integer", "minimum": 1}, "minItems": 2, "maxItems": 2},
+    "support": {"type": "array", "items": {"type": "array", "items": {"type": "array", "items": {"type": "integer", "minimum": 0}}}},
+    "display_floor": {"type": "number", "exclusiveMinimum": 0, "maximum": 0.5},
+    "parity_vectors": {"type": "array", "minItems": 200, "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["runs_needed", "balls_left", "wickets_left", "raw", "sim", "p"],
+      "properties": {
+        "runs_needed": {"type": "integer", "minimum": 1}, "balls_left": {"type": "integer", "minimum": 1},
+        "wickets_left": {"type": "integer", "minimum": 1},
+        "raw": {"type": "number", "minimum": 0, "maximum": 1}, "sim": {"type": "number", "minimum": 0, "maximum": 1},
+        "p": {"type": "number", "minimum": 0, "maximum": 1}}}}
+  }
+}

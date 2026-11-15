@@ -6,7 +6,7 @@ PY ?= .venv/bin/python
 endif
 CLI = $(PY) -m iplwp.cli
 
-.PHONY: profile data features baseline tune final export test all
+.PHONY: profile data features baseline tune final edgecases export test all
 
 profile:
 	$(CLI) profile
@@ -26,6 +26,9 @@ tune:
 final:
 	$(CLI) final
 
+edgecases:
+	$(CLI) edgecases
+
 export:
 	$(CLI) export
 
@@ -33,4 +36,4 @@ test:
 	$(PY) -m pytest -q
 	node docs/tests/parity.test.mjs
 
-all: profile data features baseline tune final export
+all: profile data features baseline tune final edgecases export

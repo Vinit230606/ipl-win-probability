@@ -83,6 +83,21 @@ class RecencyConfig:
 
 
 @dataclass(frozen=True)
+class SimulationConfig:
+    rrr_bands: tuple[float, ...]
+    wicket_groups: tuple[tuple[int, int], ...]
+    legal_max_runs: int
+    extra_max_runs: int
+    max_runs: int
+    shrinkage_grid: tuple[float, ...]
+    support_runs: int
+    support_balls: int
+    blend_k_grid: tuple[float, ...]
+    n_parity_vectors: int
+    display_floor: float
+
+
+@dataclass(frozen=True)
 class EvalConfig:
     n_bootstrap: int
     ci: float
@@ -110,6 +125,7 @@ class Config:
     lr: LrConfig
     gbm: GbmConfig
     recency: RecencyConfig
+    simulation: SimulationConfig
     eval: EvalConfig
     export: ExportConfig
     path: Path
@@ -165,6 +181,19 @@ def load_config(path: str | Path | None = None) -> Config:
             half_life_grid=tuple(None if h is None else float(h)
                                  for h in d["recency"]["half_life_grid"]),
             gbm_top_k=int(d["recency"]["gbm_top_k"]),
+        ),
+        simulation=SimulationConfig(
+            rrr_bands=tuple(float(x) for x in d["simulation"]["rrr_bands"]),
+            wicket_groups=tuple(tuple(g) for g in d["simulation"]["wicket_groups"]),
+            legal_max_runs=int(d["simulation"]["legal_max_runs"]),
+            extra_max_runs=int(d["simulation"]["extra_max_runs"]),
+            max_runs=int(d["simulation"]["max_runs"]),
+            shrinkage_grid=tuple(float(x) for x in d["simulation"]["shrinkage_grid"]),
+            support_runs=int(d["simulation"]["support_bucket"]["runs"]),
+            support_balls=int(d["simulation"]["support_bucket"]["balls"]),
+            blend_k_grid=tuple(float(x) for x in d["simulation"]["blend_k_grid"]),
+            n_parity_vectors=int(d["simulation"]["n_parity_vectors"]),
+            display_floor=float(d["simulation"]["display_floor"]),
         ),
         eval=EvalConfig(**d["eval"]),
         export=ExportConfig(**{**d["export"], "diagnostic_target_bins":

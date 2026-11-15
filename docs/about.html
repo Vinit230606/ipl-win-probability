@@ -19,6 +19,7 @@
       <nav class="site-nav" aria-label="Main">
         <a href="index.html">Replay</a>
         <a href="calculator.html">What-if</a>
+        <a href="edge-cases.html">Edge cases</a>
         <a href="results.html">Results</a>
         <a href="about.html">Write-up</a>
       </nav>
@@ -78,27 +79,168 @@
     </div>
 
     <div class="prose">
-      <h2 id="prep">4. Preprocessing, and why</h2>
-      <h3>Which matches we kept</h3>
-      <p id="cleaning-summary"></p>
+      <h2 id="prep">4. Preprocessing, step by step</h2>
+      <p>Six steps turn the raw match files into model rows. Each is one Python module that reads
+        only the output of the step before, so any step can be rerun and checked on its own. For
+        each step: what it does, how, the key functions (linked to the code), and how we checked
+        it. Run them with <code>python -m iplwp.cli data</code> (steps 1 to 3) and
+        <code>python -m iplwp.cli features</code> (steps 4 and 5).</p>
     </div>
+    <ol class="steps">
+      <li class="step">
+        <h3>Read the raw files into one fixed table layout</h3>
+        <p id="pp1"></p>
+        <dl>
+          <dt>Method</dt>
+          <dd>Format detection: every file is opened, and one with <code>meta</code>,
+            <code>info</code> and <code>innings</code> keys is a Cricsheet JSON match. Each delivery
+            becomes one row, in file order, which is bowling order (<code>seq</code>). Cricsheet's
+            nested fields map to fixed columns: runs off the bat, extras, extras type (wide,
+            no-ball, bye, leg-bye, penalty), dismissal kinds, batting and bowling team. Match
+            rows get the date, venue, teams, winner, result (<code>tie</code> or <code>no result</code>;
+            a super-over <code>eliminator</code> also means a tie), method (D/L) and the recorded
+            innings-2 target. Season is the calendar year of the first match date, because labels
+            like 2007/08 and 2020/21 are ambiguous. Every column is cast to a fixed type. Adapters
+            for the two common CSV layouts (Kaggle and Cricsheet CSV) produce the same tables.</dd>
+          <dt>Key functions</dt>
+          <dd><a class="repo-file" data-path="src/iplwp/io_adapters.py" href="#"><code>detect_format</code></a>,
+            <code>read_cricsheet_json</code>, <code>adapt_cricsheet_json</code>, <code>_finalise</code>;
+            <a class="repo-file" data-path="src/iplwp/schema.py" href="#"><code>enforce_schema</code></a></dd>
+          <dt>Checked by</dt>
+          <dd><span id="pp1-check"></span> <a class="repo-file" data-path="tests/test_adapters.py" href="#">test_adapters.py</a>:
+            the same toy match in all three layouts gives identical rows; the season comes from the
+            date, not the label; alternative column names are accepted; an unknown layout stops with
+            an error naming the missing columns.</dd>
+        </dl>
+      </li>
+      <li class="step">
+        <h3>Decide which matches are full 20-over chases</h3>
+        <p id="cleaning-summary"></p>
+        <dl>
+          <dt>Method</dt>
+          <dd>Per innings, sum runs, legal balls (not wide, not no-ball) and wickets (dismissals
+            other than retired hurt or retired not out). Target = first-innings total + 1. Then
+            apply nine rules in a fixed order and give each removed match the first one it fails:
+            duplicate id, no result, tie, DLS, no chase, reduced overs (recorded target overs not
+            20, or a first innings under 120 legal balls without being bowled out), rebuilt target
+            differing from the recorded one, chase stopping early without a result, and recorded
+            winner disagreeing with the runs. When comparing the winner with the chasing team,
+            renamed franchises (Delhi Daredevils to Delhi Capitals, and so on) count as the same
+            side. Super-over innings are dropped.</dd>
+          <dt>Key functions</dt>
+          <dd><a class="repo-file" data-path="src/iplwp/clean.py" href="#"><code>clean</code></a>,
+            <code>innings_summary</code>, <code>_post_clean_checks</code>;
+            <a class="repo-file" data-path="src/iplwp/states.py" href="#"><code>wickets_on_delivery</code></a>;
+            <a class="repo-file" data-path="src/iplwp/schema.py" href="#"><code>normalise_team</code></a></dd>
+          <dt>Checked by</dt>
+          <dd><span id="pp2-check"></span> <a class="repo-file" data-path="tests/test_clean.py" href="#">test_clean.py</a>:
+            a toy match for every reason triggers that reason, the first failing rule wins, and both
+            copies of a duplicate are logged. Every removed match is in
+            <a class="repo-file" data-path="reports/exclusions.csv" href="#">exclusions.csv</a>.</dd>
+        </dl>
+      </li>
+    </ol>
     <div id="exclusions"></div>
+    <ol class="steps" start="3" style="counter-reset: step 2">
+      <li class="step">
+        <h3>Rebuild the scoreboard after every ball of the chase</h3>
+        <p>For each kept chase, walk through the deliveries in bowling order and record the score
+          immediately after each one. This turns a list of deliveries into a list of situations,
+          which is what the models learn from.</p>
+        <dl>
+          <dt>Method</dt>
+          <dd>Vectorised running totals per match (group by match, cumulative sum):
+            <ul>
+              <li>legal balls: wides and no-balls add runs but do not use up a ball, because they
+                are bowled again; byes and leg-byes add runs and count as a legal ball;</li>
+              <li>runs needed = target − runs so far; balls left = 120 − legal balls;
+                wickets left = 10 − wickets;</li>
+              <li>over label from the legal balls before the delivery (14.3 is the third legal
+                ball of the 15th over), and phase from that over: powerplay overs 1–6, middle 7–15,
+                death 16–20;</li>
+              <li>a short event text (4, dot, W caught, wd+4, nb+1, 1lb);</li>
+              <li>settled flag when the target is reached, the side is all out or no balls are left,
+                with the known result (100% or 0%);</li>
+              <li>label: 1 if the chase was won, the same on every row of the match.</li>
+            </ul></dd>
+          <dt>Key functions</dt>
+          <dd><a class="repo-file" data-path="src/iplwp/states.py" href="#"><code>build_states</code></a>,
+            <code>event_texts</code>, <code>running_total_check</code></dd>
+          <dt>Checked by</dt>
+          <dd><span id="pp3-check"></span> The code stops with an error if a chase has more than
+            120 legal balls or 10 wickets, or a delivery after the result was settled.
+            <a class="repo-file" data-path="tests/test_states.py" href="#">test_states.py</a>: a
+            hand-worked toy innings with wides, a no-ball with runs, byes, leg-byes, a run-out on a
+            wide, a retired-hurt batter and two dismissals on one ball matches the expected scores,
+            labels and events; a slow ball-by-ball loop gives the same answer as the fast code on 30
+            real chases.</dd>
+        </dl>
+      </li>
+      <li class="step">
+        <h3>Compute the inputs, using only the past</h3>
+        <ul id="features"></ul>
+        <dl>
+          <dt>Method</dt>
+          <dd>Required rate = 6 × runs needed / balls left, capped. Momentum: for the row with L
+            legal balls bowled, R[k] is the score after the last delivery with k legal balls; then
+            runs in the last window = runs now − R[L − window]. Wickets the same way. This is a
+            lookup on earlier rows only, so it cannot see the future. The four extra terms for
+            logistic regression come from the same row.</dd>
+          <dt>Key functions</dt>
+          <dd><a class="repo-file" data-path="src/iplwp/features.py" href="#"><code>compute_features</code></a>,
+            <code>last_window</code>, <code>core_terms</code>, <code>rrr</code></dd>
+          <dt>Checked by</dt>
+          <dd><span id="pp4-check"></span>
+            <a class="repo-file" data-path="tests/test_features.py" href="#">test_features.py</a>:
+            the momentum window matches a brute-force count, including wides at the edge of the
+            window; the rate cap works; and the truncation test cuts 50 real chases at random points,
+            rebuilds them, and checks that no earlier input changes.</dd>
+        </dl>
+      </li>
+      <li class="step">
+        <h3>Set the settled balls aside</h3>
+        <p id="terminal-text"></p>
+        <dl>
+          <dt>Method</dt>
+          <dd>Settled rows keep the flag <code>is_model_row = false</code> and their known result.
+            Training, tuning and the main scores use open rows only; the replay shows settled balls
+            as "decided".</dd>
+          <dt>Key functions</dt>
+          <dd><a class="repo-file" data-path="src/iplwp/features.py" href="#"><code>compute_features</code></a> (flag),
+            <a class="repo-file" data-path="src/iplwp/baseline.py" href="#"><code>LookupBaseline.fit</code></a> (refuses settled rows)</dd>
+          <dt>Checked by</dt>
+          <dd><a class="repo-file" data-path="tests/test_states.py" href="#">test_states.py</a>
+            (settled flags on a win, an all-out and the last ball);
+            <a class="repo-file" data-path="tests/test_baseline.py" href="#">test_baseline.py</a>
+            (the baseline rejects settled rows).</dd>
+        </dl>
+      </li>
+      <li class="step">
+        <h3>Split by season</h3>
+        <p id="pp6"></p>
+        <dl>
+          <dt>Method</dt>
+          <dd>Sort the seasons left after cleaning: the last two are test, the one before is
+            validation, the rest are training. Every row of a chase gets its match's split. Steps
+            that tune models read the feature table with the test seasons filtered out while
+            reading, so test rows are never even in memory. Scaling for logistic regression is fit
+            inside the model pipeline, on training rows only.</dd>
+          <dt>Key functions</dt>
+          <dd><a class="repo-file" data-path="src/iplwp/split.py" href="#"><code>season_split</code></a>,
+            <code>assign_split</code>, <code>check_disjoint</code>;
+            <a class="repo-file" data-path="src/iplwp/io_tables.py" href="#"><code>read_dev_features</code></a></dd>
+          <dt>Checked by</dt>
+          <dd><a class="repo-file" data-path="tests/test_split.py" href="#">test_split.py</a>:
+            seasons go to the right split, no match id is in two splits, and training seasons all come
+            before validation, before test. The split of every chase is in
+            <a class="repo-file" data-path="reports/splits.csv" href="#">splits.csv</a>.</dd>
+        </dl>
+      </li>
+    </ol>
     <div class="prose">
-      <h3>Rebuilding the scoreboard</h3>
-      <ul>
-        <li>Wides and no-balls add runs but do not use up a ball, because they are bowled again.</li>
-        <li>Byes and leg-byes add runs and count as a legal ball.</li>
-        <li>"Retired hurt" and "retired not out" do not count as wickets, because the batter can
-          come back.</li>
-        <li>Season is the calendar year of the match date, because Cricsheet's season labels do
-          not always match it.</li>
-      </ul>
-      <h3>Settled balls are left out of training and scoring</h3>
-      <p id="terminal-text"></p>
-      <h3>Inputs, and why each one</h3>
-      <ul id="features"></ul>
-      <p>No team names, venues or player names are used. They would make the model describe
-        particular teams instead of match situations, and team strength changes every season.</p>
+      <p>No team names, venues or player names are used as inputs. They would make the model
+        describe particular teams instead of match situations, and team strength changes every
+        season.</p>
     </div>
 
     <div class="prose">
@@ -207,6 +349,9 @@
         <li><a href="calculator.html">What-if calculator</a>: set runs needed, balls left and
           wickets left and watch how the simple model's probability moves, including how much a
           wicket is worth late in a chase.</li>
+        <li><a href="edge-cases.html">Edge cases</a>: situations no past chase reached (such as
+          42 needed off 42 balls with one wicket left), why the simple model said 0% there, and the
+          ball-by-ball simulation that fixes the calculator. Compare the three answers yourself.</li>
         <li><a href="results.html">Results</a>: every metric table, with links from each failure
           case to its replay.</li>
       </ul>
@@ -240,6 +385,11 @@
         <li>To allow for the Impact Player rule (from 2023), training could weight recent seasons
           more; how much was chosen on validation.</li>
         <li id="selection-decision"></li>
+        <li>After the test run we found that the calculator gave impossible certainties (0% for 42
+          needed off 42 balls with one wicket left) in situations the data never reached. The
+          calculator now blends the simple model with a ball-by-ball simulation according to how
+          much data backs each situation. Its settings were chosen on validation; the main results
+          are unchanged. Details on the <a href="edge-cases.html">Edge cases</a> page.</li>
       </ul>
 
       <h2 id="credits">12. Team, AI use and citations</h2>

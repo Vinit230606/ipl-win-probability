@@ -1,0 +1,577 @@
+{
+  "chosen": {
+    "shrinkage": 5.0,
+    "k": 1.0,
+    "support_bucket": {
+      "runs": 5,
+      "balls": 6
+    },
+    "platt_slope": 0.6903945954,
+    "platt_intercept": 0.497466295,
+    "selection_metric": "validation log loss"
+  },
+  "validation": {
+    "val_log_loss": 0.382877276,
+    "val_brier": 0.1216930468,
+    "val_log_loss_lr_core": 0.3813136825,
+    "val_brier_lr_core": 0.1211019269,
+    "val_log_loss_simulation": 0.3951590321,
+    "val_brier_simulation": 0.1250264122,
+    "val_brier_simulation_uncalibrated": 0.1512520403,
+    "share_without_data": 0.0324707639,
+    "mean_lr_weight": 0.895090411
+  },
+  "tuning": [
+    {
+      "shrinkage": 5.0,
+      "k": 1.0,
+      "val_log_loss": 0.382877276,
+      "val_brier": 0.1216930468,
+      "mean_lr_weight": 0.895090411,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3951590321,
+      "val_brier_simulation": 0.1250264122,
+      "val_brier_simulation_uncalibrated": 0.1512520403,
+      "platt_slope": 0.6875850737,
+      "platt_intercept": 0.5108838659
+    },
+    {
+      "shrinkage": 5.0,
+      "k": 3.0,
+      "val_log_loss": 0.3840444664,
+      "val_brier": 0.1218876727,
+      "mean_lr_weight": 0.8038286726,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3951590321,
+      "val_brier_simulation": 0.1250264122,
+      "val_brier_simulation_uncalibrated": 0.1512520403,
+      "platt_slope": 0.6875850737,
+      "platt_intercept": 0.5108838659
+    },
+    {
+      "shrinkage": 5.0,
+      "k": 10.0,
+      "val_log_loss": 0.3860538036,
+      "val_brier": 0.1222772134,
+      "mean_lr_weight": 0.6296552771,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3951590321,
+      "val_brier_simulation": 0.1250264122,
+      "val_brier_simulation_uncalibrated": 0.1512520403,
+      "platt_slope": 0.6875850737,
+      "platt_intercept": 0.5108838659
+    },
+    {
+      "shrinkage": 5.0,
+      "k": 30.0,
+      "val_log_loss": 0.3886067772,
+      "val_brier": 0.1229330605,
+      "mean_lr_weight": 0.418019951,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3951590321,
+      "val_brier_simulation": 0.1250264122,
+      "val_brier_simulation_uncalibrated": 0.1512520403,
+      "platt_slope": 0.6875850737,
+      "platt_intercept": 0.5108838659
+    },
+    {
+      "shrinkage": 25.0,
+      "k": 1.0,
+      "val_log_loss": 0.3838807861,
+      "val_brier": 0.1219636409,
+      "mean_lr_weight": 0.895090411,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3959554519,
+      "val_brier_simulation": 0.1250562873,
+      "val_brier_simulation_uncalibrated": 0.1520607176,
+      "platt_slope": 0.6876169492,
+      "platt_intercept": 0.5244591334
+    },
+    {
+      "shrinkage": 25.0,
+      "k": 3.0,
+      "val_log_loss": 0.3851970076,
+      "val_brier": 0.1221766379,
+      "mean_lr_weight": 0.8038286726,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3959554519,
+      "val_brier_simulation": 0.1250562873,
+      "val_brier_simulation_uncalibrated": 0.1520607176,
+      "platt_slope": 0.6876169492,
+      "platt_intercept": 0.5244591334
+    },
+    {
+      "shrinkage": 25.0,
+      "k": 10.0,
+      "val_log_loss": 0.3873871234,
+      "val_brier": 0.1225704522,
+      "mean_lr_weight": 0.6296552771,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3959554519,
+      "val_brier_simulation": 0.1250562873,
+      "val_brier_simulation_uncalibrated": 0.1520607176,
+      "platt_slope": 0.6876169492,
+      "platt_intercept": 0.5244591334
+    },
+    {
+      "shrinkage": 25.0,
+      "k": 30.0,
+      "val_log_loss": 0.3899896331,
+      "val_brier": 0.1231812897,
+      "mean_lr_weight": 0.418019951,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3959554519,
+      "val_brier_simulation": 0.1250562873,
+      "val_brier_simulation_uncalibrated": 0.1520607176,
+      "platt_slope": 0.6876169492,
+      "platt_intercept": 0.5244591334
+    },
+    {
+      "shrinkage": 100.0,
+      "k": 1.0,
+      "val_log_loss": 0.3846156075,
+      "val_brier": 0.1221284675,
+      "mean_lr_weight": 0.895090411,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3978427548,
+      "val_brier_simulation": 0.1253366784,
+      "val_brier_simulation_uncalibrated": 0.1529248582,
+      "platt_slope": 0.6799919376,
+      "platt_intercept": 0.5311000905
+    },
+    {
+      "shrinkage": 100.0,
+      "k": 3.0,
+      "val_log_loss": 0.3861535949,
+      "val_brier": 0.1223715994,
+      "mean_lr_weight": 0.8038286726,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3978427548,
+      "val_brier_simulation": 0.1253366784,
+      "val_brier_simulation_uncalibrated": 0.1529248582,
+      "platt_slope": 0.6799919376,
+      "platt_intercept": 0.5311000905
+    },
+    {
+      "shrinkage": 100.0,
+      "k": 10.0,
+      "val_log_loss": 0.388785426,
+      "val_brier": 0.1228247663,
+      "mean_lr_weight": 0.6296552771,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3978427548,
+      "val_brier_simulation": 0.1253366784,
+      "val_brier_simulation_uncalibrated": 0.1529248582,
+      "platt_slope": 0.6799919376,
+      "platt_intercept": 0.5311000905
+    },
+    {
+      "shrinkage": 100.0,
+      "k": 30.0,
+      "val_log_loss": 0.3918507935,
+      "val_brier": 0.1235033959,
+      "mean_lr_weight": 0.418019951,
+      "share_without_data": 0.0324707639,
+      "val_log_loss_lr_core": 0.3813136825,
+      "val_brier_lr_core": 0.1211019269,
+      "val_log_loss_simulation": 0.3978427548,
+      "val_brier_simulation": 0.1253366784,
+      "val_brier_simulation_uncalibrated": 0.1529248582,
+      "platt_slope": 0.6799919376,
+      "platt_intercept": 0.5311000905
+    }
+  ],
+  "post_test": {
+    "all_rows": {
+      "lr_core": {
+        "brier": 0.1271852231,
+        "log_loss": 0.4008428757,
+        "ece": 0.0936380806,
+        "n_rows": 15776
+      },
+      "simulation": {
+        "brier": 0.1388093483,
+        "log_loss": 0.428908216,
+        "ece": 0.1339850268,
+        "n_rows": 15776
+      },
+      "calculator": {
+        "brier": 0.1264864184,
+        "log_loss": 0.3978966202,
+        "ece": 0.0973078969,
+        "n_rows": 15776
+      }
+    },
+    "rows_without_data": {
+      "lr_core": {
+        "brier": 0.05805096,
+        "log_loss": 0.2086701402,
+        "ece": 0.0746672654,
+        "n_rows": 570
+      },
+      "simulation": {
+        "brier": 0.0446242156,
+        "log_loss": 0.1576524489,
+        "ece": 0.0483856872,
+        "n_rows": 570
+      },
+      "calculator": {
+        "brier": 0.0450117344,
+        "log_loss": 0.1558534236,
+        "ece": 0.0588399498,
+        "n_rows": 570
+      }
+    },
+    "share_rows_without_data": 0.0361308316,
+    "n_rows": 15776,
+    "near_certain_rows": {
+      "lr_core": 1756,
+      "simulation": 2163,
+      "calculator": 1927
+    },
+    "near_certain_wrong": {
+      "lr_core": 0,
+      "simulation": 32,
+      "calculator": 11
+    }
+  },
+  "scenarios": [
+    {
+      "runs_needed": 42,
+      "balls_left": 42,
+      "wickets_left": 1,
+      "why": "The case that showed the problem: a run a ball, last pair at the crease.",
+      "support_chases": 0,
+      "support_won": 0,
+      "lr_weight": 0.0,
+      "p_lr_core": 0.000636933,
+      "p_simulation_raw": 0.0413812599,
+      "p_simulation": 0.1581293709,
+      "p_blend": 0.1581293709,
+      "p_calculator": 0.1581293709
+    },
+    {
+      "runs_needed": 42,
+      "balls_left": 42,
+      "wickets_left": 2,
+      "why": "The same chase with one more wicket.",
+      "support_chases": 0,
+      "support_won": 0,
+      "lr_weight": 0.0,
+      "p_lr_core": 0.1695244431,
+      "p_simulation_raw": 0.1574661338,
+      "p_simulation": 0.3406349613,
+      "p_blend": 0.3406349613,
+      "p_calculator": 0.3406349613
+    },
+    {
+      "runs_needed": 42,
+      "balls_left": 42,
+      "wickets_left": 6,
+      "why": "The same chase with a normal number of wickets.",
+      "support_chases": 16,
+      "support_won": 15,
+      "lr_weight": 0.9411764706,
+      "p_lr_core": 0.9177678603,
+      "p_simulation_raw": 0.9297091523,
+      "p_simulation": 0.9072259076,
+      "p_blend": 0.9171477454,
+      "p_calculator": 0.9171477454
+    },
+    {
+      "runs_needed": 60,
+      "balls_left": 42,
+      "wickets_left": 1,
+      "why": "Harder, last wicket.",
+      "support_chases": 1,
+      "support_won": 0,
+      "lr_weight": 0.5,
+      "p_lr_core": 1.9477e-06,
+      "p_simulation_raw": 0.0005117031,
+      "p_simulation": 0.0087161,
+      "p_blend": 0.0043590239,
+      "p_calculator": 0.0043590239
+    },
+    {
+      "runs_needed": 10,
+      "balls_left": 12,
+      "wickets_left": 1,
+      "why": "Last wicket, close to the line.",
+      "support_chases": 3,
+      "support_won": 0,
+      "lr_weight": 0.75,
+      "p_lr_core": 0.7545071604,
+      "p_simulation_raw": 0.5495066042,
+      "p_simulation": 0.6535390293,
+      "p_blend": 0.7292651276,
+      "p_calculator": 0.6661235402
+    },
+    {
+      "runs_needed": 1,
+      "balls_left": 1,
+      "wickets_left": 1,
+      "why": "One run off the last ball, last wicket.",
+      "support_chases": 8,
+      "support_won": 4,
+      "lr_weight": 0.8888888889,
+      "p_lr_core": 0.89753998,
+      "p_simulation_raw": 0.7223080505,
+      "p_simulation": 0.7608675342,
+      "p_blend": 0.8823541527,
+      "p_calculator": 0.8201331218
+    },
+    {
+      "runs_needed": 6,
+      "balls_left": 1,
+      "wickets_left": 10,
+      "why": "A six needed off the last ball.",
+      "support_chases": 0,
+      "support_won": 0,
+      "lr_weight": 0.0,
+      "p_lr_core": 0.1704682532,
+      "p_simulation_raw": 0.0808321798,
+      "p_simulation": 0.2348818645,
+      "p_blend": 0.2348818645,
+      "p_calculator": 0.2348819465
+    },
+    {
+      "runs_needed": 20,
+      "balls_left": 6,
+      "wickets_left": 10,
+      "why": "Twenty off the last over.",
+      "support_chases": 0,
+      "support_won": 0,
+      "lr_weight": 0.0,
+      "p_lr_core": 0.3730537361,
+      "p_simulation_raw": 0.0326568009,
+      "p_simulation": 0.1368224933,
+      "p_blend": 0.1368224933,
+      "p_calculator": 0.2005649013
+    },
+    {
+      "runs_needed": 36,
+      "balls_left": 6,
+      "wickets_left": 10,
+      "why": "Six sixes needed off the last over.",
+      "support_chases": 0,
+      "support_won": 0,
+      "lr_weight": 0.0,
+      "p_lr_core": 0.0591231528,
+      "p_simulation_raw": 1.8421e-06,
+      "p_simulation": 0.0001806228,
+      "p_blend": 0.0001806228,
+      "p_calculator": 0.0122007865
+    },
+    {
+      "runs_needed": 100,
+      "balls_left": 30,
+      "wickets_left": 10,
+      "why": "A big target late, all wickets in hand.",
+      "support_chases": 0,
+      "support_won": 0,
+      "lr_weight": 0.0,
+      "p_lr_core": 0.1898789475,
+      "p_simulation_raw": 1.44087e-05,
+      "p_simulation": 0.0007469071,
+      "p_blend": 0.0007469071,
+      "p_calculator": 0.016865799
+    },
+    {
+      "runs_needed": 300,
+      "balls_left": 120,
+      "wickets_left": 10,
+      "why": "The largest input the calculator allows.",
+      "support_chases": 0,
+      "support_won": 0,
+      "lr_weight": 0.0,
+      "p_lr_core": 0.0311253345,
+      "p_simulation_raw": 3.94742e-05,
+      "p_simulation": 0.0014966728,
+      "p_blend": 0.0014966728,
+      "p_calculator": 0.0014966728
+    },
+    {
+      "runs_needed": 1,
+      "balls_left": 120,
+      "wickets_left": 10,
+      "why": "One run needed with the whole innings left.",
+      "support_chases": 0,
+      "support_won": 0,
+      "lr_weight": 0.0,
+      "p_lr_core": 0.9999999424,
+      "p_simulation_raw": 1.0,
+      "p_simulation": 0.9999561906,
+      "p_blend": 0.9999561906,
+      "p_calculator": 0.9999752215
+    }
+  ],
+  "monotonicity": {
+    "lr_core": {
+      "states_checked": 358800,
+      "more_runs_raises_p": 0,
+      "fewer_balls_raises_p": 0,
+      "fewer_wickets_raises_p": 0
+    },
+    "simulation": {
+      "states_checked": 358800,
+      "more_runs_raises_p": 368,
+      "fewer_balls_raises_p": 14772,
+      "fewer_wickets_raises_p": 10920
+    },
+    "blend_before_envelope": {
+      "states_checked": 358800,
+      "more_runs_raises_p": 3207,
+      "fewer_balls_raises_p": 16038,
+      "fewer_wickets_raises_p": 25276
+    },
+    "calculator": {
+      "states_checked": 358800,
+      "more_runs_raises_p": 0,
+      "fewer_balls_raises_p": 0,
+      "fewer_wickets_raises_p": 0
+    }
+  },
+  "coverage": {
+    "calculator_states": 360000,
+    "states_without_data": 256554,
+    "share_without_data": 0.71265,
+    "lr_core_near_certain": 231060,
+    "lr_core_near_certain_without_data": 198622,
+    "calculator_near_certain": 233004,
+    "mean_change_by_envelope": 0.0031837084,
+    "max_change_by_envelope": 0.1406448707
+  },
+  "reach": [
+    {
+      "wickets_left": 1,
+      "chases": 202,
+      "won": 4
+    },
+    {
+      "wickets_left": 2,
+      "chases": 298,
+      "won": 14
+    },
+    {
+      "wickets_left": 3,
+      "chases": 414,
+      "won": 45
+    },
+    {
+      "wickets_left": 4,
+      "chases": 530,
+      "won": 103
+    },
+    {
+      "wickets_left": 5,
+      "chases": 659,
+      "won": 199
+    },
+    {
+      "wickets_left": 6,
+      "chases": 790,
+      "won": 317
+    },
+    {
+      "wickets_left": 7,
+      "chases": 902,
+      "won": 428
+    },
+    {
+      "wickets_left": 8,
+      "chases": 978,
+      "won": 503
+    },
+    {
+      "wickets_left": 9,
+      "chases": 1024,
+      "won": 549
+    },
+    {
+      "wickets_left": 10,
+      "chases": 1009,
+      "won": 554
+    }
+  ],
+  "display_floor": 0.01,
+  "fit": {
+    "seasons": [
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "chases": 1039,
+    "deliveries": 121118,
+    "contexts": 108,
+    "outcome_classes": 28,
+    "rrr_bands": [
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      15.0
+    ],
+    "wicket_groups": [
+      [
+        9,
+        10
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  }
+}

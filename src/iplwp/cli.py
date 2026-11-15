@@ -19,7 +19,7 @@ warnings.filterwarnings("ignore", message="Could not find the number of physical
 
 from .config import load_config
 
-STAGES = ["profile", "data", "features", "baseline", "tune", "final", "export"]
+STAGES = ["profile", "data", "features", "baseline", "tune", "final", "edgecases", "export"]
 
 
 def _not_implemented(name: str) -> Callable[[argparse.Namespace], int]:
@@ -663,8 +663,17 @@ def run_export(args: argparse.Namespace) -> int:
     return 0
 
 
+def run_edgecases(args: argparse.Namespace) -> int:
+    """Post-test addition: ball-by-ball model for states the data never reached (edge cases)."""
+    from .edge_cases import run_stage
+
+    run_stage(load_config(args.config))
+    return 0
+
+
 HANDLERS: dict[str, Callable[[argparse.Namespace], int]] = {s: _not_implemented(s) for s in STAGES}
 HANDLERS["features"] = run_features
+HANDLERS["edgecases"] = run_edgecases
 HANDLERS["export"] = run_export
 HANDLERS["final"] = run_final
 HANDLERS["baseline"] = run_baseline
@@ -694,6 +703,7 @@ def build_parser() -> argparse.ArgumentParser:
         "baseline": "lookup-table baseline on train, scored on validation",
         "tune": "tune LR and GBM on validation seasons only",
         "final": "refit on train+val, evaluate test once",
+        "edgecases": "post-test: ball-by-ball model for rare states (calculator fix)",
         "export": "write website JSON into docs/data/",
         "all": "run every stage above in order",
     }

@@ -104,11 +104,30 @@ async function init() {
       `${fix(last.mean_target, 0)} in ${last.season}. This shift matters for the results (section 8).`,
   ].map((t) => el("li", { text: t })));
 
-  // 4. preprocessing
+  // 4. preprocessing, step by step
+  $("pp1").textContent =
+    `Input: ${int(D.raw_matches)} match files. Output: a matches table (one row per match) and a deliveries ` +
+    `table (${int(D.raw_deliveries)} rows, one per delivery of every innings).`;
+  $("pp1-check").textContent =
+    `On every one of the ${int(D.raw_deliveries)} deliveries, the total must equal runs off the bat plus ` +
+    "extras, or the run stops.";
+  $("pp2-check").textContent =
+    `The run stops unless raw matches = kept + removed (${int(R.cleaning.raw_matches)} = ` +
+    `${int(R.cleaning.kept)} + ${int(R.cleaning.excluded)}), every kept match has exactly innings 1 and 2, ` +
+    "and the two batting sides are the match's two teams.";
+  $("pp3-check").textContent =
+    `The rebuilt final score matches the innings total from step 2 for ${int(D.running_total_ok)} of ` +
+    `${int(D.kept_chases)} chases (the run stops on any mismatch).`;
+  $("pp4-check").textContent = "";
+  const sp = R.splits.table;
+  $("pp6").textContent =
+    "Whole seasons go to one split, so the models are always tested on seasons later than anything they " +
+    "learned from: " + sp.map((r) => `${({ train: "training", val: "validation", test: "test" })[r.split]} ` +
+    `${r.seasons} (${int(r.matches)} chases)`).join(", ") + ".";
   $("cleaning-summary").textContent =
-    `Of ${int(R.cleaning.raw_matches)} matches, ${int(R.cleaning.excluded)} were removed and ` +
-    `${int(R.cleaning.kept)} complete 20-over chases were kept. Each removed match is given the first ` +
-    "reason it meets, in a fixed order.";
+    `Only completed chases of a full 20-over target fit the question. Of ${int(R.cleaning.raw_matches)} ` +
+    `matches, ${int(R.cleaning.excluded)} were removed and ${int(R.cleaning.kept)} were kept; the table ` +
+    "below gives every reason.";
   const ex = Object.entries(R.exclusions).sort((a, b) => b[1] - a[1]);
   $("exclusions").replaceChildren(table(["Reason", "Matches", "Why it is removed"],
     ex.map(([k, n]) => [REASONS[k]?.[0] ?? k, int(n), REASONS[k]?.[1] ?? ""]),

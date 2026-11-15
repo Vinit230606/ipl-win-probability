@@ -38,6 +38,17 @@ gbm:
 recency:                     # D8: sample weights 0.5 ** ((latest fit season - season) / half_life)
   half_life_grid: [null, 8, 4, 2]   # seasons; null = uniform weights. Applies to LR-full, LR-core, GBM
   gbm_top_k: 10              # GBM: full grid with uniform weights, then top-k configs x other half-lives
+simulation:                  # post-test addition: ball-by-ball model for edge cases (edgecases stage)
+  rrr_bands: [6, 8, 10, 12, 15]           # required-rate band edges for a delivery's context
+  wicket_groups: [[9, 10], [7, 8], [5, 6], [3, 4], [2, 2], [1, 1]]
+  legal_max_runs: 6          # legal-ball runs 0..6 (rare 7s counted as 6)
+  extra_max_runs: 7          # runs on a wide / no-ball 1..7 (no-ball + six = 7)
+  max_runs: 300              # largest runs-needed value solved
+  shrinkage_grid: [5, 25, 100]           # pseudo-deliveries pulling a context towards its parent
+  support_bucket: {runs: 5, balls: 6}    # "has the data seen this state?" cell, same wickets left
+  blend_k_grid: [1, 3, 10, 30]      # LR-core weight n/(n+k), n = fitting chases in the cell (chosen on validation)
+  n_parity_vectors: 250
+  display_floor: 0.01        # show values under 1% as "under 1%" and over 99% as "over 99%"
 eval:
   n_bootstrap: 1000
   ci: 0.95

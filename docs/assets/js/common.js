@@ -94,8 +94,70 @@ export function cssVar(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
 
+// Team colours tuned to read on the dark background: [primary, secondary]. When both sides of a
+// match would look alike, the bowling side uses its secondary colour.
+const TEAM_COLORS = {
+  "Chennai Super Kings": ["#FDB913", "#3B82F6"],
+  "Mumbai Indians": ["#1E90FF", "#D1AB3E"],
+  "Royal Challengers Bengaluru": ["#EF3340", "#C9A13B"],
+  "Kolkata Knight Riders": ["#8B5CF6", "#D4AF37"],
+  "Sunrisers Hyderabad": ["#FF7A1A", "#FACC15"],
+  "Rajasthan Royals": ["#FF4FA3", "#3B82F6"],
+  "Delhi Capitals": ["#3D6BFF", "#EF4444"],
+  "Punjab Kings": ["#ED1B24", "#D7D2CB"],
+  "Lucknow Super Giants": ["#22B8CF", "#FF8A3D"],
+  "Gujarat Titans": ["#D9B65D", "#5B8DEF"],
+  "Deccan Chargers": ["#9CA3AF", "#F59E0B"],
+  "Gujarat Lions": ["#F97316", "#EF4444"],
+  "Kochi Tuskers Kerala": ["#F97316", "#7C3AED"],
+  "Pune Warriors": ["#38BDF8", "#E5E7EB"],
+  "Rising Pune Supergiant": ["#C084FC", "#F472B6"],
+};
+const NEUTRAL = "#7DD3FC";
+
+function rgb(hex) {
+  const n = Number.parseInt(hex.slice(1), 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+const dist = (a, b) => Math.hypot(...rgb(a).map((v, i) => v - rgb(b)[i]));
+
+export function teamColors(batting, bowling) {
+  const a = TEAM_COLORS[teamName(batting)] ?? [NEUTRAL, NEUTRAL];
+  const b = TEAM_COLORS[teamName(bowling)] ?? ["#F472B6", "#F472B6"];
+  return { batting: a[0], bowling: dist(a[0], b[0]) < 110 ? b[1] : b[0] };
+}
+
+// Page tint: colour of the side that is ahead, strength = how clearly (0 at 50%, 1 at 0%/100%).
+export function setTeamTint(color, strength) {
+  const s = document.documentElement.style;
+  s.setProperty("--team", color ?? NEUTRAL);
+  s.setProperty("--team-strength", String(Math.max(0, Math.min(1, strength ?? 0.35))));
+}
+
+// A soft glow that follows the cursor (skipped for touch screens and reduced motion).
+function cursorGlow() {
+  if (typeof window === "undefined" || !window.matchMedia) return;
+  if (matchMedia("(hover: none)").matches || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const g = document.createElement("div");
+  g.className = "cursor-glow";
+  g.setAttribute("aria-hidden", "true");
+  document.body.append(g);
+  let frame = 0, x = 0, y = 0;
+  window.addEventListener("pointermove", (e) => {
+    x = e.clientX; y = e.clientY;
+    if (!frame) frame = requestAnimationFrame(() => {
+      g.style.setProperty("--mx", `${x}px`);
+      g.style.setProperty("--my", `${y}px`);
+      g.classList.add("on");
+      frame = 0;
+    });
+  }, { passive: true });
+  document.addEventListener("pointerleave", () => g.classList.remove("on"));
+}
+
 export function highlightNav() {
   linkRepo();
+  cursorGlow();
   const here = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".site-nav a").forEach((a) => {
     if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");
