@@ -13,7 +13,7 @@ const FIELDS = [
   { id: "balls", key: "balls_left", label: "Balls left" },
   { id: "wkts", key: "wickets_left", label: "Wickets left" },
 ];
-const CHASE = "#7DD3FC", DEFEND = "#F472B6";
+const CHASE = "#847dff", DEFEND = "#dd90d8";   // DESIGN.md Iris Gleam / Orchid Bloom tiles
 const $ = (id) => document.getElementById(id);
 let model = null, calc = null, chart = null;
 
@@ -123,7 +123,7 @@ function drawCurve(v) {
     data: {
       datasets: [
         { data: curve, borderColor: cssVar("--floodlight"), borderWidth: 2.5, pointRadius: 0,
-          fill: { target: { value: 50 }, above: "rgba(125, 211, 252, .14)", below: "rgba(244, 114, 182, .14)" } },
+          fill: { target: { value: 50 }, above: "rgba(132, 125, 255, .14)", below: "rgba(221, 144, 216, .14)" } },
         { type: "scatter", data: here, backgroundColor: cssVar("--ink"), pointRadius: 6 },
       ],
     },

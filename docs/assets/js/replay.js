@@ -63,6 +63,7 @@ async function init() {
   ui.season.addEventListener("change", renderOptions);
   ui.team.addEventListener("change", renderOptions);
   ui.search.addEventListener("input", renderOptions);
+  $("hero-search").addEventListener("submit", onHeroSubmit);
   ui.select.addEventListener("change", () => ui.select.value && openMatch(ui.select.value));
   ui.featured.addEventListener("click", () => {
     ui.season.value = ""; ui.team.value = ""; ui.search.value = "";
@@ -96,6 +97,26 @@ function writeIntroAnswer() {
       `${["lr_full", "lr_core", "gbm"].filter((k) => !beats.includes(k)).map(lab).join(" and ") || "every model did"}` +
       `${beats.length < 3 ? " did not" : ""}.`
     : `On the ${seasons} seasons, no model was shown to beat the baseline.`;
+  $("hero-badge").textContent =
+    `Test seasons ${seasons}, ${results.counts.test_matches} chases`;
+  const best = beats.reduce((a, k) => (T[k].bss > T[a].bss ? k : a), beats[0] ?? "lr_full");
+  $("stat-head").textContent = beats.length
+    ? `${lab(best)} removed ${pct(T[best].bss)} of the baseline's error on chases it had never seen.`
+    : "No model was shown to beat the historical baseline.";
+  $("stat-text").textContent =
+    `Brier skill score ${T[best].bss.toFixed(3)}, 95% interval ${T[best].bss_ci[0].toFixed(3)} to ` +
+    `${T[best].bss_ci[1].toFixed(3)}, test seasons ${seasons}`;
+}
+
+// Hero search: filter as you type; Enter or the arrow opens the first match and moves to it.
+function onHeroSubmit(e) {
+  e.preventDefault();
+  const list = filtered();
+  if (!list.length) return;
+  openMatch(list[0].match_id).then(() => {
+    document.getElementById("replay").scrollIntoView({ behavior: reducedMotion() ? "auto" : "smooth" });
+    ui.box.focus({ preventScroll: true });
+  });
 }
 
 // ---------- filters ----------
@@ -137,7 +158,7 @@ function renderOptions() {
     el("option", { value: "", text: list.length ? `${plural(list.length, "chase")} to choose from` : "No chases" }),
     ...list.map((m) => el("option", {
       value: m.match_id,
-      text: `${fmtDate(m.date)} · ${teamShort(m.batting_team)} chasing ${m.target} v ${teamShort(m.bowling_team)}`,
+      text: `${fmtDate(m.date)}, ${teamShort(m.batting_team)} chasing ${m.target} v ${teamShort(m.bowling_team)}`,
     })));
   if (match && list.some((m) => m.match_id === match.match_id)) ui.select.value = match.match_id;
 }
@@ -206,7 +227,7 @@ function tint(p) {
   ui.lead.textContent = p.terminal
     ? `${teamName(match.chase_won ? match.batting_team : match.bowling_team)} won`
     : Math.abs(v - 0.5) < 0.02 ? "Level: anyone's game"
-      : `${teamName(team)} ahead · ${pct(share)} by ${labels.model}`;
+      : `${teamName(team)} ahead, ${pct(share)} by ${labels.model}`;
 }
 
 function select(k, announce = true) {
@@ -257,7 +278,8 @@ const bigOverPlugin = {
   },
 };
 
-// Selected ball: a soft glowing band and a glowing dot on the main line, in the leading side's colour.
+// Selected ball: a flat white hairline and a ring on the main line (DESIGN.md: flat, no glow or
+// radial gradients); the ring is filled with the colour of the side that is ahead.
 const cursorPlugin = {
   id: "cursor",
   afterDatasetsDraw(ch) {
@@ -268,31 +290,19 @@ const cursorPlugin = {
     const py = y.getPixelForValue(100 * p.p_model);
     const col = p.p_model >= 0.5 ? teamTint.batting : teamTint.bowling;
     ctx.save();
-    const band = ctx.createLinearGradient(px - 28, 0, px + 28, 0);
-    band.addColorStop(0, "rgba(0,0,0,0)");
-    band.addColorStop(0.5, hexA(col, 0.18));
-    band.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = band;
-    ctx.fillRect(px - 28, a.top, 56, a.bottom - a.top);
-    ctx.strokeStyle = hexA(col, 0.7);
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.55)";
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(px, a.top);
     ctx.lineTo(px, a.bottom);
     ctx.stroke();
-    const halo = ctx.createRadialGradient(px, py, 0, px, py, 26);
-    halo.addColorStop(0, hexA(col, 0.65));
-    halo.addColorStop(1, "rgba(0,0,0,0)");
-    ctx.fillStyle = halo;
-    ctx.beginPath();
-    ctx.arc(px, py, 26, 0, Math.PI * 2);
-    ctx.fill();
     ctx.fillStyle = col;
-    ctx.shadowColor = col;
-    ctx.shadowBlur = 14;
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.arc(px, py, 5, 0, Math.PI * 2);
+    ctx.arc(px, py, 6, 0, Math.PI * 2);
     ctx.fill();
+    ctx.stroke();
     ctx.restore();
   },
 };
@@ -346,7 +356,7 @@ function buildChart(animate) {
         {
           label: labels.model, data: line("p_model"), borderColor: c.model, borderWidth: 2.5, pointRadius: 0, order: 1,
           // shade between the main line and 50%: chasing side's colour above, defending side's below
-          fill: { target: { value: 50 }, above: hexA(teamTint.batting, 0.16), below: hexA(teamTint.bowling, 0.16) },
+          fill: { target: { value: 50 }, above: hexA(teamTint.batting, 0.12), below: hexA(teamTint.bowling, 0.12) },
         },
         { label: labels.other, data: line("p_other"), borderColor: c.other, borderWidth: 1.5, pointRadius: 0, order: 2 },
         { label: labels.base, data: line("p_base"), borderColor: c.base, borderWidth: 1.5, borderDash: [6, 4], pointRadius: 0, order: 3 },

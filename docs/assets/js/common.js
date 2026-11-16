@@ -74,7 +74,11 @@ export function table(headers, rows, { caption, numeric = [] } = {}) {
   const t = el("table");
   if (caption) t.append(el("caption", { text: caption }));
   const head = el("tr");
-  headers.forEach((h, j) => head.append(el("th", { scope: "col", class: numeric.includes(j) ? "r" : null, text: h })));
+  headers.forEach((h, j) => {
+    const th = el("th", { scope: "col", class: numeric.includes(j) ? "r" : null });
+    if (h) th.textContent = h; else th.append(el("span", { class: "visually-hidden", text: "Link" }));
+    head.append(th);
+  });
   t.append(el("thead", {}, head));
   const body = el("tbody");
   for (const r of rows) {
@@ -87,7 +91,9 @@ export function table(headers, rows, { caption, numeric = [] } = {}) {
     body.append(tr);
   }
   t.append(body);
-  return el("div", { class: "table-wrap" }, t);
+  // focusable region so keyboard users can scroll wide tables (AccessLint: scrollable-region)
+  return el("div", { class: "table-wrap", tabindex: "0", role: "region",
+    "aria-label": caption || `Table: ${headers.filter(Boolean).slice(0, 3).join(", ")}` }, t);
 }
 
 export function cssVar(name) {
@@ -127,37 +133,27 @@ export function teamColors(batting, bowling) {
   return { batting: a[0], bowling: dist(a[0], b[0]) < 110 ? b[1] : b[0] };
 }
 
-// Page tint: colour of the side that is ahead, strength = how clearly (0 at 50%, 1 at 0%/100%).
-export function setTeamTint(color, strength) {
+// Colour of the side that is ahead: the fill of the scoreboard tile (DESIGN.md: colour appears as
+// full-bleed tiles). Callers may pass a second argument; it is ignored.
+export function setTeamTint(color) {
+  const c = color ?? NEUTRAL;
   const s = document.documentElement.style;
-  s.setProperty("--team", color ?? NEUTRAL);
-  s.setProperty("--team-strength", String(Math.max(0, Math.min(1, strength ?? 0.35))));
+  s.setProperty("--team", c);
+  s.setProperty("--on-team", readableOn(c));
 }
 
-// A soft glow that follows the cursor (skipped for touch screens and reduced motion).
-function cursorGlow() {
-  if (typeof window === "undefined" || !window.matchMedia) return;
-  if (matchMedia("(hover: none)").matches || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const g = document.createElement("div");
-  g.className = "cursor-glow";
-  g.setAttribute("aria-hidden", "true");
-  document.body.append(g);
-  let frame = 0, x = 0, y = 0;
-  window.addEventListener("pointermove", (e) => {
-    x = e.clientX; y = e.clientY;
-    if (!frame) frame = requestAnimationFrame(() => {
-      g.style.setProperty("--mx", `${x}px`);
-      g.style.setProperty("--my", `${y}px`);
-      g.classList.add("on");
-      frame = 0;
-    });
-  }, { passive: true });
-  document.addEventListener("pointerleave", () => g.classList.remove("on"));
+// WCAG relative luminance, and the readable text colour (black or white) on a background.
+function luminance(hex) {
+  return rgb(hex).map((v) => { const c = v / 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; })
+    .reduce((s, c, i) => s + c * [0.2126, 0.7152, 0.0722][i], 0);
+}
+export function readableOn(hex) {
+  const L = luminance(hex);
+  return (L + 0.05) / 0.05 >= 1.05 / (L + 0.05) ? "#000000" : "#ffffff";
 }
 
 export function highlightNav() {
   linkRepo();
-  cursorGlow();
   const here = location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".site-nav a").forEach((a) => {
     if (a.getAttribute("href") === here) a.setAttribute("aria-current", "page");

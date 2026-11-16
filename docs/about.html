@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f1011">
   <title>Write-up · IPL win probability</title>
   <meta name="description" content="The full reasoning of the project: question, data, preprocessing, baseline and models, evaluation, results, error analysis and limitations.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/site.css">
   <script type="module" src="assets/js/about.js"></script>
 </head>
@@ -21,7 +22,7 @@
         <a href="calculator.html">What-if</a>
         <a href="edge-cases.html">Edge cases</a>
         <a href="results.html">Results</a>
-        <a href="about.html">Write-up</a>
+        <a class="btn-primary" href="about.html">Write-up <span aria-hidden="true">→</span></a>
       </nav>
     </div>
   </header>
@@ -283,17 +284,17 @@
     </div>
     <div id="test-metrics"></div>
     <figure class="figure">
-      <img src="assets/figures/bss_intervals_test.png" alt="Brier skill score with 95% intervals on the test seasons: both logistic regression models are above zero, GBM against the baseline straddles zero, and GBM against LR-full is below zero." loading="lazy">
+      <img src="assets/figures/bss_intervals_test.png" width="975" height="540" alt="Brier skill score with 95% intervals on the test seasons: both logistic regression models are above zero, GBM against the baseline straddles zero, and GBM against LR-full is below zero." loading="lazy">
       <figcaption>Skill against the baseline on the test seasons, with 95% match-bootstrap
         intervals. Green: whole interval above 0. Red: whole interval below 0.</figcaption>
     </figure>
     <figure class="figure">
-      <img src="assets/figures/calibration_test.png" alt="Calibration curves on the test seasons for the four methods against the diagonal of perfect calibration." loading="lazy">
+      <img src="assets/figures/calibration_test.png" width="825" height="750" alt="Calibration curves on the test seasons for the four methods against the diagonal of perfect calibration." loading="lazy">
       <figcaption>Calibration on the test seasons. Points above the diagonal mean the method was
         too pessimistic about the chasing team.</figcaption>
     </figure>
     <figure class="figure">
-      <img src="assets/figures/phase_brier_test.png" alt="Brier score by phase of the chase for each method on the test seasons." loading="lazy">
+      <img src="assets/figures/phase_brier_test.png" width="975" height="600" alt="Brier score by phase of the chase for each method on the test seasons." loading="lazy">
       <figcaption>Brier score by phase of the chase (lower is better).</figcaption>
     </figure>
     <div class="prose"><p id="phase-text"></p>
@@ -312,7 +313,7 @@
     </div>
     <div id="season-table"></div>
     <figure class="figure">
-      <img src="assets/figures/season_drift.png" alt="Observed chase win rate against the main model's mean start-of-chase prediction for the validation and test seasons." loading="lazy">
+      <img src="assets/figures/season_drift.png" width="900" height="600" alt="Observed chase win rate against the main model's mean start-of-chase prediction for the validation and test seasons." loading="lazy">
       <figcaption>Scoring drift: observed chase win rate against the main model's average
         prediction at the start of each chase.</figcaption>
     </figure>
@@ -322,7 +323,7 @@
     </div>
     <div id="failures"></div>
     <figure class="figure">
-      <img id="example-fig" alt="Ball-by-ball win probability for the featured chase: the main model and the baseline, with wickets marked." loading="lazy">
+      <img id="example-fig" width="1350" height="600" alt="Ball-by-ball win probability for the featured chase: the main model and the baseline, with wickets marked." loading="lazy">
       <figcaption id="example-caption"></figcaption>
     </figure>
 

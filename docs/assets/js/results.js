@@ -87,11 +87,11 @@ function render() {
       `${d.gap_start > 0 ? "+" : ""}${fix(100 * d.gap_start, 1)}`, pct(d.mean_p, 1), pct(d.observed_rows, 1)]),
     { caption: `${label(best)}; a negative gap means it under-predicted chases`, numeric: [2, 3, 4, 5, 6, 7] }));
 
-  const caseRows = (list) => table(["Chase", "What happened", ""],
+  const caseRows = (list, caption) => table(["Chase", "What happened", ""],
     list.map((e) => [e.match_id, e.explanation,
-      el("a", { href: `index.html?match=${encodeURIComponent(e.match_id)}`, text: "Open replay" })]));
-  $("worst").replaceChildren(caseRows(R.failure_cases.worst_vs_baseline));
-  $("upsets").replaceChildren(caseRows(R.failure_cases.biggest_upsets));
+      el("a", { href: `index.html?match=${encodeURIComponent(e.match_id)}`, text: "Open replay" })]), { caption });
+  $("worst").replaceChildren(caseRows(R.failure_cases.worst_vs_baseline, "Test chases where the main model did worst against the baseline"));
+  $("upsets").replaceChildren(caseRows(R.failure_cases.biggest_upsets, "Biggest upsets: lowest probability given to the eventual winner"));
 
   $("validation").replaceChildren(table(
     ["Method", "Brier", "Log loss", "ECE", `BSS [${pct(ev.ci)} interval]`],

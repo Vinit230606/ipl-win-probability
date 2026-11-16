@@ -131,9 +131,13 @@ the committed one (`git diff reports/metrics.json`); only the two timing fields 
   0.3813) and is sometimes confidently wrong where data is thin; both are reported on the site's
   Edge cases page. `docs/tests/parity.test.mjs` checks that the JavaScript calculator matches
   Python on 250 states and has no monotonicity violations.
-- **Site theme.** At the team's request the site uses a single dark "space" theme instead of
-  light and dark modes. On the replay the page takes on a shade of the team the main model
-  favours, and a glow follows the cursor (off for touch screens and reduced motion).
+- **Site theme.** The site uses a single dark theme instead of light and dark modes. On the
+  `frontend-revamp` branch it follows `DESIGN.md` ("midnight gallery"): near-black surfaces,
+  Playfair Display at weight 400 for headlines (DESIGN.md's substitute for Lyon Display), Inter
+  for text, Roboto Mono for uppercase data labels, white-on-black primary buttons, and colour
+  only as full-bleed tiles and chart lines. The scoreboard above the replay chart is a tile in
+  the colour of the side the main model favours. The earlier starfield, colour aura and cursor
+  glow were removed, because DESIGN.md rules out radial gradients and decorative effects.
 - **D7 (approved):** the data is Cricsheet JSON, so `io_adapters.py` has a third adapter, "J",
   next to the planned Kaggle ("K") and Cricsheet CSV ("C") adapters. It follows the C mapping rules.
 - The canonical deliveries table has one extra column, `dismissal_kind_2`, holding the kind of a

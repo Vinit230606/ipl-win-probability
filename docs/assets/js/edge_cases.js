@@ -149,7 +149,7 @@ function explore() {
   if (errs.length) return;
   const { runs_needed: r, balls_left: bl, wickets_left: w } = vals;
   const pc = calc.p(r, bl, w);
-  setTeamTint(pc >= 0.5 ? "#7DD3FC" : "#F472B6", Math.abs(pc - 0.5) * 2);
+  setTeamTint(pc >= 0.5 ? "#847dff" : "#dd90d8", Math.abs(pc - 0.5) * 2);
   $("ex-state").textContent = `Need ${r} from ${plural(bl, "ball")}, ${plural(w, "wicket")} in hand`;
   $("ex-lr").textContent = P(calc.lr(r, bl, w));
   $("ex-sim").textContent = P(calc.sim(r, bl, w));
