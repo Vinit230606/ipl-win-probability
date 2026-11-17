@@ -35,7 +35,5 @@ export:
 test:
 	$(PY) -m pytest -q
 	node docs/tests/parity.test.mjs
-	node docs/tests/teams.test.mjs
-	node docs/tests/result_text.test.mjs
 
 all: profile data features baseline tune final edgecases export

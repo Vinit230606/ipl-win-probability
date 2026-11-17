@@ -131,16 +131,13 @@ the committed one (`git diff reports/metrics.json`); only the two timing fields 
   0.3813) and is sometimes confidently wrong where data is thin; both are reported on the site's
   Edge cases page. `docs/tests/parity.test.mjs` checks that the JavaScript calculator matches
   Python on 250 states and has no monotonicity violations.
-- **Site theme ("Under the lights", `.kiro/steering/ipl-ui-theme.md`).** A floodlit night match
-  (navy night theme by default, a day-match theme under `prefers-color-scheme: light`), Barlow
-  Condensed and Barlow, and team colour as the one bold element. Opening a chase dresses the TV-style
-  score strip, the win predictor bar and the two halves of the chart in the chasing and defending
-  teams' colours. Team kits and the OKLCH clash rule live in `docs/assets/js/teams.js` (approximate
-  kit colours, short codes on badges, no logos). Model lines stay neutral. Kept from the earlier
-  designs: the hero search, the "go further" links, the result card, the numbered preprocessing
-  steps and the accessible tables. This is a visual and copy pass only; no data file or number
-  changed. `docs/tests/teams.test.mjs` checks every match-up of the ten current teams in both themes,
-  and `docs/tests/result_text.test.mjs` checks the rebuilt result sentences against the data.
+- **Site theme.** The site uses a single dark theme instead of light and dark modes. On the
+  `frontend-revamp` branch it follows `DESIGN.md` ("midnight gallery"): near-black surfaces,
+  Playfair Display at weight 400 for headlines (DESIGN.md's substitute for Lyon Display), Inter
+  for text, Roboto Mono for uppercase data labels, white-on-black primary buttons, and colour
+  only as full-bleed tiles and chart lines. The scoreboard above the replay chart is a tile in
+  the colour of the side the main model favours. The earlier starfield, colour aura and cursor
+  glow were removed, because DESIGN.md rules out radial gradients and decorative effects.
 - **D7 (approved):** the data is Cricsheet JSON, so `io_adapters.py` has a third adapter, "J",
   next to the planned Kaggle ("K") and Cricsheet CSV ("C") adapters. It follows the C mapping rules.
 - The canonical deliveries table has one extra column, `dismissal_kind_2`, holding the kind of a

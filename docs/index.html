@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0A1633" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#F2F5EC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1011">
   <title>Replay a chase · IPL win probability</title>
   <meta name="description" content="Ball-by-ball win probability for recent IPL chases: a historical baseline against machine-learning models.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/site.css">
   <script src="assets/vendor/chart.umd.min.js" defer></script>
   <script type="module" src="assets/js/replay.js"></script>
@@ -24,123 +23,90 @@
         <a href="calculator.html">What-if</a>
         <a href="edge-cases.html">Edge cases</a>
         <a href="results.html">Results</a>
-        <a href="about.html">Write-up</a>
+        <a class="btn-primary" href="about.html">Write-up <span aria-hidden="true">→</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <div class="stripes">
-      <section class="hero" aria-labelledby="intro-title">
-        <div class="wrap hero-inner">
-          <h1 id="intro-title">Can machine learning read a chase better than history?</h1>
-          <p class="hero-sub">Win probability after every ball of an IPL chase, from the scoreboard alone.
-            <span id="intro-answer"></span></p>
-          <div class="hero-row">
-            <form id="hero-search" class="prompt" role="search">
-              <label class="visually-hidden" for="search">Search chases by team, venue or date</label>
-              <input id="search" name="search" type="search" placeholder="Search a team, venue or date…" autocomplete="off" spellcheck="false">
-              <button class="btn-pill" type="submit">Find chase</button>
-            </form>
-            <p class="hero-links">Grading this project? Start with the <a href="about.html">write-up</a>,
-              see every table on <a href="results.html">results</a>, or check the code in the
-              <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">repository</a>.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="replay" class="replay" aria-labelledby="match-title">
-        <div class="wrap">
-          <p id="filter-msg" class="notice" role="status" hidden></p>
-          <div class="match-head">
-            <h2 id="match-title" class="match-title">Loading the chase…</h2>
-            <p id="match-meta" class="match-meta"></p>
-          </div>
-
-          <div id="scoreboard" class="scoreboard" aria-hidden="true">
-            <div class="sb-left">
-              <span id="sb-chase" class="badge chase">–</span>
-              <span id="sb-score" class="score-fig">0/0</span>
-              <span id="sb-overs" class="sb-overs"></span>
-            </div>
-            <div class="sb-mid">
-              <span id="sb-eq" class="sb-eq"></span>
-              <span id="sb-rrr" class="sb-rrr"></span>
-            </div>
-            <div class="sb-right">
-              <span id="sb-target" class="sb-target"></span>
-              <span id="sb-defend" class="badge defend">–</span>
-            </div>
-            <span class="sb-bar"></span>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <section class="wrap" aria-label="Win predictor and chart">
-      <div class="predictor" aria-hidden="true">
-        <div class="predictor-labels">
-          <span id="pred-chase" class="predictor-pct"></span>
-          <span id="pred-defend" class="predictor-pct"></span>
-        </div>
-        <div class="predictor-track"><span id="pred-bar" class="predictor-chase" style="width:50%"></span><span class="predictor-defend"></span></div>
+    <section class="hero" aria-labelledby="intro-title">
+      <div class="wrap hero-inner">
+        <p class="eyebrow" id="hero-badge">IPL chases, ball by ball</p>
+        <h1 id="intro-title" class="display">Can machine learning <em>read</em> a chase better than history?</h1>
+        <p class="hero-sub">After every ball of an IPL chase we estimate how likely the chasing team
+          is to win, from the scoreboard alone, and test whether machine-learning models beat a
+          simple table of historical win rates. <span id="intro-answer"></span></p>
+        <form id="hero-search" class="prompt" role="search">
+          <label class="visually-hidden" for="search">Search chases by team, venue or date</label>
+          <input id="search" name="search" type="search" placeholder="Try “Mumbai Indians” or “Eden Gardens”…" autocomplete="off" spellcheck="false">
+          <button class="prompt-go" type="submit" aria-label="Open the first matching chase"><span aria-hidden="true">→</span></button>
+        </form>
+        <p class="hero-links">Grading this project? Start with the <a href="about.html">write-up</a>,
+          see every table on <a href="results.html">results</a>, or check the code in the
+          <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">repository</a>.</p>
       </div>
-      <dl class="readings" aria-hidden="true">
-        <div><dt><span class="sw"></span><span id="lab-model"></span></dt><dd id="p-model"></dd></div>
-        <div><dt><span class="sw other"></span><span id="lab-other"></span></dt><dd id="p-other"></dd></div>
-        <div><dt><span class="sw base"></span><span id="lab-base"></span></dt><dd id="p-base"></dd></div>
-      </dl>
+    </section>
 
-      <figure class="chart-panel">
-        <ul class="legend" id="legend">
-          <li><span class="sw"></span><span id="leg-model"></span></li>
-          <li><span class="sw other"></span><span id="leg-other"></span></li>
-          <li><span class="sw base"></span><span id="leg-base"></span></li>
-          <li><span class="sw half chase-half"></span><span id="leg-bat">Chasing side ahead</span></li>
-          <li><span class="sw half defend-half"></span><span id="leg-bowl">Defending side ahead</span></li>
-          <li><span class="sw stump"></span>Wicket</li>
-          <li><span class="sw big"></span><span id="leg-big">Big over</span></li>
-          <li><span class="sw decided"></span>Decided</li>
-        </ul>
-        <div class="chart-scroll">
+    <section id="replay" class="band" aria-labelledby="match-title">
+      <div class="wrap">
+        <div class="filters" role="group" aria-label="Choose a chase">
+          <label>Season <select id="season" name="season"></select></label>
+          <label>Team <select id="team" name="team"></select></label>
+          <label class="grow">Chase <select id="match-select" name="match"></select></label>
+          <button id="featured" class="btn-ghost" type="button">Featured chase</button>
+        </div>
+        <p id="filter-msg" class="notice" role="status" hidden></p>
+
+        <h2 id="match-title" class="match-title">Loading the featured chase…</h2>
+        <p id="match-meta" class="match-meta"></p>
+
+        <div class="strip" aria-hidden="true">
+          <p id="strip-lead" class="strip-lead"></p>
+          <p id="strip-state" class="strip-state"></p>
+          <dl class="strip-probs">
+            <div><dt><span class="sw"></span><span id="lab-model"></span></dt><dd id="p-model"></dd></div>
+            <div><dt><span class="sw other"></span><span id="lab-other"></span></dt><dd id="p-other"></dd></div>
+            <div><dt><span class="sw base"></span><span id="lab-base"></span></dt><dd id="p-base"></dd></div>
+          </dl>
+        </div>
+
+        <figure class="chart-panel">
+          <ul class="legend" id="legend">
+            <li><span class="sw"></span><span id="leg-model"></span></li>
+            <li><span class="sw other"></span><span id="leg-other"></span></li>
+            <li><span class="sw base"></span><span id="leg-base"></span></li>
+            <li><span id="sw-bat" class="sw team"></span><span id="leg-bat">Chasing side ahead</span></li>
+            <li><span id="sw-bowl" class="sw team"></span><span id="leg-bowl">Defending side ahead</span></li>
+            <li><span class="sw wkt"></span>Wicket</li>
+            <li><span class="sw big"></span><span id="leg-big">Big over</span></li>
+          </ul>
           <div id="chart-box" class="chart-box" tabindex="0" role="group"
                aria-label="Win probability chart. Use the left and right arrow keys to step through the balls, Home and End to jump to the start or the end."
                aria-describedby="detail">
             <canvas id="chart" aria-hidden="true"></canvas>
           </div>
-        </div>
-        <figcaption id="detail" class="detail"></figcaption>
-      </figure>
+          <figcaption id="detail" class="detail"></figcaption>
+        </figure>
 
-      <p id="summary" class="summary"></p>
-      <p><button id="table-toggle" class="btn-pill" type="button" aria-expanded="false" aria-controls="ball-table-wrap">View as table</button></p>
-      <div id="ball-table-wrap" hidden></div>
-      <p id="live" class="visually-hidden" aria-live="polite"></p>
-    </section>
-
-    <section class="wrap picker" aria-labelledby="picker-title">
-      <h2 id="picker-title">Pick another chase</h2>
-      <p class="picker-label" id="season-label">Season</p>
-      <div id="season-pills" class="pill-row" role="group" aria-labelledby="season-label"></div>
-      <p class="picker-label" id="team-label">Team</p>
-      <div id="team-badges" class="badge-row" role="group" aria-labelledby="team-label"></div>
-      <p id="list-count" class="picker-label" aria-live="polite"></p>
-      <div class="match-list-wrap" tabindex="0" role="region" aria-label="Chases"><ul id="match-list" class="match-list"></ul></div>
-      <p style="margin-top:12px"><button id="featured" class="btn-pill" type="button">Back to the featured chase</button></p>
+        <p id="summary" class="summary"></p>
+        <p><button id="table-toggle" class="btn-ghost" type="button" aria-expanded="false" aria-controls="ball-table-wrap">View as table</button></p>
+        <div id="ball-table-wrap" hidden></div>
+        <p id="live" class="visually-hidden" aria-live="polite"></p>
+      </div>
     </section>
 
     <section class="wrap section" aria-labelledby="explore-title">
-      <h2 id="explore-title">Go further</h2>
+      <h2 id="explore-title" class="section-title">Go further</h2>
       <div class="tiles">
-        <a class="tile" href="calculator.html">
+        <a class="tile tile-iris" href="calculator.html">
           <span class="tile-title">What if</span>
-          <span class="tile-text">Set runs needed, balls left and wickets in hand, and see how often a team in that spot wins.</span>
+          <span class="tile-text">Set runs needed, balls left and wickets left, and see how often a team in that spot wins.</span>
         </a>
-        <a class="tile" href="edge-cases.html">
+        <a class="tile tile-orchid" href="edge-cases.html">
           <span class="tile-title">Edge cases</span>
           <span class="tile-text">Situations no past chase reached, why the simple model said 0% there, and how we fixed it.</span>
         </a>
-        <a class="tile" href="results.html">
+        <a class="tile tile-periwinkle" href="results.html">
           <span class="tile-title">Results</span>
           <span class="tile-text">Every score on the test seasons, with intervals, calibration and the chases the models got wrong.</span>
         </a>
@@ -149,30 +115,27 @@
 
     <section class="wrap section">
       <div class="stat-card">
-        <p class="stat-head" id="stat-head">Loading the headline result…</p>
+        <p class="stat-head" id="stat-head">The headline result loads here.</p>
         <p class="stat-text" id="stat-text"></p>
       </div>
     </section>
 
     <section id="model-note" class="wrap section prose" aria-labelledby="note-title">
-      <h2 id="note-title">Reading the chart</h2>
+      <h2 id="note-title" class="section-title">Reading the chart</h2>
       <p>Each line is the chasing team's chance of winning, recalculated after every ball from
-        the scoreboard alone: runs needed, balls left, wickets in hand, the target and the runs and
+        the scoreboard alone: runs needed, balls left, wickets left, the target and the runs and
         wickets in the most recent <span id="win18">few</span> legal balls. Once the result is
         settled by the rules (target reached, all out, or no balls left) the lines jump to 100%
-        or 0% and the last stretch turns green, marked decided. The top half of the chart is the
-        chasing team's colour and the bottom half the defending team's.</p>
+        or 0% and the ball is marked decided. The scoreboard above the chart takes the colour of
+        the side the main model favours.</p>
       <p id="note-models"></p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <p>Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
-        ES 335 project by Vinit Parmar and Dutt Parmar.
-        Code, data splits and full results: <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">GitHub repository</a>.</p>
-      <p>Independent student project. Not affiliated with the IPL, BCCI or any franchise.</p>
-    </div>
+    <div class="wrap">Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
+      ES 335 project by Vinit Parmar and Dutt Parmar.
+      Code, data splits and full results: <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">GitHub repository</a>.</div>
   </footer>
 </body>
 </html>

@@ -3,12 +3,10 @@ import {
   CHART_MISSING, chartAvailable, chartFonts, ciText, cssVar, el, fix, highlightNav, int, loadJSON,
   onThemeChange, pct, showError, table,
 } from "./common.js";
-import { lineFor, teamFromName } from "./teams.js";
 
 const $ = (id) => document.getElementById(id);
 const ORDER = ["baseline", "lr_full", "lr_core", "gbm"];
 let R = null;
-let CHASER = new Map();   // match id -> chasing team name (from data/matches.json)
 const charts = [];
 
 init();
@@ -16,9 +14,7 @@ init();
 async function init() {
   highlightNav();
   try {
-    let idx;
-    [R, idx] = await Promise.all([loadJSON("data/results.json"), loadJSON("data/matches.json")]);
-    CHASER = new Map(idx.matches.map((m) => [m.match_id, m.batting_team]));
+    R = await loadJSON("data/results.json");
   } catch {
     return;
   }
@@ -93,8 +89,7 @@ function render() {
 
   const caseRows = (list, caption) => table(["Chase", "What happened", ""],
     list.map((e) => [e.match_id, e.explanation,
-      el("a", { href: `index.html?match=${encodeURIComponent(e.match_id)}`, text: "Open replay" })]),
-    { caption, rowLines: list.map((e) => (CHASER.has(e.match_id) ? lineFor(teamFromName(CHASER.get(e.match_id))) : null)) });
+      el("a", { href: `index.html?match=${encodeURIComponent(e.match_id)}`, text: "Open replay" })]), { caption });
   $("worst").replaceChildren(caseRows(R.failure_cases.worst_vs_baseline, "Test chases where the main model did worst against the baseline"));
   $("upsets").replaceChildren(caseRows(R.failure_cases.biggest_upsets, "Biggest upsets: lowest probability given to the eventual winner"));
 
@@ -116,21 +111,21 @@ function render() {
 }
 
 function drawCharts() {
-  const color = { baseline: cssVar("--chalk-dim"), lr_full: cssVar("--chalk"), lr_core: cssVar("--chalk-dim"), gbm: cssVar("--chalk") };
+  const color = { baseline: cssVar("--muted"), lr_full: cssVar("--outfield"), lr_core: "#6FA287", gbm: cssVar("--floodlight") };
   Chart.defaults.font = chartFonts();
-  Chart.defaults.color = cssVar("--chalk-dim");
-  const grid = cssVar("--rope");
+  Chart.defaults.color = cssVar("--muted");
+  const grid = cssVar("--line");
 
   const entries = [
     ...["lr_core", "lr_full", "gbm"].map((k) => [`${label(k)} vs baseline`, R.test[k].bss, R.test[k].bss_ci]),
     [`${label("gbm")} vs ${label("lr_full")}`, R.test_gbm_vs_lr_full.bss, R.test_gbm_vs_lr_full.ci],
   ];
-  const tone = ([, , ci]) => (ci[0] > 0 ? cssVar("--turf-line") : ci[1] < 0 ? cssVar("--chalk-dim") : cssVar("--rope"));
+  const tone = ([, , ci]) => (ci[0] > 0 ? cssVar("--outfield") : ci[1] < 0 ? cssVar("--ball-red") : cssVar("--floodlight"));
   const zeroLine = {
     id: "zero",
     afterDatasetsDraw(ch) {
       const { ctx, chartArea: a, scales: { x } } = ch;
-      ctx.save(); ctx.strokeStyle = cssVar("--chalk"); ctx.globalAlpha = 0.6;
+      ctx.save(); ctx.strokeStyle = cssVar("--ink"); ctx.globalAlpha = 0.5;
       ctx.beginPath(); ctx.moveTo(x.getPixelForValue(0), a.top); ctx.lineTo(x.getPixelForValue(0), a.bottom); ctx.stroke();
       ctx.restore();
     },
@@ -141,7 +136,7 @@ function drawCharts() {
       labels: entries.map((e) => e[0]),
       datasets: [
         { data: entries.map((e) => e[2]), backgroundColor: entries.map(tone), barThickness: 10, borderSkipped: false },
-        { type: "scatter", data: entries.map((e) => ({ x: e[1], y: e[0] })), backgroundColor: cssVar("--chalk"), pointRadius: 4 },
+        { type: "scatter", data: entries.map((e) => ({ x: e[1], y: e[0] })), backgroundColor: cssVar("--ink"), pointRadius: 4 },
       ],
     },
     options: {
@@ -159,10 +154,8 @@ function drawCharts() {
     datasets.push({
       label: label(k),
       data: R.calibration.test[k].filter((b) => b.n > 0).map((b) => ({ x: 100 * b.mean_p, y: 100 * b.observed_rate })),
-      // neutral lines, told apart by line style and marker (main model solid, baseline dashed)
-      borderColor: color[k], backgroundColor: color[k], borderWidth: k === R.best_model ? 2.5 : 1.5,
-      borderDash: k === R.best_model ? undefined : { baseline: [7, 5], lr_full: [2, 4], lr_core: [9, 3, 2, 3], gbm: [2, 4] }[k],
-      pointStyle: { baseline: "rect", lr_full: "circle", lr_core: "triangle", gbm: "rectRot" }[k], pointRadius: 4,
+      borderColor: color[k], backgroundColor: color[k], borderWidth: k === R.best_model ? 2.5 : 1.75,
+      borderDash: k === "baseline" ? [6, 4] : undefined, pointRadius: 3,
     });
   }
   charts.push(new Chart($("calib-chart"), {

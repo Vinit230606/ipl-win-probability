@@ -3,13 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0A1633" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#F2F5EC" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1011">
   <title>Edge cases · IPL win probability</title>
   <meta name="description" content="Situations the data never reached, why the simple model gave impossible 0% answers there, and how a ball-by-ball simulation fixes it.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/site.css">
   <script src="assets/vendor/chart.umd.min.js" defer></script>
   <script type="module" src="assets/js/edge_cases.js"></script>
@@ -24,7 +23,7 @@
         <a href="calculator.html">What-if</a>
         <a href="edge-cases.html">Edge cases</a>
         <a href="results.html">Results</a>
-        <a href="about.html">Write-up</a>
+        <a class="btn-primary" href="about.html">Write-up <span aria-hidden="true">→</span></a>
       </nav>
     </div>
   </header>
@@ -150,12 +149,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <p>Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
-        ES 335 project by Vinit Parmar and Dutt Parmar.
-        Code, data splits and full results: <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">GitHub repository</a>.</p>
-      <p>Independent student project. Not affiliated with the IPL, BCCI or any franchise.</p>
-    </div>
+    <div class="wrap">Ball-by-ball data from <a href="https://cricsheet.org/">Cricsheet</a> (ODC-By).
+      ES 335 project by Vinit Parmar and Dutt Parmar.
+      Code, data splits and full results: <a class="repo-link" href="https://github.com/Vinit230606/ipl-win-probability">GitHub repository</a>.</div>
   </footer>
 </body>
 </html>

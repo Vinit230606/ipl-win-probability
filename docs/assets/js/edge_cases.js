@@ -149,7 +149,7 @@ function explore() {
   if (errs.length) return;
   const { runs_needed: r, balls_left: bl, wickets_left: w } = vals;
   const pc = calc.p(r, bl, w);
-  setTeamTint(pc >= 0.5 ? cssVar("--turf-line") : cssVar("--chalk-dim"));
+  setTeamTint(pc >= 0.5 ? "#847dff" : "#dd90d8", Math.abs(pc - 0.5) * 2);
   $("ex-state").textContent = `Need ${r} from ${plural(bl, "ball")}, ${plural(w, "wicket")} in hand`;
   $("ex-lr").textContent = P(calc.lr(r, bl, w));
   $("ex-sim").textContent = P(calc.sim(r, bl, w));
@@ -173,27 +173,27 @@ function drawChart(r, w, here) {
     beforeDatasetsDraw(chh) {
       const { ctx, chartArea: a, scales: { x } } = chh;
       ctx.save();
-      ctx.fillStyle = cssVar("--stand-raised");
+      ctx.fillStyle = cssVar("--big-over");
       for (const b of empty) {
         const x0 = x.getPixelForValue(b + 0.5), x1 = x.getPixelForValue(b - 0.5);
         ctx.fillRect(Math.min(x0, x1), a.top, Math.abs(x1 - x0) + 0.5, a.bottom - a.top);
       }
       const px = x.getPixelForValue(here);
-      ctx.strokeStyle = cssVar("--chalk"); ctx.globalAlpha = 0.6;
+      ctx.strokeStyle = cssVar("--ink"); ctx.globalAlpha = 0.5;
       ctx.beginPath(); ctx.moveTo(px, a.top); ctx.lineTo(px, a.bottom); ctx.stroke();
       ctx.restore();
     },
   };
   if (chart) chart.destroy();
   Chart.defaults.font = chartFonts();
-  Chart.defaults.color = cssVar("--chalk-dim");
+  Chart.defaults.color = cssVar("--muted");
   chart = new Chart($("ex-chart"), {
     type: "line",
     data: {
       datasets: [
-        { label: "Simple model", data: ds(calc.lr), borderColor: cssVar("--chalk"), borderWidth: 1.75, borderDash: [2, 4], pointRadius: 0 },
-        { label: "Simulation", data: ds(calc.sim), borderColor: cssVar("--chalk-dim"), borderWidth: 1.5, borderDash: [7, 5], pointRadius: 0 },
-        { label: "Calculator", data: ds(calc.p), borderColor: cssVar("--chalk"), borderWidth: 2.75, pointRadius: 0 },
+        { label: "Simple model", data: ds(calc.lr), borderColor: cssVar("--outfield"), borderWidth: 1.75, pointRadius: 0 },
+        { label: "Simulation", data: ds(calc.sim), borderColor: cssVar("--muted"), borderWidth: 1.5, borderDash: [6, 4], pointRadius: 0 },
+        { label: "Calculator", data: ds(calc.p), borderColor: cssVar("--floodlight"), borderWidth: 2.75, pointRadius: 0 },
       ],
     },
     options: {
@@ -201,7 +201,7 @@ function drawChart(r, w, here) {
       plugins: { legend: { display: false }, tooltip: { enabled: false } },
       scales: {
         x: { type: "linear", reverse: true, min: 1, max: 120, title: { display: true, text: "Balls left" }, ticks: { stepSize: 12 }, grid: { display: false } },
-        y: { min: 0, max: 100, ticks: { stepSize: 25, callback: (t) => `${t}%` }, grid: { color: cssVar("--rope") }, title: { display: true, text: "Win probability" } },
+        y: { min: 0, max: 100, ticks: { stepSize: 25, callback: (t) => `${t}%` }, grid: { color: cssVar("--line") }, title: { display: true, text: "Win probability" } },
       },
     },
     plugins: [shade],
