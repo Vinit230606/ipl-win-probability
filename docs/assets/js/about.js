@@ -1,6 +1,7 @@
 // Write-up page: every number and data-dependent sentence comes from data/results.json,
 // data/lr_core.json and the featured match file, all written by `make export`.
 import { ciText, el, fix, fmtDate, highlightNav, int, loadJSON, pct, plural, table, teamName } from "./common.js";
+import { lineFor, teamFromName } from "./teams.js";
 
 const $ = (id) => document.getElementById(id);
 const ORDER = ["baseline", "lr_full", "lr_core", "gbm"];
@@ -254,10 +255,14 @@ async function init() {
     `The chases where ${lab(R.best_model)} did worst against the baseline, and the biggest upsets (the lowest ` +
     "probability it gave the eventual winner). Each opens in the replay.";
   const fc = R.failure_cases;
+  const fcRows = [...fc.worst_vs_baseline.slice(0, 3).map((e) => ["Worse than baseline", e]),
+    ...fc.biggest_upsets.slice(0, 3).map((e) => ["Upset", e])];
+  const idx = await loadJSON("data/matches.json");
+  const chaser = new Map(idx.matches.map((m) => [m.match_id, m.batting_team]));
   $("failures").replaceChildren(table(["Type", "Chase", ""],
-    [...fc.worst_vs_baseline.slice(0, 3).map((e) => ["Worse than baseline", e]),
-      ...fc.biggest_upsets.slice(0, 3).map((e) => ["Upset", e])].map(([t, e]) => [t, e.explanation,
-      el("a", { href: `index.html?match=${encodeURIComponent(e.match_id)}`, text: "Open replay" })])));
+    fcRows.map(([t, e]) => [t, e.explanation,
+      el("a", { href: `index.html?match=${encodeURIComponent(e.match_id)}`, text: "Open replay" })]),
+    { rowLines: fcRows.map(([, e]) => (chaser.has(e.match_id) ? lineFor(teamFromName(chaser.get(e.match_id))) : null)) }));
   $("example-fig").src = `assets/figures/example_replay_${R.featured_match_id}.png`;
   $("example-caption").textContent =
     `The chase with the largest swing in ${lab(R.best_model)}'s probability: ${teamName(fm.batting_team)} chasing ` +
