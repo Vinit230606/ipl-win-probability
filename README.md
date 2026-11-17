@@ -138,6 +138,13 @@ the committed one (`git diff reports/metrics.json`); only the two timing fields 
   only as full-bleed tiles and chart lines. The scoreboard above the replay chart is a tile in
   the colour of the side the main model favours. The earlier starfield, colour aura and cursor
   glow were removed, because DESIGN.md rules out radial gradients and decorative effects.
+  The replay features from the later "Under the lights" draft are kept inside this design: team
+  badges (short codes on approximate kit colours, no logos), a score strip, a win predictor bar,
+  chart halves tinted in the two teams' colours with an OKLCH clash rule, stump markers for
+  wickets, a match picker with season pills and team badges, and calculator team pickers and
+  wicket pips (`docs/assets/js/teams.js`). Tests: `docs/tests/teams.test.mjs` (every match-up,
+  contrast), `docs/tests/result_text.test.mjs` (result sentences match the data) and
+  `docs/tests/e2e.mjs`, which drives every feature in a real Chrome (see its header for how to run).
 - **D7 (approved):** the data is Cricsheet JSON, so `io_adapters.py` has a third adapter, "J",
   next to the planned Kaggle ("K") and Cricsheet CSV ("C") adapters. It follows the C mapping rules.
 - The canonical deliveries table has one extra column, `dismissal_kind_2`, holding the kind of a
